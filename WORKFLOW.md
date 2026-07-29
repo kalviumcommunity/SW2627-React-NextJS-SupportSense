@@ -134,3 +134,46 @@ To maintain repository security and prevent data leakage:
 1. **No Credentials in Git**: Never commit `.env` files, API keys, passwords, or database URIs.
 2. **Strict `.gitignore`**: All raw confidential datasets, local virtual environments (`venv/`), temporary outputs, and credentials must be listed in `.gitignore`.
 3. **Automated Secret Scanning**: Use GitHub secret scanning to prevent accidental key exposure.
+
+---
+
+## 9. Onboarding Checklist for New Contributors
+
+When a new developer joins the repository, they must follow these exact steps to contribute without breaking `main`:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/kalviumcommunity/SW2627-React-NextJS-SupportSense.git
+   cd SW2627-React-NextJS-SupportSense
+   ```
+2. **Pull Latest Main**:
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+3. **Check GitHub Issues**: Pick an assigned open issue (e.g., Issue #1).
+4. **Create a Feature Branch**:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+5. **Develop & Commit**: Make atomic, focused commits with Conventional Commit format:
+   ```bash
+   git commit -m "feat: add customer ticket validation parser"
+   ```
+6. **Push & Open PR**:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+7. **Request Code Review & Merge**: Address feedback, get approval, squash and merge, and delete the feature branch.
+
+---
+
+## 10. Definition of Done (DoD) Checklist
+
+Before any PR is marked ready for review, the author must verify:
+- [ ] Code follows Python / SQL style guidelines and is modularized.
+- [ ] Datasets, missing values, and data types are validated.
+- [ ] All unit tests pass cleanly without errors.
+- [ ] Documentation (`README.md` / `WORKFLOW.md` / Data Dictionary) is updated.
+- [ ] Conventional Commit messages are used throughout the branch history.
+- [ ] PR description links to the corresponding GitHub issue (`Closes #ID`).
