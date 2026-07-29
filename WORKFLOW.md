@@ -58,3 +58,79 @@ We enforce the **Conventional Commits** standard (`[type]: [description]`). This
 - `fix: correct null percentage calculation in customer profiler`
 - `docs: document team github workflow and conventions`
 - `chore: update requirements.txt with pandas and streamlit libraries`
+
+---
+
+## 4. Pull Request & Code Review Process
+
+Pull Requests (PRs) serve as mandatory safety gates before code enters `main`.
+
+### PR Guidelines:
+1. **Title Standard**: Must be action-oriented and descriptive (e.g., `feat: setup team GitHub workflow and branching guidelines`).
+2. **Issue Association**: Every PR must link to its corresponding GitHub issue in the description using GitHub keywords (e.g., `Closes #1`, `Fixes #3`).
+3. **Code Review Criteria**:
+   - **Correctness & Logic**: Does the pipeline execute without errors?
+   - **Data Integrity**: Are null values, schemas, and data types validated?
+   - **Clarity & Maintainability**: Are functions modular and readable?
+   - **Commit Quality**: Do commit messages adhere to Conventional Commits?
+4. **Approval Requirement**: At least **one teammate approval** is required before merging into `main`.
+5. **Merge Strategy**: Use **Squash and Merge** or standard Merge Commit to preserve clean linear history, then delete the source branch.
+
+---
+
+## 5. GitHub Issue Tracking Approach
+
+All team tasks originate as trackable GitHub Issues to establish ownership, context, and sprint progress.
+
+### Issue Requirements:
+1. **Action-Oriented Title**: Clear statement of work (e.g., `Ingest customer support ticket dataset into processing pipeline`).
+2. **Detailed Description**: Contains background/context, business objective, and acceptance criteria (Definition of Done).
+3. **Categorization Labels**: Assigned appropriate GitHub labels (`feature`, `bug`, `documentation`, `data-pipeline`).
+4. **Assignee**: Exactly one team member assigned for clear accountability.
+5. **Automatic Closing**: Closing keyword (`Closes #ID`) included in PR description to close the issue automatically upon merging PR into `main`.
+
+---
+
+## 6. Emergency Rollback & Incident Management Policy
+
+If a bug or broken pipeline logic reaches `main`:
+1. **Never Force Push (`git push --force`) to `main`**: Force pushing destroys team commit history.
+2. **Use Surgical Reverts**:
+   ```bash
+   git checkout main
+   git pull origin main
+   git revert <bad-commit-hash>
+   git push origin main
+   ```
+3. **Create Hotfix Issue & Post-Mortem**: Document why the failure bypassed review and add validation tests to prevent recurrence.
+
+---
+
+## 7. Merge Conflict Resolution Protocol
+
+When `main` has advanced while you were working on your feature branch:
+1. Fetch latest changes from `main`:
+   ```bash
+   git checkout main
+   git pull origin main
+   git checkout feature/your-branch-name
+   ```
+2. Rebase feature branch onto `main` (or merge `main` into feature branch):
+   ```bash
+   git rebase main
+   ```
+3. Resolve conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) in affected files manually.
+4. Stage resolved files and continue rebase:
+   ```bash
+   git add <resolved-file>
+   git rebase --continue
+   ```
+
+---
+
+## 8. Data & Credentials Security Guidelines
+
+To maintain repository security and prevent data leakage:
+1. **No Credentials in Git**: Never commit `.env` files, API keys, passwords, or database URIs.
+2. **Strict `.gitignore`**: All raw confidential datasets, local virtual environments (`venv/`), temporary outputs, and credentials must be listed in `.gitignore`.
+3. **Automated Secret Scanning**: Use GitHub secret scanning to prevent accidental key exposure.
