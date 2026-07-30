@@ -1,0 +1,44 @@
+{
+    "status": "FAILED",
+    "timestamp": "2026-07-30T15:53:08.418915",
+    "file": "customer_support_tickets.csv",
+    "checks": {
+        "file_exists": true,
+        "format": true,
+        "encoding": "ascii (confidence: 1.00)",
+        "schema": false
+    },
+    "statistics": {
+        "rows": 11,
+        "columns": 10,
+        "file_size_mb": 0.0011,
+        "column_names": [
+            "ticket_id",
+            "customer_id",
+            "created_at",
+            "resolved_at",
+            "category",
+            "resolution_status",
+            "escalated",
+            "satisfaction_score",
+            "monthly_spend",
+            "churn_flag"
+        ],
+        "data_types": {
+            "ticket_id": "object",
+            "customer_id": "object",
+            "created_at": "object",
+            "resolved_at": "object",
+            "category": "object",
+            "resolution_status": "object",
+            "escalated": "bool",
+            "satisfaction_score": "float64",
+            "monthly_spend": "float64",
+            "churn_flag": "int64"
+        }
+    },
+    "warnings": [],
+    "errors": [
+        "Schema mismatch. Missing: ['customer_name', 'issue_type', 'resolution_time_hrs', 'status', 'priority'], Extra: ['churn_flag', 'resolution_status', 'customer_id', 'resolved_at', 'escalated', 'category', 'monthly_spend']"
+    ]
+}
