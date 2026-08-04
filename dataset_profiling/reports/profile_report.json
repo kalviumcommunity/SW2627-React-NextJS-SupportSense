@@ -1,0 +1,116 @@
+{
+    "status": "SUCCESS",
+    "dataset": {
+        "rows": 3,
+        "columns": 4,
+        "memory": "689.00 B",
+        "column_names": [
+            "customer_id",
+            "name",
+            "email",
+            "signup_date"
+        ],
+        "data_types": {
+            "customer_id": "int64",
+            "name": "object",
+            "email": "object",
+            "signup_date": "object"
+        }
+    },
+    "null_analysis": {
+        "columns_with_nulls": {},
+        "total_null_cells": 0,
+        "columns_exceeding_threshold": []
+    },
+    "duplicates": {
+        "exact_duplicate_rows": 0,
+        "duplicate_percentage": 0.0,
+        "duplicate_samples": [],
+        "exceeds_threshold": false
+    },
+    "numerical_summary": {
+        "customer_id": {
+            "minimum": 1,
+            "maximum": 3,
+            "mean": 2.0,
+            "median": 2.0,
+            "mode": 1,
+            "std_dev": 1.0,
+            "variance": 1.0,
+            "q1": 1.5,
+            "q3": 2.5,
+            "iqr": 1.0,
+            "skewness": 0.0,
+            "kurtosis": null,
+            "unique_values": 3
+        }
+    },
+    "categorical_summary": {
+        "name": {
+            "unique_values": 3,
+            "cardinality": "Low/Medium",
+            "top_categories": {
+                "Alice": 1,
+                "Bob": 1,
+                "Carol": 1
+            },
+            "most_frequent_value": "Alice",
+            "least_frequent_value": "Carol",
+            "is_constant": false
+        },
+        "email": {
+            "unique_values": 3,
+            "cardinality": "Low/Medium",
+            "top_categories": {
+                "alice@example.com": 1,
+                "bob@example.com": 1,
+                "carol@example.com": 1
+            },
+            "most_frequent_value": "alice@example.com",
+            "least_frequent_value": "carol@example.com",
+            "is_constant": false
+        },
+        "signup_date": {
+            "unique_values": 3,
+            "cardinality": "Low/Medium",
+            "top_categories": {
+                "2025-01-15": 1,
+                "2025-02-20": 1,
+                "2025-03-10": 1
+            },
+            "most_frequent_value": "2025-01-15",
+            "least_frequent_value": "2025-03-10",
+            "is_constant": false
+        }
+    },
+    "data_type_analysis": {
+        "column_types": {
+            "customer_id": "int64",
+            "name": "object",
+            "email": "object",
+            "signup_date": "object"
+        },
+        "suspicious_columns": [
+            {
+                "column": "signup_date",
+                "detected_type": "object",
+                "reason": "Date stored as object/string"
+            }
+        ]
+    },
+    "quality_issues": [
+        {
+            "type": "Suspicious Data Type",
+            "column": "signup_date",
+            "reason": "Date stored as object/string"
+        }
+    ],
+    "health_score": 98,
+    "warnings": [
+        "Column 'signup_date' has suspicious type: Date stored as object/string"
+    ],
+    "errors": [],
+    "recommendations": [
+        "Convert column 'signup_date' to appropriate native data type."
+    ]
+}
