@@ -1,0 +1,27 @@
+2026-08-05 13:46:49,995 - main - INFO - --- Conversion Started for sample_data/untyped_data.csv ---
+2026-08-05 13:46:49,995 - main - INFO - Loading dataset...
+2026-08-05 13:46:50,013 - main - ERROR - Error loading data from sample_data/untyped_data.csv: Error tokenizing data. C error: Expected 7 fields in line 4, saw 8
+
+2026-08-05 13:47:08,877 - main - INFO - --- Conversion Started for sample_data/untyped_data.csv ---
+2026-08-05 13:47:08,878 - main - INFO - Loading dataset...
+2026-08-05 13:47:08,897 - main - INFO - Loaded dataset with 9 rows and 7 columns.
+2026-08-05 13:47:08,897 - data_type_enforcement.converters.datatype_converter - INFO - Starting DataFrame type conversion process.
+2026-08-05 13:47:08,910 - data_type_enforcement.converters.datatype_converter - INFO - Successfully converted column 'id' to Int64.
+2026-08-05 13:47:08,911 - data_type_enforcement.converters.datatype_converter - INFO - Successfully converted column 'name' to string.
+2026-08-05 13:47:08,911 - data_type_enforcement.converters.date_converter - INFO - Starting datetime conversion for column: 'signup_date' with format '%Y-%m-%d'
+2026-08-05 13:47:08,918 - data_type_enforcement.converters.date_converter - WARNING - 1 values in column 'signup_date' failed to parse as datetime with format '%Y-%m-%d'.
+2026-08-05 13:47:08,918 - data_type_enforcement.converters.date_converter - INFO - Successfully converted column 'signup_date' to datetime.
+2026-08-05 13:47:08,919 - data_type_enforcement.converters.boolean_converter - INFO - Starting boolean conversion for column: 'is_active'
+2026-08-05 13:47:08,921 - data_type_enforcement.converters.boolean_converter - INFO - Successfully converted column 'is_active' to boolean.
+2026-08-05 13:47:08,921 - data_type_enforcement.converters.currency_converter - INFO - Starting currency conversion for column: 'balance'
+2026-08-05 13:47:08,925 - data_type_enforcement.converters.currency_converter - INFO - Successfully converted column 'balance' to currency (float).
+2026-08-05 13:47:08,925 - data_type_enforcement.converters.date_converter - INFO - Starting datetime conversion for column: 'last_login' with format '%Y/%m/%d %H:%M:%S'
+2026-08-05 13:47:08,926 - data_type_enforcement.converters.date_converter - WARNING - 1 values in column 'last_login' failed to parse as datetime with format '%Y/%m/%d %H:%M:%S'.
+2026-08-05 13:47:08,927 - data_type_enforcement.converters.date_converter - INFO - Successfully converted column 'last_login' to datetime.
+2026-08-05 13:47:08,927 - data_type_enforcement.converters.datatype_converter - INFO - DataFrame type conversion process complete.
+2026-08-05 13:47:08,928 - data_type_enforcement.validators.dtype_validator - INFO - Starting validation and reporting process.
+2026-08-05 13:47:08,929 - data_type_enforcement.validators.dtype_validator - INFO - Validation complete.
+2026-08-05 13:47:08,941 - main - INFO - Saved CSV report to C:\Documents\Projects\SupportSense\data_type_enforcement\output\dtype_conversion_report.csv
+2026-08-05 13:47:08,943 - main - INFO - Saved JSON report to C:\Documents\Projects\SupportSense\data_type_enforcement\output\dtype_conversion_report.json
+2026-08-05 13:47:08,949 - main - INFO - Saved standardized dataset to C:\Documents\Projects\SupportSense\data_type_enforcement\output\standardized_untyped_data.csv
+2026-08-05 13:47:08,949 - main - INFO - --- Conversion Completed in 0.07 seconds ---

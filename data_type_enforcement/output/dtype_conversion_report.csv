@@ -1,0 +1,8 @@
+Column Name,Original Type,Converted Type,Status,Error Message,Timestamp
+id,object,Int64,Warning,1 values could not be converted and were coerced to NA.,2026-08-05T13:47:08.928122
+name,object,string,Success,None,2026-08-05T13:47:08.928717
+signup_date,object,datetime64[ns],Warning,1 values could not be converted and were coerced to NA.,2026-08-05T13:47:08.928717
+is_active,object,boolean,Warning,1 values could not be converted and were coerced to NA.,2026-08-05T13:47:08.929281
+balance,object,float64,Warning,1 values could not be converted and were coerced to NA.,2026-08-05T13:47:08.929863
+last_login,object,datetime64[ns],Warning,1 values could not be converted and were coerced to NA.,2026-08-05T13:47:08.929863
+ignored_col,object,object,Skipped,Not defined in schema,2026-08-05T13:47:08.929863
