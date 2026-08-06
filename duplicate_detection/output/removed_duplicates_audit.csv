@@ -1,0 +1,5 @@
+Original Row Index,Duplicate Type,Reason Removed,Strategy Used,Timestamp
+1,Exact,Exact duplicate of row kept at index 0.,keep_most_complete,2026-08-06T09:11:49.854700+00:00Z
+3,Near,"Near duplicate on keys: ['customer_id', 'email']. Kept row at index 2.",keep_most_complete,2026-08-06T09:11:49.859358+00:00Z
+5,Near,"Near duplicate on keys: ['customer_id', 'email']. Kept row at index 4.",keep_most_complete,2026-08-06T09:11:49.859358+00:00Z
+8,Near,"Near duplicate on keys: ['customer_id', 'email']. Kept row at index 7.",keep_most_complete,2026-08-06T09:11:49.859358+00:00Z

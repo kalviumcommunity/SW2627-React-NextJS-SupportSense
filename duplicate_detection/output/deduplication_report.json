@@ -1,0 +1,5 @@
+{
+    "status": "ERROR",
+    "error_message": "Key columns missing from dataset: ['invalid_col']",
+    "timestamp": "2026-08-06T09:12:16.118761+00:00Z"
+}
