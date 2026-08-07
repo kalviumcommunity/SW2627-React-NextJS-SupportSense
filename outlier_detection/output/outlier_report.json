@@ -1,0 +1,22 @@
+{
+    "status": "SUCCESS",
+    "detection_method": "iqr",
+    "handling_strategy": "flag",
+    "rows_before": 4,
+    "rows_after": 4,
+    "timestamp": "2026-08-07T08:03:34.009799+00:00",
+    "columns": {
+        "val1": {
+            "lower_bound": 10.0,
+            "upper_bound": 10.0,
+            "outlier_count": 0,
+            "outlier_percentage": 0.0
+        },
+        "val2": {
+            "lower_bound": 10.0,
+            "upper_bound": 10.0,
+            "outlier_count": 0,
+            "outlier_percentage": 0.0
+        }
+    }
+}
