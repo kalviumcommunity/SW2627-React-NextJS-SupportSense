@@ -1,0 +1,64 @@
+{
+    "status": "COMPLETED",
+    "timestamp": "2026-08-10T07:18:25.966676+00:00",
+    "dataset_name": "orders.csv",
+    "total_records": 10,
+    "passed_records": 1,
+    "failed_records": 9,
+    "pass_percentage": 10.0,
+    "failure_percentage": 90.0,
+    "rules": {
+        "customer_id_required": {
+            "passed": 9,
+            "failed": 1
+        },
+        "email_required": {
+            "passed": 9,
+            "failed": 1
+        },
+        "age_range": {
+            "passed": 9,
+            "failed": 1
+        },
+        "price_range": {
+            "passed": 9,
+            "failed": 1
+        },
+        "quantity_range": {
+            "passed": 10,
+            "failed": 0
+        },
+        "discount_range": {
+            "passed": 10,
+            "failed": 0
+        },
+        "email_format": {
+            "passed": 9,
+            "failed": 1
+        },
+        "phone_format": {
+            "passed": 10,
+            "failed": 0
+        },
+        "customer_id_format": {
+            "passed": 10,
+            "failed": 0
+        },
+        "order_id_format": {
+            "passed": 9,
+            "failed": 1
+        },
+        "customer_id_reference": {
+            "passed": 9,
+            "failed": 1
+        },
+        "date_order": {
+            "passed": 9,
+            "failed": 1
+        },
+        "discount_limit": {
+            "passed": 8,
+            "failed": 2
+        }
+    }
+}
