@@ -1,165 +1,122 @@
-# SupportSense
+# 🛡️ ChurnShield Enterprise System
 
-**AI-Powered Customer Churn Prediction & Support Intelligence Platform**
+> **AI-Powered Customer Churn Prediction & Support Intelligence Platform**
 
-SupportSense is an AI-powered SaaS platform that helps companies reduce customer churn by combining customer support operations with predictive machine learning. The system analyzes support tickets, customer profiles, subscription history, customer feedback, resolution history, and escalations to predict which customers are most likely to churn while recommending proactive retention actions.
-
-This repository contains the Node.js / Express backend foundation which serves both a React Frontend and a Python ML Service (FastAPI) via REST APIs.
+ChurnShield is an industry-grade SaaS intelligence platform designed to predict, analyze, and prevent customer churn by unifying support telemetry, billing indicators, customer CSAT ratings, product usage activity, and machine learning risk modeling.
 
 ---
 
-## Architecture
-
-The backend follows **Clean Architecture** and **MVC (Model-View-Controller)** principles, designed to scale for 100+ REST APIs and multiple parallel developers. 
-
-**Core Principles:**
-- **Separation of Concerns**: Controllers only handle HTTP requests/responses, Services contain all business logic, and Repositories handle all database queries.
-- **SOLID Principles**: Adherence to single responsibility and dependency inversion for highly maintainable code.
-- **Security First**: Integrated with Helmet, Express Rate Limit, and CORS out-of-the-box.
-- **Centralized Error Handling**: A robust error handler for catching operational and unhandled exceptions securely.
-
----
-
-## Folder Structure
+## 🏛️ System Architecture
 
 ```
-backend/
-├── src/
-│   ├── config/         # Environment, DB, Cloudinary, and Email configurations
-│   ├── constants/      # HTTP status codes, standard success/error messages
-│   ├── controllers/    # Route controllers (req/res handling only)
-│   ├── routes/         # Express API routes (versioned)
-│   ├── services/       # Core business logic
-│   ├── repositories/   # Database queries and abstraction
-│   ├── models/         # Mongoose schemas
-│   ├── validators/     # Request payload validation
-│   ├── middleware/     # Custom Express middlewares (error, logger, request-id)
-│   ├── helpers/        # Reusable helper functions
-│   ├── utils/          # Standard utilities (ApiResponse, ApiError, asyncHandler)
-│   ├── errors/         # Custom error types
-│   ├── responses/      # Response transformers
-│   ├── jobs/           # Cron jobs and scheduled tasks
-│   ├── events/         # Event emitters and listeners
-│   ├── sockets/        # WebSockets implementation
-│   ├── docs/           # API Documentation (Swagger/OpenAPI)
-│   ├── types/          # TypeScript-like JSDoc or typedefs
-│   ├── app.js          # Express app configuration
-│   └── server.js       # Server bootstrap and DB connection
-├── tests/              # Unit and integration tests
-├── uploads/            # Local file uploads
-├── logs/               # Application log files
-├── .env.example        # Environment variables template
-├── .eslintrc.json      # ESLint configuration
-├── .prettierrc         # Prettier configuration
-└── package.json        # Node dependencies and scripts
+SW2627-React-NextJS-SupportSense/
+├── frontend/               # React + Vite Enterprise Dashboard (Stitch Design System)
+│   ├── src/
+│   │   ├── components/     # UI Views (Dashboard, Customers, Tickets, AI Engine, Analytics)
+│   │   ├── api.ts          # API Client Layer (FastAPI REST Integration)
+│   │   ├── index.css       # Stitch v1.0 Warm Cream & Bronze Gold Design Tokens
+│   │   └── App.tsx         # Main Viewport Shell & Navigation
+│   └── package.json
+│
+├── ml_service/             # Machine Learning Service & FastAPI Backend API
+│   ├── main.py             # FastAPI REST Server (Endpoints 1–11, Real-Time Inference)
+│   ├── train_model.py      # Random Forest Classifier Training Engine (93.5% Accuracy)
+│   └── models/             # Serialized Joblib ML Models
+│
+├── backend/                # Node.js / Express Microservices Layer
+│   ├── src/                # Controllers, Routes, Services, Auth & Validation
+│   └── package.json
+│
+├── data/                   # Calibrated Multi-Entity SaaS Dataset
+│   └── raw/
+│       ├── customers.csv   # 1,000 SaaS Enterprise Customer Profiles
+│       ├── customer_support_tickets.csv  # 5,941 Granular Support Ticket Records
+│       └── subscriptions.csv             # 1,000 Subscription Lifecycle Records
+│
+├── dataset_validation/     # Data Integrity & Schema Validation Suite
+│   ├── config/             # Validation Rules & Schema Configs
+│   ├── validators/         # Automated Null/Boundary/Outlier Checks
+│   └── main.py             # Validation Pipeline Runner
+│
+├── scripts/                # Synthetic Data Generation & ETL Pipelines
+│   ├── generate_industry_dataset.py
+│   └── data_pipeline.py
+│
+├── tests/                  # Automated Test Suite (PyTest & Integration Tests)
+├── requirements.txt        # Python ML & Backend Dependencies
+├── DATA_PIPELINE.md        # Comprehensive ETL & Feature Engineering Spec
+├── WORKFLOW.md             # Developer & System Operations Guide
+└── README.md
 ```
 
 ---
 
-## Installation
+## 📊 Key Platform Capabilities & Modules
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
----
-
-## Environment Variables
-
-Create a `.env` file in the `backend/` directory based on the provided `.env.example`:
-
-```env
-PORT=5000
-NODE_ENV=development
-CLIENT_URL=http://localhost:3000
-
-MONGO_URI=mongodb://localhost:27017/supportsense
-
-JWT_SECRET=your_jwt_secret_here
-JWT_EXPIRE=7d
-COOKIE_EXPIRE=7
-
-CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-
-EMAIL_HOST=smtp.mailtrap.io
-EMAIL_PORT=2525
-EMAIL_USER=your_email_user
-EMAIL_PASS=your_email_password
-EMAIL_FROM=noreply@supportsense.com
-```
+1. **Dashboard Overview (Module 9)**: Real-time KPIs for Active Accounts, High-Risk Count, Total Revenue at Risk (MRR), and Model Accuracy.
+2. **Customer Portfolio Telemetry (Module 2)**: Search, multi-criteria risk/plan filtering, pagination across 1,000 accounts.
+3. **Support Ticket Queue (Module 3)**: Granular ticket tracking, resolution duration metrics, CSAT sentiment ratings, and 1-click SLA escalation.
+4. **AI Risk Prediction Engine (Modules 5 & 6)**: Real-time Random Forest inference returning exact `churn_probability`, `risk_level`, root cause drivers, and health scores.
+5. **Prescriptive Recommendations (Module 8)**: Automated AI retention playbooks for critical-risk accounts.
+6. **Analytics & Root Cause Telemetry (Module 10)**: Category volume distributions and portfolio risk segmentation.
+7. **Alerts & Executive Reporting (Module 11)**: High-risk alert feeds and executive CSV export.
 
 ---
 
-## Development Commands
+## ⚡ Quickstart Guide
+
+### 1. Prerequisites
+- Python 3.10+
+- Node.js 18+
+
+### 2. Environment Setup
 
 ```bash
-# Start the development server with Nodemon
+# Clone the repository
+git clone https://github.com/your-username/SW2627-React-NextJS-SupportSense.git
+cd SW2627-React-NextJS-SupportSense
+
+# Install Python dependencies
+pip install -r requirements.txt
+```
+
+### 3. Launch Backend API (FastAPI Engine)
+
+```bash
+# Start the FastAPI ML & Telemetry Server on Port 8000
+python3 ml_service/main.py
+```
+* Interactive API Documentation (Swagger): `http://localhost:8000/docs`
+* API Health Endpoint: `http://localhost:8000/health`
+
+### 4. Launch React Frontend App
+
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install Node dependencies
+npm install
+
+# Start Vite Dev Server on Port 5173
 npm run dev
-
-# Run ESLint to find issues
-npm run lint
-
-# Run ESLint to automatically fix issues
-npm run lint:fix
-
-# Format code with Prettier
-npm run format
 ```
+* Access the web application at: `http://localhost:5173`
 
 ---
 
-## Production Commands
+## 🎯 Machine Learning Model Performance
 
-```bash
-# Start the production server
-npm start
-```
-
-*Note: Ensure `NODE_ENV` is set to `production` and all required environment variables are configured securely on your host.*
-
----
-
-## API Versioning
-
-All endpoints are versioned under `/api/v1/`. As the application grows, future breaking changes can be introduced under `/api/v2/` without affecting older clients.
+| Metric | Score |
+| :--- | :--- |
+| **Model Type** | Balanced Random Forest Classifier |
+| **Accuracy** | **93.50%** |
+| **ROC-AUC** | **98.64%** |
+| **F1-Score** | **85.71%** |
+| **Primary Features** | Escalations, Unresolved Tickets, CSAT Rating, Payment Delays, Usage Score |
 
 ---
 
-## Health Check
+## 📄 License
 
-To verify the backend is running correctly, use the built-in health check route.
-
-**Endpoint:** `GET /api/v1/health`
-
-**Sample Response:**
-```json
-{
-  "success": true,
-  "statusCode": 200,
-  "message": "SupportSense Backend Running",
-  "data": {
-    "environment": "development",
-    "uptime": 12.34,
-    "memoryUsage": { ... },
-    "timestamp": "2023-10-25T12:00:00.000Z"
-  },
-  "timestamp": "2023-10-25T12:00:00.000Z"
-}
-```
-
----
-
-## Contributing
-
-1. Create a feature branch from `main`.
-2. Ensure you follow the Clean Architecture structure.
-3. Run `npm run lint` and `npm run format` before committing.
-4. Ensure no business logic leaks into Controllers or Routes.
-5. Create a Pull Request outlining your changes.
+Distributed under the MIT License. See `LICENSE` for more information.

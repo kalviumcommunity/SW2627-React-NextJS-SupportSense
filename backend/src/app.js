@@ -1,53 +1,41 @@
 import express from 'express';
 import cors from 'cors';
-import helmet from 'helmet';
-import compression from 'compression';
-import cookieParser from 'cookie-parser';
-import { rateLimit } from 'express-rate-limit';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
-import { config } from './config/environment.js';
-import { morganMiddleware } from './middleware/logger.middleware.js';
-import { requestIdMiddleware } from './middleware/request-id.middleware.js';
-import { errorHandler, notFoundHandler } from './middleware/error.middleware.js';
+import routes from './routes/v1/index.js';
 
-import v1Routes from './routes/v1/index.js';
+dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/churnshield';
 
-// Security Middlewares
-app.use(helmet());
-app.use(
-  cors({
-    origin: config.clientUrl,
-    credentials: true,
-  })
-);
+app.use(cors());
+app.use(express.json());
 
-// Rate Limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
-  message: 'Too many requests from this IP, please try again after 15 minutes',
-  standardHeaders: true, 
-  legacyHeaders: false, 
+// Routes
+app.use('/api/v1', routes);
+
+// Centralized error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Unhandled Error:', err);
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || 'Internal Server Error'
+  });
 });
-app.use('/api', limiter);
 
-// Request parsing and compression
-app.use(express.json({ limit: '16kb' }));
-app.use(express.urlencoded({ extended: true, limit: '16kb' }));
-app.use(cookieParser());
-app.use(compression());
+async function startServer() {
+  try {
+    await mongoose.connect(MONGODB_URI);
+    console.log(`✅ Connected to MongoDB at ${MONGODB_URI}`);
+    app.listen(PORT, () => {
+      console.log(`🚀 ChurnShield Backend API running on http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    console.error('❌ Failed to start server:', error);
+  }
+}
 
-// Custom Middlewares
-app.use(requestIdMiddleware);
-app.use(morganMiddleware);
-
-// API Routes
-app.use('/api/v1', v1Routes);
-
-// Error Handling
-app.use(notFoundHandler);
-app.use(errorHandler);
-
-export { app };
+startServer();
