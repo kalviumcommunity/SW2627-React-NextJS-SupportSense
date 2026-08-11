@@ -1,4 +1,1001 @@
-customer_id,name,email,signup_date
-1,Alice,alice@example.com,2025-01-15
-2,Bob,bob@example.com,2025-02-20
-3,Carol,carol@example.com,2025-03-10
+customer_id,name,company,email,subscription_plan,mrr,signup_date,subscription_age_months,total_tickets,unresolved_tickets,escalated_tickets,avg_csat,avg_resolution_hours,payment_delay_days,product_usage_score,health_score,churn_risk_score,churn_flag
+CUST-0001,Morgan Smith,Horizon Labs,morgan.smith@horizonlabs.com,Pro,199.0,2025-05-06,14,5,2,4,2.4,15.47,0,73.4,20,79.46,0
+CUST-0002,Sophia Brown,ByteWorks,sophia.brown@byteworks.com,Starter,49.0,2025-10-10,8,6,3,0,2.83,13.87,0,46.7,53,46.66,0
+CUST-0003,Siddharth Jones,DataFlow,siddharth.jones@dataflow.com,Starter,49.0,2025-05-07,14,10,4,2,3.4,13.23,0,93.2,34,65.48,0
+CUST-0004,Sophia Jones,TechPulse,sophia.jones@techpulse.com,Enterprise,799.0,2025-09-01,10,10,6,3,2.2,13.18,0,92.5,0,100.0,1
+CUST-0005,Riley Garcia,ByteWorks,riley.garcia@byteworks.com,Pro,199.0,2025-09-04,10,5,1,0,3.2,14.78,0,62.6,73,26.14,0
+CUST-0006,Olivia Williams,ByteWorks,olivia.williams@byteworks.com,Enterprise,799.0,2025-10-26,8,10,4,3,3.1,20.08,25,59.1,3,96.29,1
+CUST-0007,Alex Brown,Apex Global,alex.brown@apexglobal.com,Enterprise,799.0,2025-03-18,15,10,3,2,3.2,29.49,7,49.9,32,67.61,0
+CUST-0008,Liam Brown,ByteWorks,liam.brown@byteworks.com,Enterprise,799.0,2025-04-08,14,6,3,2,3.17,34.4,25,78.5,24,75.82,0
+CUST-0009,Chris Williams,DataFlow,chris.williams@dataflow.com,Enterprise,799.0,2025-06-21,12,3,0,1,3.0,17.23,0,29.1,66,33.09,0
+CUST-0010,Liam Kim,Acme Corp,liam.kim@acmecorp.com,Enterprise,799.0,2025-05-08,13,3,2,1,1.67,60.8,25,65.1,20,79.16,0
+CUST-0011,Casey Kim,Apex Global,casey.kim@apexglobal.com,Enterprise,799.0,2025-05-27,13,5,4,3,2.0,11.7,0,54.1,9,90.59,1
+CUST-0012,Emily Smith,ByteWorks,emily.smith@byteworks.com,Pro,199.0,2025-07-27,11,4,1,1,3.75,16.37,0,77.5,69,30.25,0
+CUST-0013,Jordan Smith,CloudScale,jordan.smith@cloudscale.com,Starter,49.0,2025-01-11,17,4,2,2,2.5,35.4,0,42.8,38,61.72,0
+CUST-0014,Rohan Patel,Apex Global,rohan.patel@apexglobal.com,Enterprise,799.0,2025-06-24,12,2,2,2,3.0,24.0,25,52.2,28,71.78,0
+CUST-0015,Noah Rodriguez,InnoWave,noah.rodriguez@innowave.com,Starter,49.0,2025-02-14,16,6,4,2,2.67,17.4,7,43.1,19,80.56,0
+CUST-0016,Siddharth Rodriguez,DataFlow,siddharth.rodriguez@dataflow.com,Pro,199.0,2025-04-29,14,3,0,1,3.67,15.37,3,70.8,74,25.39,0
+CUST-0017,Sam Taylor,Apex Global,sam.taylor@apexglobal.com,Starter,49.0,2025-10-21,8,6,3,0,3.17,49.57,0,31.9,46,53.48,0
+CUST-0018,Taylor Garcia,CloudScale,taylor.garcia@cloudscale.com,Starter,49.0,2025-10-10,8,3,2,0,2.67,16.2,0,20.7,57,42.6,0
+CUST-0019,Chris Mahato,Vanguard AI,chris.mahato@vanguardai.com,Enterprise,799.0,2025-10-19,8,6,3,1,3.5,33.57,0,83.6,52,47.64,0
+CUST-0020,Aarav Chen,Horizon Labs,aarav.chen@horizonlabs.com,Pro,199.0,2025-05-28,13,8,4,3,2.38,30.57,0,45.7,11,88.43,1
+CUST-0021,Liam Jones,Apex Global,liam.jones@apexglobal.com,Pro,199.0,2025-08-01,11,7,5,0,3.0,29.0,0,47.8,38,61.22,0
+CUST-0022,Sam Williams,Nexus Solutions,sam.williams@nexussolutions.com,Pro,199.0,2025-06-23,12,8,5,0,3.38,22.43,0,58.7,42,57.13,0
+CUST-0023,Taylor Kim,InnoWave,taylor.kim@innowave.com,Enterprise,799.0,2025-06-03,13,8,4,1,3.12,46.92,7,79.3,36,63.27,0
+CUST-0024,Siddharth Williams,TechPulse,siddharth.williams@techpulse.com,Starter,49.0,2025-07-23,11,10,6,2,2.5,11.85,0,66.3,8,91.37,1
+CUST-0025,Alex Johnson,Starlight Systems,alex.johnson@starlightsystems.com,Pro,199.0,2025-05-05,14,4,1,2,3.0,14.5,14,57.1,43,56.69,0
+CUST-0026,Taylor Taylor,Nexus Solutions,taylor.taylor@nexussolutions.com,Pro,199.0,2025-09-20,9,3,1,1,2.67,21.25,0,37.0,57,42.97,0
+CUST-0027,Noah Thomas,Horizon Labs,noah.thomas@horizonlabs.com,Pro,199.0,2025-07-15,11,10,9,1,2.0,11.1,3,71.2,0,100.0,1
+CUST-0028,Aarav Patel,Acme Corp,aarav.patel@acmecorp.com,Starter,49.0,2025-03-15,15,8,4,4,2.12,9.55,0,25.3,0,100.0,1
+CUST-0029,Riley Anderson,Synergy Tech,riley.anderson@synergytech.com,Enterprise,799.0,2025-07-01,12,3,2,0,2.67,19.6,0,88.6,64,35.81,0
+CUST-0030,Taylor Chen,Apex Global,taylor.chen@apexglobal.com,Starter,49.0,2025-08-12,10,8,6,0,2.5,21.75,0,18.0,23,76.2,0
+CUST-0031,Priya Mahato,Apex Global,priya.mahato@apexglobal.com,Enterprise,799.0,2025-02-16,16,10,6,4,2.4,29.55,0,95.0,0,100.0,1
+CUST-0032,Dakota Brown,Synergy Tech,dakota.brown@synergytech.com,Enterprise,799.0,2025-09-27,9,2,0,0,4.5,37.75,0,33.7,89,10.63,0
+CUST-0033,Riley Mahato,Starlight Systems,riley.mahato@starlightsystems.com,Pro,199.0,2025-04-10,14,7,4,1,2.86,28.7,7,78.3,34,65.51,0
+CUST-0034,Sam Johnson,DataFlow,sam.johnson@dataflow.com,Pro,199.0,2025-03-13,15,9,4,5,2.33,28.36,25,65.5,0,100.0,1
+CUST-0035,Taylor Kim,Acme Corp,taylor.kim@acmecorp.com,Pro,199.0,2025-04-14,14,2,1,1,2.0,22.0,7,36.9,47,52.51,0
+CUST-0036,Priya Chen,ByteWorks,priya.chen@byteworks.com,Enterprise,799.0,2025-08-14,10,8,7,3,2.25,11.5,0,63.4,0,100.0,1
+CUST-0037,Priya Patel,Nexus Solutions,priya.patel@nexussolutions.com,Starter,49.0,2025-10-21,8,4,4,0,2.0,24.0,0,25.9,36,63.41,0
+CUST-0038,Taylor Kim,TechPulse,taylor.kim@techpulse.com,Enterprise,799.0,2025-08-16,10,3,2,0,2.67,71.0,0,25.4,49,50.13,0
+CUST-0039,Taylor Williams,DataFlow,taylor.williams@dataflow.com,Pro,199.0,2025-09-03,10,10,5,1,3.1,16.28,0,70.1,31,68.19,0
+CUST-0040,Chris Kim,ByteWorks,chris.kim@byteworks.com,Pro,199.0,2025-08-26,10,5,3,1,2.6,7.25,0,90.6,45,54.14,0
+CUST-0041,Liam Kim,CloudScale,liam.kim@cloudscale.com,Starter,49.0,2025-10-26,8,7,5,4,2.71,26.3,25,26.9,0,100.0,1
+CUST-0042,Sam Sharma,Vanguard AI,sam.sharma@vanguardai.com,Pro,199.0,2025-03-25,15,8,6,1,2.62,24.0,14,40.1,8,91.39,1
+CUST-0043,Sophia Sharma,Synergy Tech,sophia.sharma@synergytech.com,Pro,199.0,2025-05-16,13,9,5,5,2.22,27.52,0,57.8,0,100.0,1
+CUST-0044,Jordan Garcia,ByteWorks,jordan.garcia@byteworks.com,Starter,49.0,2025-01-19,17,8,7,0,2.38,61.6,0,39.2,8,91.08,1
+CUST-0045,Alex Rodriguez,QuantumSoft,alex.rodriguez@quantumsoft.com,Pro,199.0,2025-05-01,14,2,2,1,2.5,24.0,0,32.5,47,52.75,0
+CUST-0046,Sam Taylor,TechPulse,sam.taylor@techpulse.com,Pro,199.0,2025-07-11,11,8,2,2,3.0,37.23,14,50.9,34,65.31,0
+CUST-0047,Ananya Verma,Apex Global,ananya.verma@apexglobal.com,Enterprise,799.0,2025-10-04,9,4,3,1,3.0,34.2,0,31.5,43,56.85,0
+CUST-0048,Morgan Johnson,Nexus Solutions,morgan.johnson@nexussolutions.com,Enterprise,799.0,2025-01-25,17,5,3,1,3.4,42.85,14,47.7,39,60.43,0
+CUST-0049,Dakota Verma,TechPulse,dakota.verma@techpulse.com,Enterprise,799.0,2025-08-31,10,5,2,0,3.0,36.27,0,31.9,61,38.81,0
+CUST-0050,Pat Brown,Horizon Labs,pat.brown@horizonlabs.com,Pro,199.0,2025-05-05,14,5,3,2,2.4,39.5,0,54.9,30,69.31,0
+CUST-0051,Aarav Rodriguez,Starlight Systems,aarav.rodriguez@starlightsystems.com,Pro,199.0,2025-09-09,9,9,5,1,2.56,27.77,0,67.3,27,72.83,0
+CUST-0052,Jordan Williams,ByteWorks,jordan.williams@byteworks.com,Pro,199.0,2025-07-13,11,10,6,1,2.7,22.17,14,29.9,8,91.81,1
+CUST-0053,Ananya Williams,Starlight Systems,ananya.williams@starlightsystems.com,Enterprise,799.0,2025-06-01,13,5,1,4,2.6,18.17,0,60.8,28,71.12,0
+CUST-0054,Chris Verma,TechPulse,chris.verma@techpulse.com,Starter,49.0,2025-05-18,13,6,2,1,3.5,17.88,0,41.1,56,43.89,0
+CUST-0055,Casey Verma,InnoWave,casey.verma@innowave.com,Starter,49.0,2025-10-16,8,5,1,1,4.0,37.73,0,60.1,70,29.99,0
+CUST-0056,Ananya Sharma,Starlight Systems,ananya.sharma@starlightsystems.com,Pro,199.0,2025-02-24,16,2,0,1,3.5,22.9,0,24.3,70,29.57,0
+CUST-0057,Sam Patel,DataFlow,sam.patel@dataflow.com,Pro,199.0,2025-08-22,10,5,1,1,4.0,22.82,0,31.5,67,32.85,0
+CUST-0058,Taylor Jackson,Apex Global,taylor.jackson@apexglobal.com,Enterprise,799.0,2025-04-06,15,7,4,0,3.57,26.1,0,19.3,48,51.5,0
+CUST-0059,Priya Smith,Nexus Solutions,priya.smith@nexussolutions.com,Starter,49.0,2025-04-10,14,8,3,3,2.62,42.1,14,28.3,11,88.57,1
+CUST-0060,Pat Miller,Starlight Systems,pat.miller@starlightsystems.com,Starter,49.0,2025-10-19,8,7,4,0,3.43,29.1,0,84.5,53,46.12,0
+CUST-0061,Taylor Kim,QuantumSoft,taylor.kim@quantumsoft.com,Enterprise,799.0,2025-07-03,12,3,2,1,3.0,5.2,0,89.4,56,43.06,0
+CUST-0062,Chris Kim,Nexus Solutions,chris.kim@nexussolutions.com,Starter,49.0,2025-08-08,10,5,3,1,2.6,4.9,25,20.7,23,76.13,0
+CUST-0063,Ananya Williams,Horizon Labs,ananya.williams@horizonlabs.com,Starter,49.0,2025-02-22,16,7,3,1,3.0,35.35,0,54.6,45,54.54,0
+CUST-0064,Morgan Davis,Nexus Solutions,morgan.davis@nexussolutions.com,Enterprise,799.0,2025-02-06,17,10,3,2,2.9,19.53,0,76.7,36,63.13,0
+CUST-0065,Alex Sharma,Starlight Systems,alex.sharma@starlightsystems.com,Pro,199.0,2025-05-20,13,10,5,1,2.8,17.7,0,27.0,25,74.9,0
+CUST-0066,Rohan Smith,CloudScale,rohan.smith@cloudscale.com,Enterprise,799.0,2025-06-27,12,2,1,0,3.0,11.2,0,71.9,73,26.81,0
+CUST-0067,Taylor Johnson,CloudScale,taylor.johnson@cloudscale.com,Enterprise,799.0,2025-07-31,11,7,3,2,2.86,9.23,0,92.5,38,61.89,0
+CUST-0068,Ananya Anderson,Acme Corp,ananya.anderson@acmecorp.com,Enterprise,799.0,2025-06-03,13,6,3,2,2.67,9.37,25,17.4,14,85.93,1
+CUST-0069,Chris Patel,CloudScale,chris.patel@cloudscale.com,Starter,49.0,2025-05-21,13,6,3,2,2.67,11.97,0,92.9,36,63.38,0
+CUST-0070,Morgan Davis,QuantumSoft,morgan.davis@quantumsoft.com,Starter,49.0,2025-05-17,13,10,5,2,2.7,35.34,0,90.9,20,79.31,0
+CUST-0071,Noah Verma,Starlight Systems,noah.verma@starlightsystems.com,Enterprise,799.0,2025-01-17,17,4,1,1,2.5,41.83,25,73.6,44,55.64,0
+CUST-0072,Chris Chen,Nexus Solutions,chris.chen@nexussolutions.com,Pro,199.0,2025-06-29,12,10,2,5,3.1,13.44,14,44.6,4,95.14,1
+CUST-0073,Casey Kim,Nexus Solutions,casey.kim@nexussolutions.com,Pro,199.0,2025-04-26,14,6,3,1,3.0,27.27,14,31.2,34,65.28,0
+CUST-0074,Sam Rodriguez,InnoWave,sam.rodriguez@innowave.com,Enterprise,799.0,2025-02-04,17,3,2,1,2.67,12.4,14,67.4,43,56.33,0
+CUST-0075,Noah Taylor,Acme Corp,noah.taylor@acmecorp.com,Starter,49.0,2025-05-22,13,8,4,3,3.5,14.28,14,65.8,14,85.82,1
+CUST-0076,Alex Davis,InnoWave,alex.davis@innowave.com,Pro,199.0,2025-08-17,10,4,2,1,3.25,32.45,3,63.7,54,45.43,0
+CUST-0077,Dakota Rodriguez,ByteWorks,dakota.rodriguez@byteworks.com,Pro,199.0,2025-06-28,12,9,8,1,2.44,26.0,0,90.8,4,95.36,1
+CUST-0078,Taylor Davis,InnoWave,taylor.davis@innowave.com,Starter,49.0,2025-06-07,12,8,4,3,1.88,29.17,0,16.4,4,95.36,1
+CUST-0079,Riley Davis,Horizon Labs,riley.davis@horizonlabs.com,Pro,199.0,2025-06-09,12,4,3,0,2.5,26.0,0,32.9,49,50.71,0
+CUST-0080,Sam Miller,Horizon Labs,sam.miller@horizonlabs.com,Starter,49.0,2025-09-16,9,4,0,0,4.5,25.45,0,48.5,90,9.15,0
+CUST-0081,Morgan Anderson,Horizon Labs,morgan.anderson@horizonlabs.com,Enterprise,799.0,2025-03-02,16,6,2,4,1.83,36.47,7,49.1,9,90.62,1
+CUST-0082,Jordan Smith,TechPulse,jordan.smith@techpulse.com,Enterprise,799.0,2025-03-29,15,7,5,2,2.86,29.7,0,71.4,19,80.0,0
+CUST-0083,Liam Jackson,Horizon Labs,liam.jackson@horizonlabs.com,Enterprise,799.0,2025-04-25,14,7,4,2,2.43,13.33,0,78.3,25,74.74,0
+CUST-0084,Olivia Mahato,Synergy Tech,olivia.mahato@synergytech.com,Enterprise,799.0,2025-04-16,14,9,2,0,3.89,30.97,0,80.2,73,26.87,0
+CUST-0085,Morgan Verma,QuantumSoft,morgan.verma@quantumsoft.com,Enterprise,799.0,2025-06-14,12,10,6,2,3.2,23.43,0,89.1,16,83.49,1
+CUST-0086,Aarav Thomas,Acme Corp,aarav.thomas@acmecorp.com,Starter,49.0,2025-05-09,13,5,3,2,3.2,9.4,3,54.2,35,64.78,0
+CUST-0087,Noah Thomas,InnoWave,noah.thomas@innowave.com,Starter,49.0,2025-06-12,12,10,6,0,2.9,27.47,0,51.7,30,69.63,0
+CUST-0088,Aarav Johnson,Apex Global,aarav.johnson@apexglobal.com,Starter,49.0,2025-01-28,17,4,1,0,3.5,22.9,0,37.5,73,26.25,0
+CUST-0089,Siddharth Verma,ByteWorks,siddharth.verma@byteworks.com,Enterprise,799.0,2025-01-16,17,9,5,1,3.22,14.62,7,79.6,29,70.46,0
+CUST-0090,Rohan Garcia,Acme Corp,rohan.garcia@acmecorp.com,Pro,199.0,2025-05-07,14,5,1,0,3.8,47.1,0,86.5,81,18.95,0
+CUST-0091,Sophia Taylor,QuantumSoft,sophia.taylor@quantumsoft.com,Starter,49.0,2025-07-07,11,8,5,3,2.5,23.33,14,43.2,0,100.0,1
+CUST-0092,Emily Taylor,Vanguard AI,emily.taylor@vanguardai.com,Starter,49.0,2025-09-14,9,4,2,0,2.75,15.55,0,65.4,62,37.46,0
+CUST-0093,Jordan Jackson,TechPulse,jordan.jackson@techpulse.com,Starter,49.0,2025-03-27,15,6,2,1,3.5,37.12,25,67.8,43,56.22,0
+CUST-0094,Olivia Thomas,Acme Corp,olivia.thomas@acmecorp.com,Enterprise,799.0,2025-08-09,10,10,6,1,3.3,23.88,0,27.9,21,78.81,0
+CUST-0095,Alex Williams,TechPulse,alex.williams@techpulse.com,Pro,199.0,2025-08-11,10,3,1,1,2.67,56.4,0,64.2,51,48.25,0
+CUST-0096,Jordan Patel,CloudScale,jordan.patel@cloudscale.com,Enterprise,799.0,2025-01-01,18,4,1,1,3.75,23.43,0,79.2,69,30.08,0
+CUST-0097,Casey Thomas,Starlight Systems,casey.thomas@starlightsystems.com,Enterprise,799.0,2025-05-09,13,9,7,1,2.0,59.05,0,82.8,0,99.72,1
+CUST-0098,Aarav Taylor,Vanguard AI,aarav.taylor@vanguardai.com,Pro,199.0,2025-09-09,9,4,2,0,3.75,7.5,0,58.9,69,30.11,0
+CUST-0099,Riley Rodriguez,Nexus Solutions,riley.rodriguez@nexussolutions.com,Enterprise,799.0,2025-06-25,12,7,3,1,3.57,16.35,3,42.5,47,52.98,0
+CUST-0100,Rohan Brown,InnoWave,rohan.brown@innowave.com,Enterprise,799.0,2025-04-12,14,10,7,3,3.0,29.27,0,25.5,0,100.0,1
+CUST-0101,Alex Johnson,QuantumSoft,alex.johnson@quantumsoft.com,Pro,199.0,2025-06-16,12,9,4,3,3.11,42.02,3,37.8,14,85.13,1
+CUST-0102,Casey Chen,CloudScale,casey.chen@cloudscale.com,Starter,49.0,2025-04-04,15,4,1,2,2.5,13.3,25,94.8,36,63.52,0
+CUST-0103,Siddharth Johnson,InnoWave,siddharth.johnson@innowave.com,Starter,49.0,2025-03-16,15,2,1,1,2.5,70.2,25,34.8,32,67.52,0
+CUST-0104,Jordan Miller,Nexus Solutions,jordan.miller@nexussolutions.com,Enterprise,799.0,2025-02-18,16,10,6,2,2.6,18.55,0,58.5,8,91.35,1
+CUST-0105,Siddharth Rodriguez,Vanguard AI,siddharth.rodriguez@vanguardai.com,Enterprise,799.0,2025-03-24,15,3,2,0,3.0,24.4,0,92.4,67,32.76,0
+CUST-0106,Ananya Miller,Synergy Tech,ananya.miller@synergytech.com,Enterprise,799.0,2025-09-12,9,10,2,5,2.5,33.2,25,89.7,0,100.0,1
+CUST-0107,Sophia Sharma,InnoWave,sophia.sharma@innowave.com,Pro,199.0,2025-08-09,10,7,2,1,4.0,30.76,0,54.1,61,38.59,0
+CUST-0108,Noah Brown,Vanguard AI,noah.brown@vanguardai.com,Enterprise,799.0,2025-06-03,13,2,0,1,3.0,64.7,0,65.7,62,37.43,0
+CUST-0109,Ananya Johnson,DataFlow,ananya.johnson@dataflow.com,Enterprise,799.0,2025-01-22,17,7,3,1,3.14,35.6,7,62.5,43,56.81,0
+CUST-0110,Alex Mahato,TechPulse,alex.mahato@techpulse.com,Pro,199.0,2025-08-15,10,4,0,0,4.75,14.8,0,53.6,93,6.64,0
+CUST-0111,Sam Smith,ByteWorks,sam.smith@byteworks.com,Enterprise,799.0,2025-09-27,9,2,0,1,4.0,13.05,0,16.5,73,26.35,0
+CUST-0112,Ananya Davis,ByteWorks,ananya.davis@byteworks.com,Enterprise,799.0,2025-02-20,16,7,4,2,3.29,29.2,7,50.9,25,74.82,0
+CUST-0113,Sam Miller,QuantumSoft,sam.miller@quantumsoft.com,Starter,49.0,2025-10-25,8,10,4,2,2.7,23.38,7,84.3,23,76.17,0
+CUST-0114,Riley Chen,ByteWorks,riley.chen@byteworks.com,Starter,49.0,2025-07-14,11,7,2,2,2.43,36.68,0,71.5,40,59.42,0
+CUST-0115,Priya Williams,Synergy Tech,priya.williams@synergytech.com,Enterprise,799.0,2025-07-16,11,10,5,1,2.9,12.26,0,92.3,32,67.57,0
+CUST-0116,Noah Patel,Acme Corp,noah.patel@acmecorp.com,Starter,49.0,2025-06-03,13,7,4,1,3.0,24.73,14,48.1,28,71.59,0
+CUST-0117,Aarav Patel,Synergy Tech,aarav.patel@synergytech.com,Enterprise,799.0,2025-04-19,14,2,1,1,2.5,23.5,0,81.6,60,39.84,0
+CUST-0118,Pat Sharma,InnoWave,pat.sharma@innowave.com,Enterprise,799.0,2025-09-03,10,9,6,2,2.44,44.93,3,77.0,7,92.54,1
+CUST-0119,Morgan Anderson,QuantumSoft,morgan.anderson@quantumsoft.com,Starter,49.0,2025-04-16,14,2,0,0,4.0,3.3,0,61.2,88,11.88,0
+CUST-0120,Dakota Miller,InnoWave,dakota.miller@innowave.com,Starter,49.0,2025-04-09,14,6,3,3,3.17,10.63,3,41.6,23,76.31,0
+CUST-0121,Pat Thomas,Apex Global,pat.thomas@apexglobal.com,Pro,199.0,2025-10-18,8,4,2,2,3.0,15.3,3,76.4,43,56.16,0
+CUST-0122,Olivia Jackson,TechPulse,olivia.jackson@techpulse.com,Enterprise,799.0,2025-02-22,16,8,3,4,2.88,39.44,14,64.2,7,92.98,1
+CUST-0123,Pat Sharma,DataFlow,pat.sharma@dataflow.com,Enterprise,799.0,2025-06-05,13,8,4,0,3.5,18.68,0,59.2,51,48.08,0
+CUST-0124,Siddharth Verma,InnoWave,siddharth.verma@innowave.com,Starter,49.0,2025-04-06,15,8,4,1,3.12,19.7,25,61.3,24,75.87,0
+CUST-0125,Noah Johnson,QuantumSoft,noah.johnson@quantumsoft.com,Pro,199.0,2025-01-14,17,6,3,1,2.83,15.57,0,19.2,40,59.41,0
+CUST-0126,Siddharth Verma,Nexus Solutions,siddharth.verma@nexussolutions.com,Pro,199.0,2025-09-01,10,10,4,4,2.8,19.2,7,35.6,0,100.0,1
+CUST-0127,Casey Johnson,ByteWorks,casey.johnson@byteworks.com,Pro,199.0,2025-06-20,12,2,0,1,3.0,20.8,0,88.0,72,27.2,0
+CUST-0128,Casey Brown,Acme Corp,casey.brown@acmecorp.com,Starter,49.0,2025-02-06,17,6,5,3,2.0,16.4,25,75.8,0,100.0,1
+CUST-0129,Pat Garcia,Synergy Tech,pat.garcia@synergytech.com,Starter,49.0,2025-07-16,11,5,3,1,2.8,6.0,0,74.3,45,54.17,0
+CUST-0130,Riley Williams,Acme Corp,riley.williams@acmecorp.com,Enterprise,799.0,2025-03-14,15,9,3,2,3.44,10.22,0,26.4,36,63.8,0
+CUST-0131,Casey Anderson,Nexus Solutions,casey.anderson@nexussolutions.com,Pro,199.0,2025-05-03,14,4,1,0,3.25,24.13,0,66.6,74,25.34,0
+CUST-0132,Dakota Miller,ByteWorks,dakota.miller@byteworks.com,Pro,199.0,2025-06-21,12,9,5,5,1.89,11.88,0,78.2,0,100.0,1
+CUST-0133,Olivia Garcia,Vanguard AI,olivia.garcia@vanguardai.com,Enterprise,799.0,2025-04-28,14,3,0,0,4.33,24.63,0,94.3,94,5.9,0
+CUST-0134,Liam Johnson,ByteWorks,liam.johnson@byteworks.com,Enterprise,799.0,2025-07-21,11,9,2,1,3.78,38.36,7,34.1,53,46.57,0
+CUST-0135,Morgan Taylor,Horizon Labs,morgan.taylor@horizonlabs.com,Enterprise,799.0,2025-04-18,14,5,4,1,2.6,4.4,0,54.7,34,65.73,0
+CUST-0136,Pat Anderson,QuantumSoft,pat.anderson@quantumsoft.com,Starter,49.0,2025-05-31,13,8,3,2,2.75,51.58,3,44.6,22,77.34,0
+CUST-0137,Pat Thomas,Horizon Labs,pat.thomas@horizonlabs.com,Starter,49.0,2025-06-12,12,7,3,0,2.86,35.33,0,16.8,50,49.46,0
+CUST-0138,Sophia Kim,QuantumSoft,sophia.kim@quantumsoft.com,Enterprise,799.0,2025-02-14,16,10,9,2,2.3,22.0,25,59.7,0,100.0,1
+CUST-0139,Alex Smith,TechPulse,alex.smith@techpulse.com,Pro,199.0,2025-06-03,13,9,6,1,2.22,16.43,0,56.5,15,84.57,1
+CUST-0140,Emily Chen,InnoWave,emily.chen@innowave.com,Starter,49.0,2025-02-22,16,5,2,1,2.6,29.6,0,21.2,46,53.08,0
+CUST-0141,Emily Chen,Acme Corp,emily.chen@acmecorp.com,Starter,49.0,2025-02-25,16,2,1,0,2.5,22.2,0,87.1,70,29.29,0
+CUST-0142,Chris Patel,Acme Corp,chris.patel@acmecorp.com,Starter,49.0,2025-03-16,15,6,1,0,3.83,20.34,0,38.1,76,23.52,0
+CUST-0143,Jordan Williams,InnoWave,jordan.williams@innowave.com,Pro,199.0,2025-03-01,16,8,6,1,2.62,4.0,25,23.6,0,99.64,1
+CUST-0144,Emily Davis,QuantumSoft,emily.davis@quantumsoft.com,Starter,49.0,2025-01-16,17,3,1,0,4.33,39.3,0,58.4,82,17.49,0
+CUST-0145,Sophia Thomas,Acme Corp,sophia.thomas@acmecorp.com,Starter,49.0,2025-08-09,10,3,3,3,2.33,24.0,25,67.8,6,93.55,1
+CUST-0146,Noah Taylor,Nexus Solutions,noah.taylor@nexussolutions.com,Enterprise,799.0,2025-03-22,15,10,6,6,2.7,29.88,0,54.8,0,100.0,1
+CUST-0147,Taylor Thomas,CloudScale,taylor.thomas@cloudscale.com,Pro,199.0,2025-05-16,13,2,1,1,2.5,52.2,7,78.7,47,52.33,0
+CUST-0148,Dakota Anderson,Starlight Systems,dakota.anderson@starlightsystems.com,Pro,199.0,2025-08-10,10,10,6,0,3.0,24.95,0,83.8,34,65.62,0
+CUST-0149,Taylor Sharma,Vanguard AI,taylor.sharma@vanguardai.com,Pro,199.0,2025-02-02,17,8,3,1,3.38,42.06,0,57.8,48,51.22,0
+CUST-0150,Riley Kim,ByteWorks,riley.kim@byteworks.com,Starter,49.0,2025-07-21,11,6,3,0,3.33,11.37,0,23.9,55,44.94,0
+CUST-0151,Riley Anderson,Horizon Labs,riley.anderson@horizonlabs.com,Enterprise,799.0,2025-03-08,16,8,2,4,3.38,18.12,0,48.5,25,74.15,0
+CUST-0152,Rohan Jones,Acme Corp,rohan.jones@acmecorp.com,Pro,199.0,2025-05-15,13,5,3,3,2.2,16.8,7,25.6,11,88.04,1
+CUST-0153,Jordan Jackson,TechPulse,jordan.jackson@techpulse.com,Pro,199.0,2025-03-28,15,10,3,4,3.3,15.41,0,86.0,21,79.0,0
+CUST-0154,Alex Mahato,QuantumSoft,alex.mahato@quantumsoft.com,Enterprise,799.0,2025-03-04,16,8,6,0,2.75,11.1,0,88.7,32,67.13,0
+CUST-0155,Olivia Jones,InnoWave,olivia.jones@innowave.com,Enterprise,799.0,2025-02-19,16,7,3,3,2.86,25.92,3,43.4,21,78.6,0
+CUST-0156,Noah Williams,Starlight Systems,noah.williams@starlightsystems.com,Enterprise,799.0,2025-01-09,17,3,2,2,1.67,16.8,0,49.7,32,67.7,0
+CUST-0157,Alex Smith,ByteWorks,alex.smith@byteworks.com,Starter,49.0,2025-01-07,18,4,1,1,2.75,18.17,0,87.2,62,37.28,0
+CUST-0158,Siddharth Taylor,Nexus Solutions,siddharth.taylor@nexussolutions.com,Starter,49.0,2025-08-19,10,5,4,2,1.8,39.0,25,64.8,3,96.12,1
+CUST-0159,Siddharth Chen,Acme Corp,siddharth.chen@acmecorp.com,Starter,49.0,2025-05-28,13,5,1,2,3.0,35.62,3,43.6,48,51.44,0
+CUST-0160,Chris Garcia,Synergy Tech,chris.garcia@synergytech.com,Starter,49.0,2025-02-02,17,7,3,1,2.86,29.1,0,21.8,41,58.96,0
+CUST-0161,Priya Chen,InnoWave,priya.chen@innowave.com,Enterprise,799.0,2025-05-06,14,4,2,2,2.75,53.15,0,93.2,37,62.68,0
+CUST-0162,Liam Mahato,ByteWorks,liam.mahato@byteworks.com,Pro,199.0,2025-10-11,8,6,5,3,2.83,2.8,7,24.9,0,99.04,1
+CUST-0163,Morgan Kim,DataFlow,morgan.kim@dataflow.com,Enterprise,799.0,2025-01-03,18,9,5,0,3.22,21.65,0,24.7,38,61.75,0
+CUST-0164,Noah Mahato,Acme Corp,noah.mahato@acmecorp.com,Enterprise,799.0,2025-03-20,15,3,3,2,1.33,24.0,7,20.4,14,85.49,1
+CUST-0165,Emily Jackson,DataFlow,emily.jackson@dataflow.com,Enterprise,799.0,2025-08-20,10,7,3,2,3.43,38.27,0,54.3,38,61.14,0
+CUST-0166,Alex Sharma,ByteWorks,alex.sharma@byteworks.com,Starter,49.0,2025-08-01,11,2,1,1,2.0,10.0,3,91.2,55,44.68,0
+CUST-0167,Chris Johnson,Vanguard AI,chris.johnson@vanguardai.com,Pro,199.0,2025-04-03,15,2,1,0,2.5,5.6,0,62.8,68,31.72,0
+CUST-0168,Riley Taylor,Synergy Tech,riley.taylor@synergytech.com,Enterprise,799.0,2025-07-17,11,3,2,0,2.0,20.8,0,82.7,58,41.73,0
+CUST-0169,Liam Miller,Starlight Systems,liam.miller@starlightsystems.com,Starter,49.0,2025-07-11,11,10,6,1,3.1,41.65,0,86.4,25,74.56,0
+CUST-0170,Siddharth Brown,InnoWave,siddharth.brown@innowave.com,Pro,199.0,2025-07-03,12,8,5,1,3.0,29.6,0,83.3,32,67.67,0
+CUST-0171,Aarav Chen,ByteWorks,aarav.chen@byteworks.com,Pro,199.0,2025-03-04,16,10,3,4,2.5,34.6,14,47.1,2,97.69,1
+CUST-0172,Rohan Davis,Vanguard AI,rohan.davis@vanguardai.com,Enterprise,799.0,2025-01-06,18,9,5,3,2.22,26.02,14,41.3,0,100.0,1
+CUST-0173,Jordan Taylor,CloudScale,jordan.taylor@cloudscale.com,Starter,49.0,2025-04-25,14,5,3,3,2.0,21.65,0,30.7,15,84.93,1
+CUST-0174,Casey Brown,Acme Corp,casey.brown@acmecorp.com,Enterprise,799.0,2025-03-12,15,8,6,2,2.38,38.2,25,29.3,0,100.0,1
+CUST-0175,Liam Taylor,Horizon Labs,liam.taylor@horizonlabs.com,Pro,199.0,2025-08-31,10,6,2,3,2.83,23.85,7,87.1,31,68.82,0
+CUST-0176,Dakota Anderson,Synergy Tech,dakota.anderson@synergytech.com,Enterprise,799.0,2025-02-10,16,6,4,2,2.83,22.5,25,42.3,9,90.1,1
+CUST-0177,Pat Chen,Starlight Systems,pat.chen@starlightsystems.com,Enterprise,799.0,2025-08-02,11,5,2,0,3.2,54.4,0,45.9,56,43.81,0
+CUST-0178,Emily Brown,InnoWave,emily.brown@innowave.com,Enterprise,799.0,2025-08-20,10,6,2,2,3.83,11.38,3,62.0,49,50.93,0
+CUST-0179,Liam Kim,DataFlow,liam.kim@dataflow.com,Starter,49.0,2025-01-04,18,4,1,0,3.75,31.87,0,70.9,79,20.91,0
+CUST-0180,Jordan Davis,TechPulse,jordan.davis@techpulse.com,Pro,199.0,2025-10-03,9,6,3,2,2.67,27.3,25,80.6,20,79.61,0
+CUST-0181,Chris Garcia,Acme Corp,chris.garcia@acmecorp.com,Enterprise,799.0,2025-02-21,16,4,2,2,1.75,12.9,0,89.3,36,63.07,0
+CUST-0182,Priya Davis,CloudScale,priya.davis@cloudscale.com,Starter,49.0,2025-01-09,17,8,3,5,2.12,21.64,0,41.8,0,100.0,1
+CUST-0183,Noah Kim,ByteWorks,noah.kim@byteworks.com,Enterprise,799.0,2025-04-30,14,10,2,2,3.9,13.11,25,92.4,39,60.56,0
+CUST-0184,Pat Rodriguez,Starlight Systems,pat.rodriguez@starlightsystems.com,Pro,199.0,2025-02-10,16,7,6,2,2.0,2.3,7,45.7,0,100.0,1
+CUST-0185,Noah Williams,ByteWorks,noah.williams@byteworks.com,Starter,49.0,2025-03-05,16,8,5,1,3.25,25.33,0,23.7,28,71.63,0
+CUST-0186,Noah Patel,TechPulse,noah.patel@techpulse.com,Pro,199.0,2025-04-18,14,8,3,2,2.38,16.96,0,56.8,30,69.32,0
+CUST-0187,Alex Verma,Vanguard AI,alex.verma@vanguardai.com,Enterprise,799.0,2025-05-17,13,9,6,1,2.67,27.33,0,25.2,15,84.15,1
+CUST-0188,Dakota Thomas,Nexus Solutions,dakota.thomas@nexussolutions.com,Starter,49.0,2025-08-17,10,3,1,0,3.33,33.6,0,78.6,76,23.47,0
+CUST-0189,Aarav Davis,Vanguard AI,aarav.davis@vanguardai.com,Enterprise,799.0,2025-02-03,17,7,3,1,2.71,11.82,3,55.2,41,58.57,0
+CUST-0190,Morgan Rodriguez,Horizon Labs,morgan.rodriguez@horizonlabs.com,Enterprise,799.0,2025-09-02,10,5,2,2,2.4,46.63,0,25.5,35,64.25,0
+CUST-0191,Noah Johnson,Horizon Labs,noah.johnson@horizonlabs.com,Pro,199.0,2025-08-23,10,4,2,0,2.75,14.25,0,24.4,58,41.56,0
+CUST-0192,Liam Sharma,Vanguard AI,liam.sharma@vanguardai.com,Pro,199.0,2025-03-18,15,8,5,3,2.12,24.47,0,29.5,0,100.0,1
+CUST-0193,Chris Smith,Synergy Tech,chris.smith@synergytech.com,Pro,199.0,2025-06-10,12,3,1,0,3.33,11.65,0,87.4,77,22.59,0
+CUST-0194,Dakota Thomas,Nexus Solutions,dakota.thomas@nexussolutions.com,Starter,49.0,2025-10-23,8,9,1,4,2.56,24.6,0,45.3,26,73.03,0
+CUST-0195,Morgan Brown,TechPulse,morgan.brown@techpulse.com,Enterprise,799.0,2025-06-06,13,9,5,1,3.22,14.97,0,92.0,34,65.02,0
+CUST-0196,Rohan Anderson,Horizon Labs,rohan.anderson@horizonlabs.com,Starter,49.0,2025-09-03,10,9,4,4,2.0,21.94,0,57.3,0,100.0,1
+CUST-0197,Rohan Brown,Nexus Solutions,rohan.brown@nexussolutions.com,Starter,49.0,2025-03-21,15,6,3,1,3.5,17.5,14,25.5,38,61.85,0
+CUST-0198,Morgan Smith,TechPulse,morgan.smith@techpulse.com,Starter,49.0,2025-06-26,12,10,5,3,2.5,22.42,7,32.0,0,100.0,1
+CUST-0199,Olivia Brown,ByteWorks,olivia.brown@byteworks.com,Starter,49.0,2025-05-10,13,9,7,4,2.33,32.35,0,28.4,0,100.0,1
+CUST-0200,Sam Mahato,Acme Corp,sam.mahato@acmecorp.com,Enterprise,799.0,2025-02-01,17,5,2,1,2.6,14.83,0,66.4,51,48.56,0
+CUST-0201,Riley Miller,Synergy Tech,riley.miller@synergytech.com,Starter,49.0,2025-01-01,18,7,3,4,2.14,39.95,3,16.7,3,96.99,1
+CUST-0202,Chris Verma,QuantumSoft,chris.verma@quantumsoft.com,Enterprise,799.0,2025-04-07,15,3,1,0,3.67,10.1,0,26.4,73,26.03,0
+CUST-0203,Olivia Smith,Starlight Systems,olivia.smith@starlightsystems.com,Starter,49.0,2025-02-24,16,10,5,4,2.3,31.3,7,89.6,0,100.0,1
+CUST-0204,Taylor Smith,TechPulse,taylor.smith@techpulse.com,Enterprise,799.0,2025-03-17,15,7,4,0,3.0,16.43,0,16.4,43,56.36,0
+CUST-0205,Sophia Taylor,TechPulse,sophia.taylor@techpulse.com,Starter,49.0,2025-01-31,17,7,3,2,3.14,12.45,0,63.3,37,62.53,0
+CUST-0206,Chris Anderson,TechPulse,chris.anderson@techpulse.com,Starter,49.0,2025-07-22,11,8,3,2,2.62,16.08,0,60.1,33,66.99,0
+CUST-0207,Emily Johnson,Acme Corp,emily.johnson@acmecorp.com,Pro,199.0,2025-02-17,16,6,1,0,3.83,23.06,0,83.5,81,18.98,0
+CUST-0208,Rohan Johnson,Horizon Labs,rohan.johnson@horizonlabs.com,Enterprise,799.0,2025-07-18,11,5,3,2,3.2,52.35,7,83.7,27,72.23,0
+CUST-0209,Ananya Chen,Vanguard AI,ananya.chen@vanguardai.com,Enterprise,799.0,2025-03-08,16,9,6,3,2.44,17.03,14,20.0,0,100.0,1
+CUST-0210,Rohan Taylor,CloudScale,rohan.taylor@cloudscale.com,Starter,49.0,2025-04-19,14,2,1,1,1.5,7.9,0,68.6,50,49.14,0
+CUST-0211,Casey Garcia,Acme Corp,casey.garcia@acmecorp.com,Starter,49.0,2025-08-08,10,7,4,0,2.57,21.77,0,31.8,41,58.25,0
+CUST-0212,Pat Jackson,Acme Corp,pat.jackson@acmecorp.com,Pro,199.0,2025-07-06,12,2,1,0,4.0,51.0,0,24.1,68,31.59,0
+CUST-0213,Chris Kim,ByteWorks,chris.kim@byteworks.com,Pro,199.0,2025-04-01,15,10,7,4,2.1,45.2,14,81.3,0,100.0,1
+CUST-0214,Noah Chen,TechPulse,noah.chen@techpulse.com,Enterprise,799.0,2025-07-19,11,4,2,1,2.0,9.35,25,65.8,31,68.42,0
+CUST-0215,Priya Garcia,CloudScale,priya.garcia@cloudscale.com,Enterprise,799.0,2025-04-24,14,6,4,2,2.33,25.15,25,79.7,9,90.36,1
+CUST-0216,Alex Garcia,QuantumSoft,alex.garcia@quantumsoft.com,Enterprise,799.0,2025-01-17,17,3,0,0,4.67,7.9,0,36.9,91,8.98,0
+CUST-0217,Pat Williams,InnoWave,pat.williams@innowave.com,Enterprise,799.0,2025-10-10,8,6,5,1,2.0,68.8,3,63.3,12,87.47,1
+CUST-0218,Liam Patel,ByteWorks,liam.patel@byteworks.com,Starter,49.0,2025-02-28,16,4,2,0,2.5,12.9,0,37.2,57,42.28,0
+CUST-0219,Olivia Williams,Vanguard AI,olivia.williams@vanguardai.com,Enterprise,799.0,2025-08-04,11,8,3,5,2.5,23.46,0,23.4,0,100.0,1
+CUST-0220,Rohan Davis,TechPulse,rohan.davis@techpulse.com,Starter,49.0,2025-04-08,14,7,4,2,2.86,22.6,0,32.0,24,75.94,0
+CUST-0221,Pat Kim,ByteWorks,pat.kim@byteworks.com,Starter,49.0,2025-09-07,9,3,1,0,4.0,12.85,0,69.9,80,19.01,0
+CUST-0222,Noah Brown,TechPulse,noah.brown@techpulse.com,Pro,199.0,2025-02-24,16,3,1,0,3.67,37.4,0,19.3,73,26.74,0
+CUST-0223,Casey Patel,Apex Global,casey.patel@apexglobal.com,Starter,49.0,2025-07-15,11,8,5,3,2.5,32.17,0,92.0,9,90.8,1
+CUST-0224,Rohan Sharma,Acme Corp,rohan.sharma@acmecorp.com,Starter,49.0,2025-05-16,13,3,1,0,4.33,12.1,0,54.3,82,17.9,0
+CUST-0225,Priya Thomas,DataFlow,priya.thomas@dataflow.com,Enterprise,799.0,2025-09-07,9,6,3,2,3.17,25.13,0,61.4,37,62.53,0
+CUST-0226,Aarav Brown,ByteWorks,aarav.brown@byteworks.com,Pro,199.0,2025-10-18,8,7,4,2,2.71,7.03,14,48.8,16,83.81,1
+CUST-0227,Morgan Rodriguez,DataFlow,morgan.rodriguez@dataflow.com,Enterprise,799.0,2025-06-09,12,4,3,1,2.0,23.1,14,52.3,28,71.17,0
+CUST-0228,Rohan Kim,Acme Corp,rohan.kim@acmecorp.com,Enterprise,799.0,2025-01-14,17,8,4,2,1.88,22.9,0,52.9,18,81.71,0
+CUST-0229,Liam Kim,ByteWorks,liam.kim@byteworks.com,Starter,49.0,2025-03-04,16,6,3,1,2.83,35.23,3,17.7,38,61.36,0
+CUST-0230,Olivia Kim,Acme Corp,olivia.kim@acmecorp.com,Pro,199.0,2025-03-13,15,9,3,2,3.0,26.42,0,50.3,35,64.97,0
+CUST-0231,Priya Smith,TechPulse,priya.smith@techpulse.com,Pro,199.0,2025-02-25,16,9,4,1,3.33,13.86,0,92.4,43,56.09,0
+CUST-0232,Taylor Thomas,Vanguard AI,taylor.thomas@vanguardai.com,Starter,49.0,2025-09-23,9,10,3,1,3.3,24.37,14,74.8,41,58.52,0
+CUST-0233,Sophia Jackson,Acme Corp,sophia.jackson@acmecorp.com,Starter,49.0,2025-05-08,13,2,0,1,3.5,11.75,0,67.5,74,25.25,0
+CUST-0234,Taylor Rodriguez,Synergy Tech,taylor.rodriguez@synergytech.com,Starter,49.0,2025-09-11,9,7,2,3,3.14,10.68,0,67.8,35,64.08,0
+CUST-0235,Jordan Thomas,Starlight Systems,jordan.thomas@starlightsystems.com,Pro,199.0,2025-01-14,17,7,5,1,2.71,9.45,0,92.3,30,69.06,0
+CUST-0236,Emily Thomas,CloudScale,emily.thomas@cloudscale.com,Pro,199.0,2025-01-30,17,3,1,0,3.33,12.0,0,18.4,70,29.49,0
+CUST-0237,Riley Johnson,Horizon Labs,riley.johnson@horizonlabs.com,Pro,199.0,2025-05-12,13,2,1,1,1.5,18.6,7,81.3,47,52.07,0
+CUST-0238,Rohan Williams,QuantumSoft,rohan.williams@quantumsoft.com,Pro,199.0,2025-05-25,13,4,3,1,1.75,65.8,0,67.6,28,71.24,0
+CUST-0239,Sam Verma,Starlight Systems,sam.verma@starlightsystems.com,Enterprise,799.0,2025-02-10,16,3,1,2,2.0,60.9,7,74.9,33,66.71,0
+CUST-0240,Morgan Davis,Nexus Solutions,morgan.davis@nexussolutions.com,Enterprise,799.0,2025-07-29,11,7,2,1,4.0,46.9,14,87.3,56,43.67,0
+CUST-0241,Priya Jones,ByteWorks,priya.jones@byteworks.com,Enterprise,799.0,2025-10-13,8,5,4,1,2.8,15.1,3,54.5,34,65.95,0
+CUST-0242,Jordan Jackson,Synergy Tech,jordan.jackson@synergytech.com,Enterprise,799.0,2025-10-24,8,10,4,3,3.1,32.03,0,73.2,20,79.88,0
+CUST-0243,Aarav Garcia,Synergy Tech,aarav.garcia@synergytech.com,Pro,199.0,2025-05-22,13,9,5,1,3.0,24.62,0,24.0,26,73.6,0
+CUST-0244,Dakota Chen,Nexus Solutions,dakota.chen@nexussolutions.com,Pro,199.0,2025-05-07,14,8,5,3,2.38,39.17,14,22.2,0,100.0,1
+CUST-0245,Priya Thomas,Apex Global,priya.thomas@apexglobal.com,Enterprise,799.0,2025-01-26,17,10,5,3,3.0,26.32,25,37.8,0,100.0,1
+CUST-0246,Liam Davis,ByteWorks,liam.davis@byteworks.com,Starter,49.0,2025-09-12,9,8,5,1,3.12,32.73,14,25.2,19,80.88,0
+CUST-0247,Alex Garcia,Synergy Tech,alex.garcia@synergytech.com,Enterprise,799.0,2025-03-04,16,4,3,1,3.25,4.7,0,26.3,44,55.37,0
+CUST-0248,Liam Miller,Starlight Systems,liam.miller@starlightsystems.com,Enterprise,799.0,2025-07-10,11,10,3,3,3.1,27.19,0,26.5,23,76.55,0
+CUST-0249,Emily Smith,InnoWave,emily.smith@innowave.com,Starter,49.0,2025-01-27,17,4,4,1,2.5,24.0,14,59.8,25,74.42,0
+CUST-0250,Emily Rodriguez,QuantumSoft,emily.rodriguez@quantumsoft.com,Starter,49.0,2025-10-13,8,8,3,3,3.12,12.66,7,22.8,19,80.92,0
+CUST-0251,Sophia Rodriguez,CloudScale,sophia.rodriguez@cloudscale.com,Enterprise,799.0,2025-01-09,17,7,3,2,3.29,19.5,0,39.6,36,63.75,0
+CUST-0252,Pat Jones,DataFlow,pat.jones@dataflow.com,Starter,49.0,2025-07-14,11,6,4,1,2.83,37.55,0,35.7,34,65.76,0
+CUST-0253,Siddharth Rodriguez,Acme Corp,siddharth.rodriguez@acmecorp.com,Starter,49.0,2025-09-22,9,4,1,1,3.0,21.2,14,52.9,52,47.11,0
+CUST-0254,Riley Rodriguez,Horizon Labs,riley.rodriguez@horizonlabs.com,Pro,199.0,2025-06-22,12,9,4,4,2.33,48.76,0,40.5,0,100.0,1
+CUST-0255,Ananya Sharma,DataFlow,ananya.sharma@dataflow.com,Enterprise,799.0,2025-08-06,10,8,2,1,3.12,19.95,0,39.2,52,47.08,0
+CUST-0256,Casey Brown,Vanguard AI,casey.brown@vanguardai.com,Pro,199.0,2025-09-15,9,7,3,1,3.43,32.6,0,21.7,45,54.4,0
+CUST-0257,Morgan Jones,Horizon Labs,morgan.jones@horizonlabs.com,Starter,49.0,2025-09-10,9,8,4,1,3.0,35.65,14,67.6,30,69.64,0
+CUST-0258,Casey Rodriguez,Nexus Solutions,casey.rodriguez@nexussolutions.com,Enterprise,799.0,2025-06-12,12,3,3,1,2.33,24.0,7,42.2,34,65.31,0
+CUST-0259,Priya Kim,TechPulse,priya.kim@techpulse.com,Pro,199.0,2025-09-13,9,5,4,1,2.2,15.7,0,45.3,30,69.87,0
+CUST-0260,Morgan Brown,ByteWorks,morgan.brown@byteworks.com,Starter,49.0,2025-04-19,14,3,1,1,3.67,43.5,14,33.0,56,43.77,0
+CUST-0261,Ananya Taylor,Starlight Systems,ananya.taylor@starlightsystems.com,Pro,199.0,2025-05-27,13,9,3,0,3.33,28.3,0,82.0,60,39.13,0
+CUST-0262,Chris Davis,Nexus Solutions,chris.davis@nexussolutions.com,Enterprise,799.0,2025-02-05,17,2,1,0,2.5,52.1,0,53.5,59,40.65,0
+CUST-0263,Jordan Mahato,Starlight Systems,jordan.mahato@starlightsystems.com,Pro,199.0,2025-01-21,17,7,5,0,2.86,11.4,0,60.4,38,61.1,0
+CUST-0264,Dakota Taylor,Horizon Labs,dakota.taylor@horizonlabs.com,Pro,199.0,2025-05-31,13,4,4,0,2.0,24.0,0,45.2,38,61.48,0
+CUST-0265,Emily Garcia,Synergy Tech,emily.garcia@synergytech.com,Pro,199.0,2025-03-31,15,9,1,1,4.0,18.12,25,24.3,51,48.57,0
+CUST-0266,Taylor Taylor,CloudScale,taylor.taylor@cloudscale.com,Starter,49.0,2025-10-05,8,5,3,1,2.8,34.3,25,28.1,26,73.79,0
+CUST-0267,Taylor Chen,QuantumSoft,taylor.chen@quantumsoft.com,Pro,199.0,2025-02-18,16,9,4,1,3.22,32.54,0,31.7,36,63.05,0
+CUST-0268,Casey Mahato,InnoWave,casey.mahato@innowave.com,Starter,49.0,2025-06-14,12,8,4,3,3.38,38.4,0,76.8,22,77.32,0
+CUST-0269,Taylor Sharma,InnoWave,taylor.sharma@innowave.com,Pro,199.0,2025-04-20,14,4,2,1,3.75,38.85,3,61.0,58,41.7,0
+CUST-0270,Taylor Williams,Vanguard AI,taylor.williams@vanguardai.com,Starter,49.0,2025-10-13,8,3,2,0,3.0,14.6,0,86.2,66,33.38,0
+CUST-0271,Ananya Jackson,DataFlow,ananya.jackson@dataflow.com,Starter,49.0,2025-07-19,11,2,0,1,3.0,31.8,0,30.1,67,32.99,0
+CUST-0272,Sam Miller,DataFlow,sam.miller@dataflow.com,Starter,49.0,2025-02-21,16,2,1,0,3.0,8.7,0,33.6,69,30.64,0
+CUST-0273,Pat Patel,Acme Corp,pat.patel@acmecorp.com,Starter,49.0,2025-08-14,10,3,1,0,4.0,8.0,0,90.3,83,16.97,0
+CUST-0274,Olivia Patel,Horizon Labs,olivia.patel@horizonlabs.com,Pro,199.0,2025-08-01,11,5,3,0,2.8,9.25,0,82.8,56,43.32,0
+CUST-0275,Chris Jackson,Acme Corp,chris.jackson@acmecorp.com,Starter,49.0,2025-09-23,9,4,2,1,2.75,26.85,3,64.8,50,49.32,0
+CUST-0276,Alex Smith,InnoWave,alex.smith@innowave.com,Starter,49.0,2025-08-29,10,2,2,1,2.0,24.0,14,94.1,41,58.99,0
+CUST-0277,Morgan Taylor,Nexus Solutions,morgan.taylor@nexussolutions.com,Pro,199.0,2025-10-02,9,9,4,2,3.11,21.46,0,65.3,29,70.58,0
+CUST-0278,Noah Verma,Nexus Solutions,noah.verma@nexussolutions.com,Starter,49.0,2025-08-21,10,6,2,1,4.0,49.88,0,26.3,50,49.37,0
+CUST-0279,Riley Smith,CloudScale,riley.smith@cloudscale.com,Enterprise,799.0,2025-07-01,12,10,4,1,2.7,25.08,0,56.6,35,64.74,0
+CUST-0280,Liam Brown,Starlight Systems,liam.brown@starlightsystems.com,Enterprise,799.0,2025-08-30,10,5,3,2,2.2,45.65,3,66.2,28,71.58,0
+CUST-0281,Aarav Chen,QuantumSoft,aarav.chen@quantumsoft.com,Pro,199.0,2025-07-02,12,3,3,0,1.0,24.0,0,23.6,36,63.64,0
+CUST-0282,Morgan Jackson,Apex Global,morgan.jackson@apexglobal.com,Starter,49.0,2025-05-03,14,7,3,1,3.14,31.38,7,64.3,43,56.63,0
+CUST-0283,Riley Sharma,DataFlow,riley.sharma@dataflow.com,Starter,49.0,2025-02-16,16,8,5,1,2.25,15.93,0,81.7,26,73.83,0
+CUST-0284,Riley Davis,CloudScale,riley.davis@cloudscale.com,Pro,199.0,2025-04-21,14,4,1,1,3.5,39.1,0,40.7,64,35.93,0
+CUST-0285,Riley Thomas,Vanguard AI,riley.thomas@vanguardai.com,Starter,49.0,2025-02-19,16,10,3,4,3.4,28.39,25,73.3,5,94.47,1
+CUST-0286,Morgan Verma,Vanguard AI,morgan.verma@vanguardai.com,Enterprise,799.0,2025-07-18,11,8,4,5,2.12,30.43,0,80.1,0,100.0,1
+CUST-0287,Olivia Johnson,Synergy Tech,olivia.johnson@synergytech.com,Starter,49.0,2025-06-09,12,6,3,2,3.17,43.47,14,75.6,30,69.51,0
+CUST-0288,Pat Mahato,InnoWave,pat.mahato@innowave.com,Starter,49.0,2025-08-18,10,5,4,2,2.6,8.8,7,92.1,23,76.19,0
+CUST-0289,Jordan Chen,Horizon Labs,jordan.chen@horizonlabs.com,Enterprise,799.0,2025-09-26,9,4,2,1,2.5,41.7,0,44.7,48,51.53,0
+CUST-0290,Ananya Johnson,TechPulse,ananya.johnson@techpulse.com,Starter,49.0,2025-05-07,14,6,5,3,1.83,3.6,3,23.7,0,100.0,1
+CUST-0291,Pat Williams,Synergy Tech,pat.williams@synergytech.com,Pro,199.0,2025-04-13,14,4,0,2,3.0,24.2,3,88.7,61,38.93,0
+CUST-0292,Priya Kim,CloudScale,priya.kim@cloudscale.com,Enterprise,799.0,2025-01-29,17,8,3,3,3.0,16.62,25,57.9,10,89.21,1
+CUST-0293,Sam Mahato,QuantumSoft,sam.mahato@quantumsoft.com,Enterprise,799.0,2025-03-31,15,8,4,2,3.0,32.83,0,42.0,26,73.8,0
+CUST-0294,Chris Verma,Synergy Tech,chris.verma@synergytech.com,Pro,199.0,2025-04-03,15,9,4,2,2.22,28.1,0,93.1,25,74.91,0
+CUST-0295,Sam Kim,Apex Global,sam.kim@apexglobal.com,Starter,49.0,2025-03-11,15,8,3,1,3.62,26.34,3,75.0,50,49.3,0
+CUST-0296,Siddharth Williams,InnoWave,siddharth.williams@innowave.com,Enterprise,799.0,2025-01-17,17,4,2,1,3.5,22.45,25,88.5,45,54.15,0
+CUST-0297,Taylor Sharma,Synergy Tech,taylor.sharma@synergytech.com,Starter,49.0,2025-01-12,17,4,2,2,2.5,4.3,0,22.3,36,63.77,0
+CUST-0298,Taylor Smith,ByteWorks,taylor.smith@byteworks.com,Enterprise,799.0,2025-04-30,14,5,1,1,3.4,13.75,0,57.4,64,35.06,0
+CUST-0299,Casey Mahato,Starlight Systems,casey.mahato@starlightsystems.com,Starter,49.0,2025-02-03,17,2,0,1,3.5,27.2,3,73.2,73,26.48,0
+CUST-0300,Aarav Kim,InnoWave,aarav.kim@innowave.com,Enterprise,799.0,2025-09-03,10,7,4,1,2.86,13.1,3,81.4,37,62.8,0
+CUST-0301,Sophia Rodriguez,CloudScale,sophia.rodriguez@cloudscale.com,Starter,49.0,2025-09-07,9,9,5,0,2.89,41.3,0,54.1,38,61.48,0
+CUST-0302,Emily Smith,InnoWave,emily.smith@innowave.com,Enterprise,799.0,2025-02-18,16,8,4,1,3.12,25.15,3,17.0,32,67.1,0
+CUST-0303,Rohan Williams,InnoWave,rohan.williams@innowave.com,Pro,199.0,2025-03-17,15,9,5,6,2.33,29.2,14,66.3,0,100.0,1
+CUST-0304,Sam Thomas,Apex Global,sam.thomas@apexglobal.com,Starter,49.0,2025-08-18,10,4,2,3,2.75,26.95,0,31.0,29,70.9,0
+CUST-0305,Jordan Miller,CloudScale,jordan.miller@cloudscale.com,Enterprise,799.0,2025-09-09,9,2,1,0,4.0,22.1,0,59.5,79,20.05,0
+CUST-0306,Liam Verma,TechPulse,liam.verma@techpulse.com,Starter,49.0,2025-05-12,13,7,3,1,3.29,29.3,0,88.7,51,48.84,0
+CUST-0307,Emily Thomas,Vanguard AI,emily.thomas@vanguardai.com,Pro,199.0,2025-05-08,13,3,1,0,3.0,12.2,0,48.4,70,29.16,0
+CUST-0308,Alex Mahato,Starlight Systems,alex.mahato@starlightsystems.com,Starter,49.0,2025-03-03,16,6,4,3,1.83,14.15,25,31.2,0,100.0,1
+CUST-0309,Casey Miller,CloudScale,casey.miller@cloudscale.com,Enterprise,799.0,2025-08-18,10,2,2,1,1.5,24.0,0,44.9,40,59.51,0
+CUST-0310,Priya Thomas,Synergy Tech,priya.thomas@synergytech.com,Starter,49.0,2025-06-14,12,7,2,1,3.43,42.44,7,54.1,52,47.36,0
+CUST-0311,Aarav Patel,Synergy Tech,aarav.patel@synergytech.com,Pro,199.0,2025-09-25,9,8,2,4,2.88,26.37,0,48.8,21,78.12,0
+CUST-0312,Noah Patel,QuantumSoft,noah.patel@quantumsoft.com,Pro,199.0,2025-01-14,17,8,6,2,2.12,28.9,14,77.1,0,100.0,1
+CUST-0313,Chris Verma,Acme Corp,chris.verma@acmecorp.com,Pro,199.0,2025-04-04,15,5,4,3,2.6,11.6,25,47.1,0,100.0,1
+CUST-0314,Sam Brown,Acme Corp,sam.brown@acmecorp.com,Starter,49.0,2025-02-14,16,4,2,1,3.0,9.65,0,39.3,51,48.07,0
+CUST-0315,Sam Sharma,CloudScale,sam.sharma@cloudscale.com,Pro,199.0,2025-04-20,14,5,3,0,2.4,13.3,0,63.5,51,48.45,0
+CUST-0316,Riley Jones,Nexus Solutions,riley.jones@nexussolutions.com,Enterprise,799.0,2025-09-18,9,8,6,1,2.88,17.35,3,36.1,16,83.19,1
+CUST-0317,Pat Jones,Starlight Systems,pat.jones@starlightsystems.com,Enterprise,799.0,2025-06-01,13,5,5,2,2.4,24.0,14,15.3,2,97.67,1
+CUST-0318,Casey Taylor,Nexus Solutions,casey.taylor@nexussolutions.com,Enterprise,799.0,2025-10-26,8,6,1,2,3.5,32.0,7,82.3,54,45.97,0
+CUST-0319,Sam Smith,Synergy Tech,sam.smith@synergytech.com,Enterprise,799.0,2025-06-12,12,5,1,2,3.2,51.25,25,50.4,29,70.36,0
+CUST-0320,Ananya Verma,Acme Corp,ananya.verma@acmecorp.com,Enterprise,799.0,2025-05-20,13,5,1,0,3.6,14.28,0,60.7,76,23.13,0
+CUST-0321,Priya Verma,Acme Corp,priya.verma@acmecorp.com,Pro,199.0,2025-08-12,10,9,4,3,2.22,19.7,7,72.9,8,91.13,1
+CUST-0322,Chris Davis,Starlight Systems,chris.davis@starlightsystems.com,Starter,49.0,2025-06-16,12,4,1,2,3.25,27.8,3,51.9,51,48.61,0
+CUST-0323,Emily Verma,Synergy Tech,emily.verma@synergytech.com,Enterprise,799.0,2025-07-26,11,10,8,1,2.1,42.7,0,62.9,0,100.0,1
+CUST-0324,Liam Thomas,Nexus Solutions,liam.thomas@nexussolutions.com,Starter,49.0,2025-09-03,10,3,1,3,1.67,24.45,3,44.4,27,72.03,0
+CUST-0325,Liam Jackson,Apex Global,liam.jackson@apexglobal.com,Pro,199.0,2025-09-07,9,8,5,1,2.75,17.53,25,91.5,16,83.85,1
+CUST-0326,Sophia Thomas,Horizon Labs,sophia.thomas@horizonlabs.com,Pro,199.0,2025-06-17,12,10,5,2,2.8,21.44,0,62.8,18,81.32,0
+CUST-0327,Noah Verma,Apex Global,noah.verma@apexglobal.com,Starter,49.0,2025-02-12,16,3,1,1,2.67,3.75,0,18.1,55,44.86,0
+CUST-0328,Noah Williams,Acme Corp,noah.williams@acmecorp.com,Enterprise,799.0,2025-01-01,18,5,4,0,2.0,60.2,0,39.5,29,70.05,0
+CUST-0329,Ananya Chen,Starlight Systems,ananya.chen@starlightsystems.com,Starter,49.0,2025-06-08,12,7,6,2,2.29,2.8,25,25.6,0,100.0,1
+CUST-0330,Rohan Sharma,Starlight Systems,rohan.sharma@starlightsystems.com,Enterprise,799.0,2025-04-05,15,2,2,1,2.0,24.0,0,48.4,44,55.16,0
+CUST-0331,Alex Patel,Horizon Labs,alex.patel@horizonlabs.com,Pro,199.0,2025-07-10,11,7,3,1,3.14,15.82,0,49.4,46,53.92,0
+CUST-0332,Taylor Rodriguez,Synergy Tech,taylor.rodriguez@synergytech.com,Enterprise,799.0,2025-08-02,11,2,0,0,4.5,51.8,0,73.1,85,14.69,0
+CUST-0333,Chris Thomas,QuantumSoft,chris.thomas@quantumsoft.com,Starter,49.0,2025-01-08,17,8,6,3,2.62,12.65,0,94.4,2,97.56,1
+CUST-0334,Aarav Garcia,Synergy Tech,aarav.garcia@synergytech.com,Enterprise,799.0,2025-10-01,9,5,3,2,2.4,28.75,7,84.0,29,70.6,0
+CUST-0335,Taylor Jones,Apex Global,taylor.jones@apexglobal.com,Enterprise,799.0,2025-09-24,9,10,5,2,3.2,36.28,7,36.5,15,84.95,1
+CUST-0336,Taylor Brown,Vanguard AI,taylor.brown@vanguardai.com,Starter,49.0,2025-02-24,16,9,2,3,3.44,24.34,0,33.5,34,65.09,0
+CUST-0337,Riley Johnson,Horizon Labs,riley.johnson@horizonlabs.com,Starter,49.0,2025-07-22,11,4,2,1,2.5,54.8,14,43.3,31,68.07,0
+CUST-0338,Riley Taylor,Nexus Solutions,riley.taylor@nexussolutions.com,Pro,199.0,2025-08-12,10,2,0,1,2.0,33.55,3,29.2,57,42.88,0
+CUST-0339,Alex Taylor,Starlight Systems,alex.taylor@starlightsystems.com,Enterprise,799.0,2025-02-03,17,9,6,2,2.78,16.1,14,68.6,2,97.32,1
+CUST-0340,Noah Jackson,InnoWave,noah.jackson@innowave.com,Starter,49.0,2025-07-14,11,9,5,1,2.78,24.25,7,23.0,20,79.68,0
+CUST-0341,Liam Jackson,CloudScale,liam.jackson@cloudscale.com,Enterprise,799.0,2025-05-23,13,2,1,0,3.5,16.7,0,80.8,78,21.92,0
+CUST-0342,Riley Johnson,Horizon Labs,riley.johnson@horizonlabs.com,Starter,49.0,2025-04-11,14,5,2,1,2.8,13.03,0,71.0,53,46.5,0
+CUST-0343,Chris Rodriguez,Horizon Labs,chris.rodriguez@horizonlabs.com,Enterprise,799.0,2025-10-12,8,10,3,0,3.7,24.53,0,69.5,62,37.45,0
+CUST-0344,Aarav Smith,Acme Corp,aarav.smith@acmecorp.com,Starter,49.0,2025-01-14,17,2,1,1,1.0,3.8,0,94.1,49,50.59,0
+CUST-0345,Aarav Verma,QuantumSoft,aarav.verma@quantumsoft.com,Starter,49.0,2025-09-16,9,6,1,2,3.33,20.9,0,94.3,58,41.9,0
+CUST-0346,Priya Johnson,InnoWave,priya.johnson@innowave.com,Pro,199.0,2025-03-29,15,8,2,1,3.5,23.45,7,72.8,55,44.92,0
+CUST-0347,Liam Chen,CloudScale,liam.chen@cloudscale.com,Starter,49.0,2025-06-08,12,6,4,1,2.5,29.45,7,73.0,31,68.9,0
+CUST-0348,Sam Kim,Vanguard AI,sam.kim@vanguardai.com,Enterprise,799.0,2025-02-01,17,7,3,1,3.14,32.65,14,22.6,35,65.0,0
+CUST-0349,Liam Chen,Starlight Systems,liam.chen@starlightsystems.com,Enterprise,799.0,2025-09-26,9,2,0,2,2.0,42.25,0,70.1,53,46.99,0
+CUST-0350,Aarav Taylor,QuantumSoft,aarav.taylor@quantumsoft.com,Enterprise,799.0,2025-09-12,9,6,4,1,2.67,33.3,7,42.0,29,70.67,0
+CUST-0351,Taylor Williams,DataFlow,taylor.williams@dataflow.com,Starter,49.0,2025-05-31,13,4,1,1,2.75,27.13,0,80.5,62,37.95,0
+CUST-0352,Alex Verma,TechPulse,alex.verma@techpulse.com,Enterprise,799.0,2025-08-22,10,3,0,1,3.33,25.33,0,24.3,69,30.9,0
+CUST-0353,Dakota Thomas,Acme Corp,dakota.thomas@acmecorp.com,Enterprise,799.0,2025-08-18,10,5,3,2,2.6,25.1,14,84.6,26,73.14,0
+CUST-0354,Dakota Thomas,QuantumSoft,dakota.thomas@quantumsoft.com,Enterprise,799.0,2025-08-22,10,3,1,1,4.0,6.45,0,77.1,71,28.29,0
+CUST-0355,Rohan Verma,Vanguard AI,rohan.verma@vanguardai.com,Enterprise,799.0,2025-01-29,17,8,3,1,3.88,30.04,0,68.8,53,46.12,0
+CUST-0356,Sam Miller,Starlight Systems,sam.miller@starlightsystems.com,Enterprise,799.0,2025-06-10,12,7,3,1,2.86,12.85,25,47.6,28,71.38,0
+CUST-0357,Chris Anderson,CloudScale,chris.anderson@cloudscale.com,Enterprise,799.0,2025-08-15,10,8,4,1,3.0,17.3,0,52.1,37,62.79,0
+CUST-0358,Pat Garcia,QuantumSoft,pat.garcia@quantumsoft.com,Starter,49.0,2025-02-10,16,4,2,4,2.0,43.05,7,18.8,7,92.32,1
+CUST-0359,Dakota Anderson,Acme Corp,dakota.anderson@acmecorp.com,Starter,49.0,2025-08-09,10,6,2,0,3.67,12.05,0,82.8,71,28.39,0
+CUST-0360,Chris Thomas,QuantumSoft,chris.thomas@quantumsoft.com,Pro,199.0,2025-07-29,11,2,1,0,3.0,33.8,0,83.9,74,25.61,0
+CUST-0361,Emily Davis,ByteWorks,emily.davis@byteworks.com,Enterprise,799.0,2025-03-17,15,2,0,1,3.0,5.95,7,16.2,61,38.58,0
+CUST-0362,Aarav Thomas,Nexus Solutions,aarav.thomas@nexussolutions.com,Starter,49.0,2025-05-16,13,8,2,0,4.12,37.98,0,53.2,72,27.68,0
+CUST-0363,Sophia Garcia,Acme Corp,sophia.garcia@acmecorp.com,Enterprise,799.0,2025-08-20,10,6,0,0,4.33,23.23,0,37.4,88,11.59,0
+CUST-0364,Sophia Garcia,Starlight Systems,sophia.garcia@starlightsystems.com,Enterprise,799.0,2025-06-25,12,7,5,1,2.29,9.3,0,59.8,24,75.73,0
+CUST-0365,Ananya Patel,InnoWave,ananya.patel@innowave.com,Starter,49.0,2025-09-08,9,10,7,2,2.4,11.57,14,64.3,0,100.0,1
+CUST-0366,Morgan Jackson,Synergy Tech,morgan.jackson@synergytech.com,Pro,199.0,2025-10-15,8,2,0,0,4.5,37.75,0,19.7,87,12.03,0
+CUST-0367,Aarav Jackson,Synergy Tech,aarav.jackson@synergytech.com,Pro,199.0,2025-08-19,10,10,7,3,2.6,9.37,25,26.5,0,100.0,1
+CUST-0368,Riley Chen,Nexus Solutions,riley.chen@nexussolutions.com,Enterprise,799.0,2025-08-14,10,6,1,2,2.83,22.52,0,68.2,51,48.51,0
+CUST-0369,Chris Garcia,InnoWave,chris.garcia@innowave.com,Pro,199.0,2025-08-26,10,7,1,0,3.71,27.67,0,59.1,77,22.38,0
+CUST-0370,Riley Garcia,InnoWave,riley.garcia@innowave.com,Enterprise,799.0,2025-07-06,12,5,5,1,2.4,24.0,25,15.2,5,94.28,1
+CUST-0371,Siddharth Williams,TechPulse,siddharth.williams@techpulse.com,Starter,49.0,2025-06-19,12,5,3,0,2.8,30.15,0,85.8,56,43.02,0
+CUST-0372,Liam Anderson,Synergy Tech,liam.anderson@synergytech.com,Enterprise,799.0,2025-08-13,10,7,4,1,3.0,35.67,0,31.8,35,64.82,0
+CUST-0373,Noah Taylor,Apex Global,noah.taylor@apexglobal.com,Enterprise,799.0,2025-02-28,16,4,1,0,3.25,25.37,0,89.0,76,23.1,0
+CUST-0374,Siddharth Davis,CloudScale,siddharth.davis@cloudscale.com,Enterprise,799.0,2025-04-20,14,2,2,0,2.0,24.0,0,27.0,52,47.3,0
+CUST-0375,Dakota Garcia,Apex Global,dakota.garcia@apexglobal.com,Starter,49.0,2025-05-26,13,2,1,0,2.5,66.5,0,16.4,55,44.36,0
+CUST-0376,Noah Miller,Horizon Labs,noah.miller@horizonlabs.com,Pro,199.0,2025-06-29,12,8,3,3,3.12,23.28,3,57.5,24,75.05,0
+CUST-0377,Morgan Sharma,InnoWave,morgan.sharma@innowave.com,Pro,199.0,2025-03-23,15,2,1,1,2.5,10.7,3,64.8,56,43.32,0
+CUST-0378,Priya Kim,Vanguard AI,priya.kim@vanguardai.com,Enterprise,799.0,2025-06-28,12,7,1,3,2.29,25.3,0,52.0,35,64.51,0
+CUST-0379,Riley Sharma,Apex Global,riley.sharma@apexglobal.com,Starter,49.0,2025-05-28,13,7,4,1,2.57,31.37,0,93.4,37,62.09,0
+CUST-0380,Ananya Chen,ByteWorks,ananya.chen@byteworks.com,Starter,49.0,2025-06-09,12,7,4,0,3.71,4.83,0,80.1,55,44.28,0
+CUST-0381,Ananya Thomas,Horizon Labs,ananya.thomas@horizonlabs.com,Pro,199.0,2025-02-22,16,8,5,0,2.62,21.87,0,24.0,33,66.6,0
+CUST-0382,Siddharth Smith,Horizon Labs,siddharth.smith@horizonlabs.com,Enterprise,799.0,2025-09-15,9,6,2,0,4.33,15.95,0,76.2,76,23.71,0
+CUST-0383,Taylor Garcia,Synergy Tech,taylor.garcia@synergytech.com,Pro,199.0,2025-05-19,13,4,1,1,3.25,35.37,0,41.7,62,37.83,0
+CUST-0384,Ananya Patel,Apex Global,ananya.patel@apexglobal.com,Pro,199.0,2025-10-25,8,8,2,3,3.12,21.22,0,61.9,35,64.81,0
+CUST-0385,Riley Patel,QuantumSoft,riley.patel@quantumsoft.com,Enterprise,799.0,2025-03-25,15,5,2,2,2.6,24.07,14,47.2,31,68.88,0
+CUST-0386,Taylor Taylor,Starlight Systems,taylor.taylor@starlightsystems.com,Enterprise,799.0,2025-09-05,9,3,0,1,3.33,15.97,14,64.3,64,35.3,0
+CUST-0387,Sophia Davis,Horizon Labs,sophia.davis@horizonlabs.com,Enterprise,799.0,2025-07-22,11,10,6,5,2.7,20.77,14,36.0,0,100.0,1
+CUST-0388,Dakota Sharma,ByteWorks,dakota.sharma@byteworks.com,Pro,199.0,2025-09-08,9,9,4,3,2.78,32.74,0,23.7,12,87.41,1
+CUST-0389,Ananya Taylor,Horizon Labs,ananya.taylor@horizonlabs.com,Pro,199.0,2025-10-14,8,4,3,2,2.25,22.2,14,42.7,19,80.13,0
+CUST-0390,Noah Verma,Starlight Systems,noah.verma@starlightsystems.com,Enterprise,799.0,2025-01-25,17,9,2,1,4.22,28.03,0,35.4,61,38.68,0
+CUST-0391,Pat Johnson,ByteWorks,pat.johnson@byteworks.com,Enterprise,799.0,2025-04-28,14,7,1,1,4.14,23.72,3,84.9,71,28.17,0
+CUST-0392,Ananya Jackson,Vanguard AI,ananya.jackson@vanguardai.com,Pro,199.0,2025-10-28,8,10,1,2,3.3,23.16,3,30.1,49,50.39,0
+CUST-0393,Ananya Williams,DataFlow,ananya.williams@dataflow.com,Starter,49.0,2025-05-01,14,10,4,2,3.2,18.35,0,45.2,28,71.88,0
+CUST-0394,Noah Jackson,Vanguard AI,noah.jackson@vanguardai.com,Pro,199.0,2025-03-23,15,8,3,4,2.25,31.16,3,45.8,6,93.22,1
+CUST-0395,Taylor Brown,Synergy Tech,taylor.brown@synergytech.com,Enterprise,799.0,2025-10-10,8,4,4,0,2.25,24.0,0,44.8,40,59.52,0
+CUST-0396,Jordan Sharma,ByteWorks,jordan.sharma@byteworks.com,Enterprise,799.0,2025-03-06,16,2,1,0,3.5,3.4,0,89.0,78,21.1,0
+CUST-0397,Aarav Chen,DataFlow,aarav.chen@dataflow.com,Starter,49.0,2025-08-24,10,4,3,0,2.0,13.3,0,90.3,51,48.97,0
+CUST-0398,Sophia Patel,Acme Corp,sophia.patel@acmecorp.com,Pro,199.0,2025-02-03,17,2,1,1,3.0,8.9,0,74.5,63,36.55,0
+CUST-0399,Riley Kim,Acme Corp,riley.kim@acmecorp.com,Enterprise,799.0,2025-03-11,15,5,5,0,2.6,24.0,0,62.6,37,62.94,0
+CUST-0400,Casey Taylor,Starlight Systems,casey.taylor@starlightsystems.com,Starter,49.0,2025-07-31,11,3,0,1,3.67,12.47,7,50.0,70,29.87,0
+CUST-0401,Liam Davis,InnoWave,liam.davis@innowave.com,Starter,49.0,2025-08-04,11,10,4,1,3.0,18.0,14,19.3,25,74.47,0
+CUST-0402,Chris Garcia,QuantumSoft,chris.garcia@quantumsoft.com,Starter,49.0,2025-07-27,11,7,4,2,2.71,30.3,0,88.1,28,71.48,0
+CUST-0403,Taylor Johnson,Acme Corp,taylor.johnson@acmecorp.com,Pro,199.0,2025-05-28,13,5,3,0,2.8,35.5,0,43.9,52,47.21,0
+CUST-0404,Taylor Johnson,Acme Corp,taylor.johnson@acmecorp.com,Pro,199.0,2025-09-07,9,2,0,1,4.0,39.45,0,72.3,79,20.77,0
+CUST-0405,Pat Miller,Vanguard AI,pat.miller@vanguardai.com,Pro,199.0,2025-06-07,12,7,3,6,2.57,17.2,0,16.1,0,100.0,1
+CUST-0406,Morgan Williams,ByteWorks,morgan.williams@byteworks.com,Pro,199.0,2025-08-16,10,5,2,2,2.4,12.8,0,15.1,34,65.29,0
+CUST-0407,Siddharth Brown,Apex Global,siddharth.brown@apexglobal.com,Pro,199.0,2025-03-24,15,5,4,2,2.2,13.5,25,70.2,7,92.38,1
+CUST-0408,Morgan Verma,Synergy Tech,morgan.verma@synergytech.com,Enterprise,799.0,2025-01-23,17,2,1,0,3.5,3.5,0,84.3,78,21.57,0
+CUST-0409,Morgan Anderson,TechPulse,morgan.anderson@techpulse.com,Starter,49.0,2025-09-02,10,4,0,1,3.25,30.77,0,17.9,67,32.21,0
+CUST-0410,Pat Johnson,DataFlow,pat.johnson@dataflow.com,Enterprise,799.0,2025-03-18,15,5,1,2,2.8,25.2,0,69.7,51,48.63,0
+CUST-0411,Chris Williams,ByteWorks,chris.williams@byteworks.com,Enterprise,799.0,2025-02-07,16,9,4,0,3.33,33.64,0,39.2,48,51.41,0
+CUST-0412,Olivia Verma,TechPulse,olivia.verma@techpulse.com,Pro,199.0,2025-04-08,14,4,2,1,2.0,28.85,0,72.9,47,52.71,0
+CUST-0413,Taylor Jackson,QuantumSoft,taylor.jackson@quantumsoft.com,Pro,199.0,2025-05-15,13,5,3,2,3.2,37.65,14,88.3,32,67.97,0
+CUST-0414,Noah Rodriguez,Nexus Solutions,noah.rodriguez@nexussolutions.com,Pro,199.0,2025-08-21,10,8,6,2,2.38,20.65,7,77.2,4,95.48,1
+CUST-0415,Morgan Rodriguez,TechPulse,morgan.rodriguez@techpulse.com,Pro,199.0,2025-03-04,16,6,1,2,3.67,22.26,0,49.6,56,43.71,0
+CUST-0416,Liam Kim,DataFlow,liam.kim@dataflow.com,Pro,199.0,2025-09-13,9,2,0,1,4.0,40.25,25,25.6,59,40.44,0
+CUST-0417,Rohan Verma,QuantumSoft,rohan.verma@quantumsoft.com,Pro,199.0,2025-07-28,11,5,3,4,1.8,6.75,0,76.5,8,91.95,1
+CUST-0418,Ananya Anderson,Starlight Systems,ananya.anderson@starlightsystems.com,Enterprise,799.0,2025-02-14,16,9,2,2,3.44,16.7,25,25.0,29,70.94,0
+CUST-0419,Ananya Brown,InnoWave,ananya.brown@innowave.com,Enterprise,799.0,2025-10-11,8,5,2,1,2.8,46.27,7,47.4,46,53.06,0
+CUST-0420,Ananya Garcia,Vanguard AI,ananya.garcia@vanguardai.com,Pro,199.0,2025-04-19,14,7,6,3,1.86,10.8,7,40.5,0,100.0,1
+CUST-0421,Chris Williams,InnoWave,chris.williams@innowave.com,Starter,49.0,2025-08-08,10,6,3,2,2.83,10.87,14,52.0,25,74.53,0
+CUST-0422,Noah Kim,ByteWorks,noah.kim@byteworks.com,Starter,49.0,2025-10-17,8,10,6,4,2.6,11.15,3,60.8,0,100.0,1
+CUST-0423,Dakota Williams,ByteWorks,dakota.williams@byteworks.com,Starter,49.0,2025-07-17,11,7,3,3,2.57,45.6,7,63.9,18,81.24,0
+CUST-0424,Priya Mahato,ByteWorks,priya.mahato@byteworks.com,Enterprise,799.0,2025-08-11,10,5,3,2,3.2,17.7,0,63.4,37,62.06,0
+CUST-0425,Emily Miller,Vanguard AI,emily.miller@vanguardai.com,Enterprise,799.0,2025-09-30,9,10,5,4,2.3,42.3,3,71.5,0,100.0,1
+CUST-0426,Pat Rodriguez,Horizon Labs,pat.rodriguez@horizonlabs.com,Pro,199.0,2025-07-23,11,8,4,3,2.88,21.3,7,19.7,8,91.23,1
+CUST-0427,Priya Johnson,TechPulse,priya.johnson@techpulse.com,Starter,49.0,2025-10-14,8,6,3,1,3.17,22.37,7,75.1,44,55.36,0
+CUST-0428,Aarav Davis,Horizon Labs,aarav.davis@horizonlabs.com,Starter,49.0,2025-03-30,15,6,3,3,2.67,21.17,0,81.5,25,74.52,0
+CUST-0429,Emily Taylor,InnoWave,emily.taylor@innowave.com,Pro,199.0,2025-07-31,11,3,2,0,3.33,10.5,0,79.2,68,31.41,0
+CUST-0430,Noah Sharma,ByteWorks,noah.sharma@byteworks.com,Pro,199.0,2025-10-01,9,6,1,0,3.33,18.9,0,23.2,70,29.01,0
+CUST-0431,Chris Jones,Nexus Solutions,chris.jones@nexussolutions.com,Pro,199.0,2025-05-11,13,5,3,1,2.6,46.45,7,15.9,34,65.81,0
+CUST-0432,Siddharth Smith,Starlight Systems,siddharth.smith@starlightsystems.com,Starter,49.0,2025-01-06,18,7,5,4,2.14,21.5,0,27.1,0,100.0,1
+CUST-0433,Noah Verma,CloudScale,noah.verma@cloudscale.com,Pro,199.0,2025-05-06,14,9,6,1,3.0,6.1,0,46.2,20,79.38,0
+CUST-0434,Dakota Jones,QuantumSoft,dakota.jones@quantumsoft.com,Starter,49.0,2025-01-22,17,8,3,1,3.0,27.44,0,19.6,41,58.04,0
+CUST-0435,Rohan Chen,ByteWorks,rohan.chen@byteworks.com,Starter,49.0,2025-03-28,15,2,0,2,3.0,10.4,7,79.8,57,42.22,0
+CUST-0436,Casey Davis,Synergy Tech,casey.davis@synergytech.com,Starter,49.0,2025-10-09,8,2,1,0,2.0,16.5,0,75.5,65,34.45,0
+CUST-0437,Riley Davis,TechPulse,riley.davis@techpulse.com,Enterprise,799.0,2025-04-16,14,10,7,2,2.0,11.03,25,88.5,0,100.0,1
+CUST-0438,Priya Jackson,ByteWorks,priya.jackson@byteworks.com,Enterprise,799.0,2025-10-01,9,5,2,1,3.8,20.07,14,48.8,50,49.12,0
+CUST-0439,Dakota Williams,Starlight Systems,dakota.williams@starlightsystems.com,Pro,199.0,2025-10-21,8,8,6,0,2.38,14.75,0,51.7,26,73.83,0
+CUST-0440,Ananya Verma,DataFlow,ananya.verma@dataflow.com,Enterprise,799.0,2025-02-01,17,2,1,0,2.5,21.2,0,53.6,67,32.64,0
+CUST-0441,Sophia Thomas,CloudScale,sophia.thomas@cloudscale.com,Enterprise,799.0,2025-08-31,10,6,1,2,3.83,20.5,14,44.8,48,51.25,0
+CUST-0442,Morgan Johnson,CloudScale,morgan.johnson@cloudscale.com,Pro,199.0,2025-06-01,13,6,2,0,3.67,11.03,0,35.7,66,33.1,0
+CUST-0443,Dakota Taylor,ByteWorks,dakota.taylor@byteworks.com,Pro,199.0,2025-10-05,8,6,5,3,1.83,10.7,7,59.5,0,100.0,1
+CUST-0444,Aarav Thomas,InnoWave,aarav.thomas@innowave.com,Starter,49.0,2025-04-03,15,6,4,2,2.67,20.55,25,31.0,7,92.57,1
+CUST-0445,Olivia Miller,Acme Corp,olivia.miller@acmecorp.com,Pro,199.0,2025-04-29,14,9,3,2,3.22,25.85,0,94.0,41,58.82,0
+CUST-0446,Riley Miller,ByteWorks,riley.miller@byteworks.com,Starter,49.0,2025-10-28,8,6,4,2,3.17,11.7,25,28.7,11,88.8,1
+CUST-0447,Priya Taylor,InnoWave,priya.taylor@innowave.com,Enterprise,799.0,2025-10-20,8,7,4,1,2.43,22.77,7,75.2,30,69.25,0
+CUST-0448,Sophia Brown,Starlight Systems,sophia.brown@starlightsystems.com,Starter,49.0,2025-10-23,8,5,2,0,3.8,18.63,0,76.5,72,27.95,0
+CUST-0449,Aarav Miller,TechPulse,aarav.miller@techpulse.com,Enterprise,799.0,2025-07-22,11,2,1,1,3.0,2.2,0,72.9,63,36.71,0
+CUST-0450,Jordan Jackson,Acme Corp,jordan.jackson@acmecorp.com,Enterprise,799.0,2025-09-29,9,7,3,1,3.0,20.98,0,61.8,46,53.82,0
+CUST-0451,Noah Garcia,InnoWave,noah.garcia@innowave.com,Pro,199.0,2025-03-01,16,3,2,1,2.0,48.2,7,88.1,36,63.39,0
+CUST-0452,Dakota Garcia,Synergy Tech,dakota.garcia@synergytech.com,Starter,49.0,2025-07-13,11,6,3,1,2.17,19.9,14,61.0,31,68.97,0
+CUST-0453,Jordan Chen,Nexus Solutions,jordan.chen@nexussolutions.com,Pro,199.0,2025-05-14,13,2,2,0,2.0,24.0,0,34.0,53,46.6,0
+CUST-0454,Aarav Thomas,Horizon Labs,aarav.thomas@horizonlabs.com,Pro,199.0,2025-03-11,15,9,4,5,2.67,18.04,0,86.6,0,100.0,1
+CUST-0455,Priya Kim,Nexus Solutions,priya.kim@nexussolutions.com,Starter,49.0,2025-01-04,18,6,6,3,1.5,24.0,0,38.2,0,100.0,1
+CUST-0456,Pat Garcia,ByteWorks,pat.garcia@byteworks.com,Starter,49.0,2025-02-25,16,10,5,4,2.6,8.04,14,54.6,0,100.0,1
+CUST-0457,Alex Rodriguez,InnoWave,alex.rodriguez@innowave.com,Enterprise,799.0,2025-05-24,13,8,2,2,3.25,20.58,0,92.6,49,50.74,0
+CUST-0458,Sam Rodriguez,InnoWave,sam.rodriguez@innowave.com,Enterprise,799.0,2025-07-03,12,10,5,3,2.6,29.9,14,40.5,0,100.0,1
+CUST-0459,Sam Smith,TechPulse,sam.smith@techpulse.com,Starter,49.0,2025-03-27,15,5,2,1,2.6,6.1,0,80.6,52,47.14,0
+CUST-0460,Sam Taylor,CloudScale,sam.taylor@cloudscale.com,Pro,199.0,2025-10-25,8,10,3,2,3.5,17.93,0,79.8,41,58.02,0
+CUST-0461,Sophia Williams,Horizon Labs,sophia.williams@horizonlabs.com,Enterprise,799.0,2025-03-19,15,4,3,2,2.25,30.8,7,94.7,29,70.73,0
+CUST-0462,Alex Smith,DataFlow,alex.smith@dataflow.com,Starter,49.0,2025-03-23,15,3,2,0,2.33,57.0,0,17.5,46,53.58,0
+CUST-0463,Siddharth Garcia,CloudScale,siddharth.garcia@cloudscale.com,Starter,49.0,2025-05-16,13,8,2,2,3.25,21.1,0,35.8,43,56.42,0
+CUST-0464,Priya Thomas,ByteWorks,priya.thomas@byteworks.com,Starter,49.0,2025-09-09,9,8,3,1,3.62,21.5,0,90.8,54,45.92,0
+CUST-0465,Sam Williams,InnoWave,sam.williams@innowave.com,Enterprise,799.0,2025-08-10,10,6,6,1,2.17,24.0,0,94.4,18,81.23,0
+CUST-0466,Ananya Rodriguez,Starlight Systems,ananya.rodriguez@starlightsystems.com,Starter,49.0,2025-06-27,12,3,1,2,1.33,19.6,25,26.4,20,79.69,0
+CUST-0467,Liam Verma,Acme Corp,liam.verma@acmecorp.com,Starter,49.0,2025-04-14,14,4,4,2,2.0,24.0,14,18.6,7,92.54,1
+CUST-0468,Ananya Jones,Starlight Systems,ananya.jones@starlightsystems.com,Pro,199.0,2025-01-27,17,10,5,4,2.8,36.5,0,78.9,0,99.71,1
+CUST-0469,Ananya Garcia,TechPulse,ananya.garcia@techpulse.com,Starter,49.0,2025-07-20,11,2,2,0,2.5,24.0,0,20.3,56,43.97,0
+CUST-0470,Olivia Brown,CloudScale,olivia.brown@cloudscale.com,Enterprise,799.0,2025-07-06,12,4,1,2,2.75,29.73,0,32.6,47,52.74,0
+CUST-0471,Alex Mahato,Apex Global,alex.mahato@apexglobal.com,Enterprise,799.0,2025-08-06,10,3,2,0,3.0,12.3,0,59.0,63,36.1,0
+CUST-0472,Taylor Smith,InnoWave,taylor.smith@innowave.com,Starter,49.0,2025-03-02,16,6,3,3,3.0,24.1,3,77.9,25,74.01,0
+CUST-0473,Rohan Patel,Starlight Systems,rohan.patel@starlightsystems.com,Pro,199.0,2025-08-05,11,9,3,2,3.56,16.03,0,53.3,39,60.23,0
+CUST-0474,Taylor Miller,InnoWave,taylor.miller@innowave.com,Starter,49.0,2025-10-08,8,8,6,1,2.75,44.4,0,81.5,22,77.85,0
+CUST-0475,Liam Rodriguez,TechPulse,liam.rodriguez@techpulse.com,Starter,49.0,2025-09-02,10,5,1,3,2.8,25.12,0,31.6,37,62.44,0
+CUST-0476,Chris Garcia,Acme Corp,chris.garcia@acmecorp.com,Starter,49.0,2025-07-31,11,10,4,0,2.9,44.35,0,58.3,47,52.97,0
+CUST-0477,Taylor Garcia,Vanguard AI,taylor.garcia@vanguardai.com,Starter,49.0,2025-07-18,11,5,3,1,2.4,40.3,0,28.6,38,61.94,0
+CUST-0478,Sophia Smith,QuantumSoft,sophia.smith@quantumsoft.com,Enterprise,799.0,2025-02-22,16,4,0,0,4.25,14.65,0,67.2,90,9.28,0
+CUST-0479,Aarav Patel,Acme Corp,aarav.patel@acmecorp.com,Starter,49.0,2025-04-26,14,7,3,1,3.29,19.55,0,21.0,44,55.61,0
+CUST-0480,Siddharth Mahato,Vanguard AI,siddharth.mahato@vanguardai.com,Pro,199.0,2025-05-23,13,4,3,0,2.75,17.9,0,83.4,56,43.66,0
+CUST-0481,Casey Taylor,InnoWave,casey.taylor@innowave.com,Starter,49.0,2025-09-18,9,8,2,2,3.12,20.98,0,62.3,45,54.77,0
+CUST-0482,Alex Mahato,Starlight Systems,alex.mahato@starlightsystems.com,Enterprise,799.0,2025-09-05,9,9,6,1,3.0,11.93,0,43.2,20,79.68,0
+CUST-0483,Ananya Garcia,Starlight Systems,ananya.garcia@starlightsystems.com,Pro,199.0,2025-08-17,10,4,2,2,2.75,18.8,3,88.5,43,56.95,0
+CUST-0484,Aarav Johnson,Vanguard AI,aarav.johnson@vanguardai.com,Pro,199.0,2025-08-09,10,5,1,0,3.6,15.68,0,53.9,76,23.81,0
+CUST-0485,Jordan Sharma,ByteWorks,jordan.sharma@byteworks.com,Pro,199.0,2025-07-24,11,3,2,1,1.33,16.0,25,81.1,27,72.22,0
+CUST-0486,Sam Davis,QuantumSoft,sam.davis@quantumsoft.com,Starter,49.0,2025-04-16,14,5,2,3,2.0,44.0,3,85.4,26,73.26,0
+CUST-0487,Taylor Taylor,InnoWave,taylor.taylor@innowave.com,Pro,199.0,2025-02-21,16,10,6,1,2.7,27.45,14,73.1,12,87.49,1
+CUST-0488,Noah Smith,Starlight Systems,noah.smith@starlightsystems.com,Starter,49.0,2025-10-25,8,5,5,2,1.6,24.0,14,75.4,1,98.06,1
+CUST-0489,Taylor Patel,QuantumSoft,taylor.patel@quantumsoft.com,Pro,199.0,2025-02-14,16,10,4,4,3.1,26.77,0,70.7,9,90.13,1
+CUST-0490,Liam Taylor,ByteWorks,liam.taylor@byteworks.com,Starter,49.0,2025-06-11,12,7,1,0,4.14,23.95,0,28.7,78,21.99,0
+CUST-0491,Noah Mahato,TechPulse,noah.mahato@techpulse.com,Starter,49.0,2025-04-16,14,10,3,1,3.3,39.67,0,48.0,47,52.8,0
+CUST-0492,Dakota Johnson,Nexus Solutions,dakota.johnson@nexussolutions.com,Starter,49.0,2025-04-15,14,2,1,0,4.0,12.0,0,67.1,80,19.29,0
+CUST-0493,Dakota Mahato,Synergy Tech,dakota.mahato@synergytech.com,Pro,199.0,2025-01-16,17,2,2,1,3.0,24.0,14,90.0,48,51.4,0
+CUST-0494,Morgan Verma,Apex Global,morgan.verma@apexglobal.com,Starter,49.0,2025-08-30,10,8,5,3,2.75,20.23,14,80.8,1,98.32,1
+CUST-0495,Jordan Davis,Vanguard AI,jordan.davis@vanguardai.com,Pro,199.0,2025-08-18,10,2,2,1,1.5,24.0,0,71.0,43,56.9,0
+CUST-0496,Siddharth Patel,Starlight Systems,siddharth.patel@starlightsystems.com,Pro,199.0,2025-01-09,17,5,3,1,3.2,10.35,14,29.8,36,63.82,0
+CUST-0497,Rohan Jackson,Vanguard AI,rohan.jackson@vanguardai.com,Starter,49.0,2025-01-06,18,8,4,2,3.25,25.9,0,91.5,33,66.85,0
+CUST-0498,Dakota Davis,Acme Corp,dakota.davis@acmecorp.com,Pro,199.0,2025-10-16,8,3,2,1,2.0,38.2,0,38.7,43,56.13,0
+CUST-0499,Alex Sharma,Vanguard AI,alex.sharma@vanguardai.com,Enterprise,799.0,2025-03-19,15,2,1,0,4.0,2.7,0,64.6,80,19.54,0
+CUST-0500,Sam Jackson,Starlight Systems,sam.jackson@starlightsystems.com,Enterprise,799.0,2025-01-18,17,7,4,3,2.57,27.93,14,21.9,2,97.64,1
+CUST-0501,Chris Johnson,TechPulse,chris.johnson@techpulse.com,Enterprise,799.0,2025-06-20,12,3,2,0,2.33,6.6,0,50.5,57,42.28,0
+CUST-0502,Sophia Chen,TechPulse,sophia.chen@techpulse.com,Starter,49.0,2025-06-11,12,3,1,2,2.0,62.85,3,18.0,30,70.0,0
+CUST-0503,Taylor Thomas,Starlight Systems,taylor.thomas@starlightsystems.com,Pro,199.0,2025-09-18,9,2,1,1,3.0,53.0,0,63.2,54,45.68,0
+CUST-0504,Morgan Verma,Acme Corp,morgan.verma@acmecorp.com,Enterprise,799.0,2025-09-09,9,9,3,3,3.11,30.6,0,55.4,26,73.57,0
+CUST-0505,Olivia Thomas,Nexus Solutions,olivia.thomas@nexussolutions.com,Starter,49.0,2025-03-28,15,2,1,0,3.0,19.8,0,22.7,68,31.73,0
+CUST-0506,Sophia Rodriguez,Synergy Tech,sophia.rodriguez@synergytech.com,Pro,199.0,2025-10-15,8,2,1,1,3.0,6.1,0,16.4,57,42.36,0
+CUST-0507,Riley Taylor,QuantumSoft,riley.taylor@quantumsoft.com,Starter,49.0,2025-09-01,10,9,6,2,2.89,12.77,14,34.1,0,99.88,1
+CUST-0508,Priya Johnson,TechPulse,priya.johnson@techpulse.com,Enterprise,799.0,2025-09-29,9,3,1,1,3.33,11.25,0,76.4,66,33.69,0
+CUST-0509,Siddharth Patel,Vanguard AI,siddharth.patel@vanguardai.com,Pro,199.0,2025-07-07,11,5,2,1,3.6,8.67,7,57.4,54,45.66,0
+CUST-0510,Dakota Mahato,Starlight Systems,dakota.mahato@starlightsystems.com,Pro,199.0,2025-07-23,11,8,5,6,1.62,27.0,7,25.3,0,100.0,1
+CUST-0511,Taylor Miller,CloudScale,taylor.miller@cloudscale.com,Enterprise,799.0,2025-06-17,12,6,6,2,2.0,24.0,25,46.7,0,100.0,1
+CUST-0512,Priya Kim,Acme Corp,priya.kim@acmecorp.com,Starter,49.0,2025-05-05,14,9,3,2,3.22,12.78,3,38.5,33,66.17,0
+CUST-0513,Pat Mahato,Nexus Solutions,pat.mahato@nexussolutions.com,Enterprise,799.0,2025-02-06,17,10,7,1,2.2,21.63,3,25.8,2,97.62,1
+CUST-0514,Jordan Taylor,Starlight Systems,jordan.taylor@starlightsystems.com,Enterprise,799.0,2025-06-02,13,2,2,1,1.5,24.0,0,82.3,44,55.77,0
+CUST-0515,Rohan Garcia,Acme Corp,rohan.garcia@acmecorp.com,Starter,49.0,2025-05-06,14,8,2,2,3.38,23.28,7,33.2,40,59.88,0
+CUST-0516,Alex Smith,Horizon Labs,alex.smith@horizonlabs.com,Starter,49.0,2025-04-04,15,9,5,2,2.67,29.7,14,79.3,10,89.14,1
+CUST-0517,Sophia Johnson,Vanguard AI,sophia.johnson@vanguardai.com,Starter,49.0,2025-08-02,11,3,2,2,2.0,31.3,0,94.3,39,60.57,0
+CUST-0518,Chris Rodriguez,Nexus Solutions,chris.rodriguez@nexussolutions.com,Pro,199.0,2025-05-21,13,2,1,0,3.5,9.9,0,43.2,74,25.68,0
+CUST-0519,Aarav Brown,TechPulse,aarav.brown@techpulse.com,Starter,49.0,2025-05-12,13,6,4,2,2.0,34.25,0,17.4,15,84.26,1
+CUST-0520,Casey Williams,CloudScale,casey.williams@cloudscale.com,Pro,199.0,2025-10-24,8,2,2,1,2.5,24.0,3,23.8,44,55.42,0
+CUST-0521,Priya Verma,Vanguard AI,priya.verma@vanguardai.com,Pro,199.0,2025-09-27,9,2,1,1,1.5,42.1,3,69.1,49,50.89,0
+CUST-0522,Aarav Jackson,QuantumSoft,aarav.jackson@quantumsoft.com,Enterprise,799.0,2025-01-24,17,4,3,1,3.25,34.8,25,37.9,30,69.21,0
+CUST-0523,Rohan Kim,InnoWave,rohan.kim@innowave.com,Enterprise,799.0,2025-07-07,11,3,2,0,3.0,20.5,0,48.6,62,37.14,0
+CUST-0524,Riley Davis,TechPulse,riley.davis@techpulse.com,Pro,199.0,2025-01-16,17,7,3,2,2.43,34.0,25,69.3,17,82.64,1
+CUST-0525,Jordan Chen,InnoWave,jordan.chen@innowave.com,Pro,199.0,2025-10-05,8,9,4,3,2.78,39.32,0,27.4,12,87.04,1
+CUST-0526,Sophia Anderson,QuantumSoft,sophia.anderson@quantumsoft.com,Pro,199.0,2025-02-20,16,10,5,1,2.7,42.54,25,64.4,13,86.96,1
+CUST-0527,Riley Anderson,DataFlow,riley.anderson@dataflow.com,Enterprise,799.0,2025-05-24,13,6,3,1,2.83,21.33,3,43.6,41,58.77,0
+CUST-0528,Liam Mahato,DataFlow,liam.mahato@dataflow.com,Pro,199.0,2025-08-31,10,6,2,1,3.67,26.35,0,33.1,56,43.36,0
+CUST-0529,Dakota Williams,ByteWorks,dakota.williams@byteworks.com,Enterprise,799.0,2025-07-10,11,3,2,0,3.0,68.3,0,73.2,57,42.68,0
+CUST-0530,Priya Jackson,InnoWave,priya.jackson@innowave.com,Enterprise,799.0,2025-05-26,13,3,1,0,3.0,17.7,0,78.0,73,26.2,0
+CUST-0531,Dakota Rodriguez,QuantumSoft,dakota.rodriguez@quantumsoft.com,Pro,199.0,2025-07-17,11,2,0,0,5.0,32.2,0,66.0,96,3.4,0
+CUST-0532,Riley Miller,Starlight Systems,riley.miller@starlightsystems.com,Starter,49.0,2025-03-19,15,8,4,2,3.0,10.65,14,24.6,16,83.94,1
+CUST-0533,Olivia Garcia,CloudScale,olivia.garcia@cloudscale.com,Starter,49.0,2025-06-29,12,3,2,1,3.0,40.5,14,86.5,48,51.75,0
+CUST-0534,Aarav Patel,Vanguard AI,aarav.patel@vanguardai.com,Starter,49.0,2025-04-04,15,9,7,3,2.11,33.95,0,85.0,0,100.0,1
+CUST-0535,Alex Jackson,InnoWave,alex.jackson@innowave.com,Pro,199.0,2025-05-05,14,9,4,1,2.67,13.3,14,84.9,29,70.58,0
+CUST-0536,Aarav Smith,QuantumSoft,aarav.smith@quantumsoft.com,Pro,199.0,2025-03-12,15,4,2,3,2.5,3.7,0,17.5,25,74.25,0
+CUST-0537,Aarav Davis,Vanguard AI,aarav.davis@vanguardai.com,Starter,49.0,2025-04-05,15,4,1,0,3.5,24.5,0,73.6,77,22.64,0
+CUST-0538,Casey Sharma,ByteWorks,casey.sharma@byteworks.com,Enterprise,799.0,2025-05-26,13,7,4,2,2.86,30.37,0,84.8,29,70.66,0
+CUST-0539,Liam Johnson,Vanguard AI,liam.johnson@vanguardai.com,Pro,199.0,2025-08-02,11,6,6,4,1.67,24.0,25,84.1,0,100.0,1
+CUST-0540,Rohan Miller,Horizon Labs,rohan.miller@horizonlabs.com,Enterprise,799.0,2025-10-08,8,5,3,2,2.0,24.1,0,16.8,23,76.32,0
+CUST-0541,Pat Taylor,TechPulse,pat.taylor@techpulse.com,Pro,199.0,2025-01-31,17,9,5,2,3.56,15.23,14,69.6,17,83.0,1
+CUST-0542,Pat Sharma,CloudScale,pat.sharma@cloudscale.com,Enterprise,799.0,2025-02-26,16,2,1,1,4.0,41.7,0,75.9,71,28.41,0
+CUST-0543,Taylor Miller,CloudScale,taylor.miller@cloudscale.com,Starter,49.0,2025-05-20,13,6,2,0,3.33,19.25,0,92.2,69,30.11,0
+CUST-0544,Olivia Johnson,CloudScale,olivia.johnson@cloudscale.com,Pro,199.0,2025-03-15,15,3,1,0,2.67,22.5,0,88.7,72,27.8,0
+CUST-0545,Ananya Johnson,Apex Global,ananya.johnson@apexglobal.com,Pro,199.0,2025-09-04,10,3,1,1,2.67,30.85,7,25.9,51,48.28,0
+CUST-0546,Emily Williams,Starlight Systems,emily.williams@starlightsystems.com,Enterprise,799.0,2025-04-20,14,8,6,3,2.38,6.55,0,15.2,0,100.0,1
+CUST-0547,Dakota Taylor,Horizon Labs,dakota.taylor@horizonlabs.com,Starter,49.0,2025-08-27,10,10,7,1,2.5,42.77,0,57.9,9,90.21,1
+CUST-0548,Rohan Garcia,CloudScale,rohan.garcia@cloudscale.com,Enterprise,799.0,2025-02-26,16,3,2,0,2.33,14.1,0,36.8,56,43.65,0
+CUST-0549,Jordan Thomas,DataFlow,jordan.thomas@dataflow.com,Pro,199.0,2025-03-01,16,5,1,0,3.4,23.4,0,39.0,73,26.9,0
+CUST-0550,Olivia Mahato,Horizon Labs,olivia.mahato@horizonlabs.com,Pro,199.0,2025-05-05,14,6,1,0,3.83,28.0,0,40.9,76,23.24,0
+CUST-0551,Priya Taylor,Starlight Systems,priya.taylor@starlightsystems.com,Pro,199.0,2025-10-20,8,6,4,4,2.0,56.7,0,38.9,0,100.0,1
+CUST-0552,Jordan Jones,InnoWave,jordan.jones@innowave.com,Starter,49.0,2025-01-11,17,10,7,4,2.8,23.33,0,82.9,0,100.0,1
+CUST-0553,Sophia Jones,Synergy Tech,sophia.jones@synergytech.com,Pro,199.0,2025-04-26,14,2,0,0,4.5,14.0,0,26.1,88,11.39,0
+CUST-0554,Sam Smith,DataFlow,sam.smith@dataflow.com,Starter,49.0,2025-07-28,11,9,4,2,2.89,11.54,0,56.1,26,73.28,0
+CUST-0555,Priya Patel,Vanguard AI,priya.patel@vanguardai.com,Pro,199.0,2025-01-02,18,9,5,3,2.89,14.95,0,45.9,7,92.3,1
+CUST-0556,Rohan Miller,InnoWave,rohan.miller@innowave.com,Starter,49.0,2025-03-11,15,4,3,2,2.5,2.5,0,51.3,31,68.87,0
+CUST-0557,Aarav Davis,Vanguard AI,aarav.davis@vanguardai.com,Enterprise,799.0,2025-10-17,8,4,2,0,3.25,34.5,0,18.3,61,38.17,0
+CUST-0558,Morgan Rodriguez,QuantumSoft,morgan.rodriguez@quantumsoft.com,Starter,49.0,2025-07-18,11,7,4,2,2.71,18.2,0,84.3,28,71.86,0
+CUST-0559,Sam Kim,ByteWorks,sam.kim@byteworks.com,Enterprise,799.0,2025-09-10,9,4,1,2,2.75,10.83,25,83.6,37,62.64,0
+CUST-0560,Sam Patel,Apex Global,sam.patel@apexglobal.com,Enterprise,799.0,2025-05-30,13,2,0,0,5.0,10.7,0,20.1,92,7.99,0
+CUST-0561,Ananya Taylor,ByteWorks,ananya.taylor@byteworks.com,Enterprise,799.0,2025-08-16,10,2,0,1,3.0,19.1,0,86.3,72,27.37,0
+CUST-0562,Liam Mahato,Synergy Tech,liam.mahato@synergytech.com,Pro,199.0,2025-03-06,16,8,2,2,3.75,25.43,0,37.9,47,52.21,0
+CUST-0563,Taylor Johnson,DataFlow,taylor.johnson@dataflow.com,Starter,49.0,2025-05-20,13,5,2,2,2.8,20.53,3,17.9,36,63.61,0
+CUST-0564,Olivia Johnson,TechPulse,olivia.johnson@techpulse.com,Pro,199.0,2025-02-22,16,8,4,0,3.12,11.9,0,26.4,45,54.36,0
+CUST-0565,Siddharth Taylor,InnoWave,siddharth.taylor@innowave.com,Enterprise,799.0,2025-01-23,17,3,2,1,2.33,2.1,14,49.4,39,60.79,0
+CUST-0566,Sophia Davis,DataFlow,sophia.davis@dataflow.com,Pro,199.0,2025-02-05,17,7,5,4,1.29,25.95,0,72.3,0,100.0,1
+CUST-0567,Pat Mahato,QuantumSoft,pat.mahato@quantumsoft.com,Pro,199.0,2025-09-08,9,5,4,0,2.4,44.5,0,64.2,43,56.38,0
+CUST-0568,Priya Jones,TechPulse,priya.jones@techpulse.com,Pro,199.0,2025-03-12,15,8,3,2,3.0,18.4,0,43.7,34,65.63,0
+CUST-0569,Taylor Garcia,Apex Global,taylor.garcia@apexglobal.com,Pro,199.0,2025-10-20,8,8,2,4,2.62,37.83,0,80.9,23,76.91,0
+CUST-0570,Emily Brown,ByteWorks,emily.brown@byteworks.com,Enterprise,799.0,2025-04-14,14,2,1,0,3.0,22.0,0,18.0,67,32.2,0
+CUST-0571,Jordan Anderson,Vanguard AI,jordan.anderson@vanguardai.com,Enterprise,799.0,2025-05-01,14,3,0,0,4.67,27.93,0,88.9,96,3.78,0
+CUST-0572,Riley Kim,ByteWorks,riley.kim@byteworks.com,Pro,199.0,2025-02-15,16,5,1,1,3.4,40.47,0,59.6,65,34.84,0
+CUST-0573,Morgan Mahato,TechPulse,morgan.mahato@techpulse.com,Enterprise,799.0,2025-08-05,11,5,4,0,2.2,48.1,0,27.7,30,69.63,0
+CUST-0574,Rohan Chen,ByteWorks,rohan.chen@byteworks.com,Pro,199.0,2025-09-21,9,10,6,4,2.4,39.83,0,36.0,0,100.0,1
+CUST-0575,Chris Anderson,Nexus Solutions,chris.anderson@nexussolutions.com,Enterprise,799.0,2025-09-09,9,7,2,0,3.57,17.84,0,35.8,66,33.85,0
+CUST-0576,Noah Kim,InnoWave,noah.kim@innowave.com,Starter,49.0,2025-08-29,10,6,5,1,3.0,58.5,7,67.4,18,81.46,0
+CUST-0577,Rohan Garcia,ByteWorks,rohan.garcia@byteworks.com,Pro,199.0,2025-04-21,14,8,4,1,3.25,21.62,7,68.4,36,63.36,0
+CUST-0578,Alex Davis,Synergy Tech,alex.davis@synergytech.com,Starter,49.0,2025-02-02,17,8,4,0,2.75,20.9,0,59.3,45,54.07,0
+CUST-0579,Priya Patel,DataFlow,priya.patel@dataflow.com,Pro,199.0,2025-02-11,16,6,1,0,4.0,38.54,0,23.1,76,23.69,0
+CUST-0580,Rohan Smith,Synergy Tech,rohan.smith@synergytech.com,Pro,199.0,2025-09-27,9,3,2,1,2.33,43.2,0,39.9,46,53.34,0
+CUST-0581,Jordan Sharma,Horizon Labs,jordan.sharma@horizonlabs.com,Enterprise,799.0,2025-10-04,9,4,1,0,3.75,27.83,0,52.7,77,22.73,0
+CUST-0582,Priya Kim,ByteWorks,priya.kim@byteworks.com,Pro,199.0,2025-04-05,15,3,0,2,3.33,44.9,0,68.2,63,36.51,0
+CUST-0583,Noah Taylor,Nexus Solutions,noah.taylor@nexussolutions.com,Starter,49.0,2025-02-24,16,7,4,2,2.0,33.2,25,54.0,4,95.6,1
+CUST-0584,Dakota Patel,Vanguard AI,dakota.patel@vanguardai.com,Enterprise,799.0,2025-02-11,16,7,4,1,3.29,16.63,0,18.6,36,63.85,0
+CUST-0585,Riley Thomas,QuantumSoft,riley.thomas@quantumsoft.com,Starter,49.0,2025-08-17,10,4,1,1,2.75,23.87,0,72.9,61,38.71,0
+CUST-0586,Rohan Davis,ByteWorks,rohan.davis@byteworks.com,Starter,49.0,2025-05-02,14,10,6,4,2.1,24.35,0,70.0,0,100.0,1
+CUST-0587,Liam Chen,Starlight Systems,liam.chen@starlightsystems.com,Starter,49.0,2025-08-06,10,5,3,2,3.4,35.55,25,48.9,23,76.91,0
+CUST-0588,Pat Smith,DataFlow,pat.smith@dataflow.com,Enterprise,799.0,2025-02-26,16,3,2,1,1.67,9.9,0,82.3,45,54.44,0
+CUST-0589,Ananya Sharma,ByteWorks,ananya.sharma@byteworks.com,Enterprise,799.0,2025-10-17,8,8,3,1,3.0,19.04,25,41.8,29,70.82,0
+CUST-0590,Siddharth Anderson,Vanguard AI,siddharth.anderson@vanguardai.com,Enterprise,799.0,2025-09-24,9,6,3,0,3.17,29.1,0,80.4,59,40.63,0
+CUST-0591,Rohan Brown,ByteWorks,rohan.brown@byteworks.com,Enterprise,799.0,2025-06-06,13,8,4,2,2.62,11.02,0,27.3,21,78.27,0
+CUST-0592,Casey Miller,Vanguard AI,casey.miller@vanguardai.com,Enterprise,799.0,2025-03-20,15,4,1,1,3.75,41.93,3,43.6,64,35.44,0
+CUST-0593,Morgan Miller,Horizon Labs,morgan.miller@horizonlabs.com,Enterprise,799.0,2025-05-09,13,7,5,1,2.57,25.2,25,17.3,7,92.7,1
+CUST-0594,Morgan Taylor,QuantumSoft,morgan.taylor@quantumsoft.com,Starter,49.0,2025-05-31,13,2,0,1,3.5,29.15,0,49.7,72,27.03,0
+CUST-0595,Dakota Smith,Apex Global,dakota.smith@apexglobal.com,Enterprise,799.0,2025-02-21,16,6,3,1,3.67,43.17,7,39.9,45,54.88,0
+CUST-0596,Sam Mahato,InnoWave,sam.mahato@innowave.com,Starter,49.0,2025-01-29,17,10,5,2,2.9,21.56,0,37.7,16,83.03,1
+CUST-0597,Chris Verma,Vanguard AI,chris.verma@vanguardai.com,Starter,49.0,2025-10-11,8,7,5,1,2.71,5.9,14,71.1,20,79.58,0
+CUST-0598,Siddharth Smith,ByteWorks,siddharth.smith@byteworks.com,Enterprise,799.0,2025-01-27,17,3,2,1,2.33,3.8,14,90.5,43,56.68,0
+CUST-0599,Morgan Verma,Nexus Solutions,morgan.verma@nexussolutions.com,Enterprise,799.0,2025-05-30,13,6,4,2,2.5,17.4,0,82.6,26,73.74,0
+CUST-0600,Aarav Johnson,QuantumSoft,aarav.johnson@quantumsoft.com,Starter,49.0,2025-10-03,9,7,2,2,3.43,40.42,14,26.7,35,64.3,0
+CUST-0601,Pat Chen,CloudScale,pat.chen@cloudscale.com,Pro,199.0,2025-06-05,13,6,4,0,2.67,40.4,0,40.1,43,56.66,0
+CUST-0602,Jordan Anderson,Vanguard AI,jordan.anderson@vanguardai.com,Enterprise,799.0,2025-09-08,9,9,7,2,2.44,16.8,7,34.5,0,100.0,1
+CUST-0603,Aarav Chen,InnoWave,aarav.chen@innowave.com,Starter,49.0,2025-06-25,12,4,3,2,2.25,20.8,0,58.8,29,70.12,0
+CUST-0604,Aarav Anderson,CloudScale,aarav.anderson@cloudscale.com,Enterprise,799.0,2025-08-18,10,6,4,1,2.67,17.85,0,60.9,35,64.58,0
+CUST-0605,Chris Taylor,ByteWorks,chris.taylor@byteworks.com,Pro,199.0,2025-01-09,17,7,3,2,2.29,13.82,3,89.1,31,68.6,0
+CUST-0606,Emily Taylor,DataFlow,emily.taylor@dataflow.com,Starter,49.0,2025-04-15,14,3,2,2,2.33,2.6,0,54.1,38,61.92,0
+CUST-0607,Olivia Sharma,InnoWave,olivia.sharma@innowave.com,Enterprise,799.0,2025-01-30,17,10,4,2,2.9,22.67,0,51.0,26,73.7,0
+CUST-0608,Sophia Williams,QuantumSoft,sophia.williams@quantumsoft.com,Enterprise,799.0,2025-02-21,16,2,2,0,2.0,24.0,0,79.0,57,42.1,0
+CUST-0609,Aarav Mahato,Apex Global,aarav.mahato@apexglobal.com,Enterprise,799.0,2025-04-05,15,3,1,1,3.33,44.8,14,70.2,57,42.71,0
+CUST-0610,Taylor Smith,Acme Corp,taylor.smith@acmecorp.com,Enterprise,799.0,2025-09-27,9,4,2,1,2.75,23.1,0,15.9,47,52.41,0
+CUST-0611,Noah Davis,TechPulse,noah.davis@techpulse.com,Enterprise,799.0,2025-06-30,12,9,4,2,2.89,13.54,7,49.9,21,78.1,0
+CUST-0612,Casey Miller,Acme Corp,casey.miller@acmecorp.com,Starter,49.0,2025-07-19,11,7,2,1,3.71,30.88,7,73.4,56,43.15,0
+CUST-0613,Sophia Garcia,Horizon Labs,sophia.garcia@horizonlabs.com,Enterprise,799.0,2025-05-29,13,6,3,2,2.17,42.0,0,84.8,31,68.19,0
+CUST-0614,Chris Anderson,TechPulse,chris.anderson@techpulse.com,Enterprise,799.0,2025-10-02,9,2,2,1,2.0,24.0,25,87.5,33,66.25,0
+CUST-0615,Emily Anderson,Acme Corp,emily.anderson@acmecorp.com,Enterprise,799.0,2025-07-24,11,6,2,0,3.83,43.05,0,82.1,72,27.12,0
+CUST-0616,Morgan Taylor,ByteWorks,morgan.taylor@byteworks.com,Pro,199.0,2025-06-21,12,5,3,2,2.0,36.1,0,28.8,24,75.12,0
+CUST-0617,Casey Jones,TechPulse,casey.jones@techpulse.com,Enterprise,799.0,2025-05-24,13,10,5,2,3.2,32.8,0,93.5,24,75.05,0
+CUST-0618,Priya Sharma,Horizon Labs,priya.sharma@horizonlabs.com,Enterprise,799.0,2025-04-22,14,10,4,2,3.5,17.22,3,73.0,31,68.5,0
+CUST-0619,Casey Miller,QuantumSoft,casey.miller@quantumsoft.com,Pro,199.0,2025-04-24,14,8,5,1,3.12,18.13,7,47.1,25,74.49,0
+CUST-0620,Morgan Davis,InnoWave,morgan.davis@innowave.com,Pro,199.0,2025-09-07,9,6,3,1,3.0,47.9,3,16.5,39,60.15,0
+CUST-0621,Morgan Rodriguez,ByteWorks,morgan.rodriguez@byteworks.com,Enterprise,799.0,2025-08-16,10,3,3,0,2.67,24.0,0,18.0,49,50.87,0
+CUST-0622,Siddharth Smith,CloudScale,siddharth.smith@cloudscale.com,Enterprise,799.0,2025-07-18,11,3,2,0,3.0,16.5,0,29.2,60,39.08,0
+CUST-0623,Liam Sharma,InnoWave,liam.sharma@innowave.com,Enterprise,799.0,2025-02-20,16,8,3,1,3.12,19.26,0,91.1,50,49.89,0
+CUST-0624,Casey Anderson,Acme Corp,casey.anderson@acmecorp.com,Starter,49.0,2025-01-06,18,2,2,0,1.5,24.0,0,34.0,49,50.6,0
+CUST-0625,Emily Jackson,DataFlow,emily.jackson@dataflow.com,Enterprise,799.0,2025-02-04,17,4,1,1,3.0,12.6,0,29.5,58,41.05,0
+CUST-0626,Aarav Rodriguez,DataFlow,aarav.rodriguez@dataflow.com,Starter,49.0,2025-02-26,16,10,4,6,2.5,29.52,0,65.9,0,100.0,1
+CUST-0627,Morgan Taylor,TechPulse,morgan.taylor@techpulse.com,Starter,49.0,2025-05-25,13,10,6,3,3.0,22.22,7,91.2,0,99.08,1
+CUST-0628,Alex Jones,TechPulse,alex.jones@techpulse.com,Starter,49.0,2025-08-05,11,2,2,0,3.0,24.0,0,75.5,65,34.45,0
+CUST-0629,Dakota Miller,QuantumSoft,dakota.miller@quantumsoft.com,Enterprise,799.0,2025-02-12,16,2,2,0,2.0,24.0,0,76.7,57,42.33,0
+CUST-0630,Priya Brown,Acme Corp,priya.brown@acmecorp.com,Starter,49.0,2025-02-11,16,6,3,3,2.33,47.6,0,75.9,22,77.74,0
+CUST-0631,Sophia Jackson,InnoWave,sophia.jackson@innowave.com,Starter,49.0,2025-05-03,14,9,5,3,3.22,32.95,3,79.2,11,88.1,1
+CUST-0632,Morgan Brown,Apex Global,morgan.brown@apexglobal.com,Starter,49.0,2025-09-05,9,9,5,0,3.33,29.82,0,68.6,43,56.47,0
+CUST-0633,Taylor Johnson,Nexus Solutions,taylor.johnson@nexussolutions.com,Starter,49.0,2025-07-03,12,3,0,1,4.0,18.37,14,80.2,71,28.38,0
+CUST-0634,Alex Verma,Vanguard AI,alex.verma@vanguardai.com,Pro,199.0,2025-04-27,14,2,1,1,3.0,25.9,0,17.6,57,42.24,0
+CUST-0635,Ananya Rodriguez,DataFlow,ananya.rodriguez@dataflow.com,Enterprise,799.0,2025-10-12,8,7,4,3,2.0,20.9,25,60.3,0,100.0,1
+CUST-0636,Chris Anderson,Nexus Solutions,chris.anderson@nexussolutions.com,Starter,49.0,2025-02-09,16,6,3,3,2.0,25.6,7,90.8,16,83.12,1
+CUST-0637,Casey Anderson,Nexus Solutions,casey.anderson@nexussolutions.com,Enterprise,799.0,2025-03-12,15,3,1,1,3.0,61.5,14,19.4,41,58.46,0
+CUST-0638,Sophia Sharma,DataFlow,sophia.sharma@dataflow.com,Enterprise,799.0,2025-10-05,8,5,3,1,2.8,9.35,14,54.7,35,64.53,0
+CUST-0639,Emily Jones,Acme Corp,emily.jones@acmecorp.com,Enterprise,799.0,2025-03-08,16,7,2,1,3.86,36.68,0,38.9,58,41.25,0
+CUST-0640,Siddharth Davis,Vanguard AI,siddharth.davis@vanguardai.com,Pro,199.0,2025-03-23,15,8,4,2,3.12,33.23,0,72.7,30,69.73,0
+CUST-0641,Noah Mahato,Acme Corp,noah.mahato@acmecorp.com,Enterprise,799.0,2025-02-03,17,8,4,1,2.62,12.12,0,81.7,37,62.83,0
+CUST-0642,Aarav Chen,QuantumSoft,aarav.chen@quantumsoft.com,Pro,199.0,2025-09-04,10,9,3,3,2.67,24.88,0,56.1,22,77.06,0
+CUST-0643,Sophia Davis,InnoWave,sophia.davis@innowave.com,Pro,199.0,2025-04-12,14,5,2,2,2.6,5.43,0,25.0,37,62.7,0
+CUST-0644,Sam Sharma,Apex Global,sam.sharma@apexglobal.com,Starter,49.0,2025-09-07,9,3,2,3,1.67,10.2,0,40.7,21,78.6,0
+CUST-0645,Liam Johnson,Nexus Solutions,liam.johnson@nexussolutions.com,Enterprise,799.0,2025-02-08,16,3,3,0,2.0,24.0,0,54.7,47,52.53,0
+CUST-0646,Morgan Verma,ByteWorks,morgan.verma@byteworks.com,Starter,49.0,2025-03-30,15,10,4,0,3.5,23.9,0,24.2,48,51.58,0
+CUST-0647,Riley Thomas,Synergy Tech,riley.thomas@synergytech.com,Starter,49.0,2025-07-28,11,10,5,4,2.8,25.2,14,51.0,0,100.0,1
+CUST-0648,Sophia Sharma,Starlight Systems,sophia.sharma@starlightsystems.com,Pro,199.0,2025-02-21,16,3,0,1,3.0,17.37,7,57.3,65,34.47,0
+CUST-0649,Priya Chen,InnoWave,priya.chen@innowave.com,Starter,49.0,2025-05-03,14,9,3,1,3.0,32.55,0,40.0,44,56.0,0
+CUST-0650,Olivia Mahato,Vanguard AI,olivia.mahato@vanguardai.com,Starter,49.0,2025-01-10,17,9,6,3,2.33,24.5,0,61.3,0,100.0,1
+CUST-0651,Sophia Mahato,Starlight Systems,sophia.mahato@starlightsystems.com,Pro,199.0,2025-09-06,9,2,2,0,2.0,24.0,0,39.2,53,46.08,0
+CUST-0652,Sam Smith,TechPulse,sam.smith@techpulse.com,Starter,49.0,2025-05-13,13,10,2,1,3.0,18.34,0,39.8,51,48.02,0
+CUST-0653,Siddharth Johnson,Synergy Tech,siddharth.johnson@synergytech.com,Pro,199.0,2025-08-01,11,2,1,0,2.5,3.5,0,79.7,69,30.03,0
+CUST-0654,Priya Verma,DataFlow,priya.verma@dataflow.com,Pro,199.0,2025-08-31,10,4,2,3,2.75,18.45,0,81.7,34,65.83,0
+CUST-0655,Alex Davis,TechPulse,alex.davis@techpulse.com,Pro,199.0,2025-08-19,10,7,4,2,3.43,22.93,0,50.6,30,69.51,0
+CUST-0656,Riley Taylor,InnoWave,riley.taylor@innowave.com,Enterprise,799.0,2025-06-08,12,5,1,1,3.0,28.07,0,60.4,62,37.96,0
+CUST-0657,Morgan Taylor,Starlight Systems,morgan.taylor@starlightsystems.com,Enterprise,799.0,2025-01-14,17,5,2,1,3.0,51.2,14,83.6,39,60.04,0
+CUST-0658,Riley Jones,Nexus Solutions,riley.jones@nexussolutions.com,Enterprise,799.0,2025-07-18,11,10,6,1,3.0,30.72,0,41.3,20,79.87,0
+CUST-0659,Olivia Garcia,ByteWorks,olivia.garcia@byteworks.com,Starter,49.0,2025-01-04,18,2,1,1,3.0,3.8,3,92.4,63,36.56,0
+CUST-0660,Olivia Anderson,Apex Global,olivia.anderson@apexglobal.com,Starter,49.0,2025-02-14,16,5,2,0,3.6,25.17,0,26.1,65,34.59,0
+CUST-0661,Taylor Anderson,Synergy Tech,taylor.anderson@synergytech.com,Starter,49.0,2025-03-13,15,2,1,1,1.5,60.0,14,35.9,31,68.81,0
+CUST-0662,Morgan Chen,Vanguard AI,morgan.chen@vanguardai.com,Starter,49.0,2025-08-05,11,10,3,2,3.3,24.57,14,70.9,31,68.91,0
+CUST-0663,Chris Taylor,Synergy Tech,chris.taylor@synergytech.com,Pro,199.0,2025-01-27,17,4,2,1,3.25,13.4,25,76.6,42,57.34,0
+CUST-0664,Siddharth Jackson,CloudScale,siddharth.jackson@cloudscale.com,Enterprise,799.0,2025-07-03,12,9,2,1,3.33,17.49,0,29.7,53,46.36,0
+CUST-0665,Emily Jones,Acme Corp,emily.jones@acmecorp.com,Starter,49.0,2025-08-18,10,2,2,1,1.5,24.0,7,20.3,33,66.17,0
+CUST-0666,Olivia Sharma,InnoWave,olivia.sharma@innowave.com,Pro,199.0,2025-02-16,16,2,0,0,4.5,34.95,0,70.2,93,6.98,0
+CUST-0667,Alex Miller,ByteWorks,alex.miller@byteworks.com,Starter,49.0,2025-08-20,10,4,2,0,3.25,19.8,0,24.9,62,37.51,0
+CUST-0668,Rohan Verma,Synergy Tech,rohan.verma@synergytech.com,Pro,199.0,2025-06-06,13,2,2,0,1.5,24.0,0,46.3,50,49.37,0
+CUST-0669,Noah Kim,Acme Corp,noah.kim@acmecorp.com,Starter,49.0,2025-10-07,8,6,2,2,3.0,17.02,25,65.9,29,70.41,0
+CUST-0670,Riley Patel,DataFlow,riley.patel@dataflow.com,Enterprise,799.0,2025-01-30,17,6,3,3,2.83,6.5,0,29.2,21,78.41,0
+CUST-0671,Riley Patel,Horizon Labs,riley.patel@horizonlabs.com,Pro,199.0,2025-06-01,13,7,3,2,3.43,21.98,0,88.2,42,57.75,0
+CUST-0672,Pat Rodriguez,Nexus Solutions,pat.rodriguez@nexussolutions.com,Pro,199.0,2025-02-06,17,4,4,2,2.75,24.0,7,85.6,24,75.64,0
+CUST-0673,Sam Anderson,InnoWave,sam.anderson@innowave.com,Enterprise,799.0,2025-10-15,8,10,6,1,2.8,30.35,3,69.2,19,80.48,0
+CUST-0674,Emily Miller,Acme Corp,emily.miller@acmecorp.com,Pro,199.0,2025-02-20,16,9,4,2,2.33,29.56,0,71.8,23,76.15,0
+CUST-0675,Aarav Patel,InnoWave,aarav.patel@innowave.com,Enterprise,799.0,2025-08-20,10,2,1,2,2.0,12.3,25,78.9,30,69.11,0
+CUST-0676,Morgan Garcia,Apex Global,morgan.garcia@apexglobal.com,Enterprise,799.0,2025-10-16,8,5,3,1,2.2,14.45,0,25.1,36,63.89,0
+CUST-0677,Rohan Miller,Horizon Labs,rohan.miller@horizonlabs.com,Pro,199.0,2025-08-08,10,2,1,0,2.0,42.4,0,69.3,64,35.07,0
+CUST-0678,Rohan Johnson,Acme Corp,rohan.johnson@acmecorp.com,Enterprise,799.0,2025-04-02,15,5,1,2,3.8,37.55,25,49.9,42,57.61,0
+CUST-0679,Emily Garcia,Apex Global,emily.garcia@apexglobal.com,Pro,199.0,2025-04-04,15,3,2,1,2.33,14.9,25,21.8,29,70.15,0
+CUST-0680,Chris Chen,Acme Corp,chris.chen@acmecorp.com,Starter,49.0,2025-10-14,8,4,2,0,3.0,8.8,0,35.7,61,38.43,0
+CUST-0681,Rohan Patel,Synergy Tech,rohan.patel@synergytech.com,Enterprise,799.0,2025-06-15,12,4,4,1,2.25,24.0,0,79.8,33,66.02,0
+CUST-0682,Olivia Rodriguez,ByteWorks,olivia.rodriguez@byteworks.com,Pro,199.0,2025-09-03,10,9,4,4,3.33,39.26,0,82.1,12,87.12,1
+CUST-0683,Taylor Jackson,Vanguard AI,taylor.jackson@vanguardai.com,Starter,49.0,2025-10-12,8,6,1,1,3.67,22.8,0,69.1,68,31.76,0
+CUST-0684,Jordan Brown,Nexus Solutions,jordan.brown@nexussolutions.com,Enterprise,799.0,2025-07-05,12,2,0,0,4.5,13.6,0,21.6,88,11.84,0
+CUST-0685,Chris Taylor,InnoWave,chris.taylor@innowave.com,Enterprise,799.0,2025-08-31,10,6,2,0,4.0,31.02,0,82.0,74,25.8,0
+CUST-0686,Aarav Sharma,Nexus Solutions,aarav.sharma@nexussolutions.com,Starter,49.0,2025-08-23,10,6,3,3,2.0,22.17,7,79.1,15,84.29,1
+CUST-0687,Sophia Rodriguez,ByteWorks,sophia.rodriguez@byteworks.com,Enterprise,799.0,2025-08-06,10,10,4,1,3.8,19.83,0,79.7,46,53.63,0
+CUST-0688,Priya Jones,Vanguard AI,priya.jones@vanguardai.com,Starter,49.0,2025-08-05,11,9,3,2,3.33,33.47,0,67.6,39,60.57,0
+CUST-0689,Aarav Rodriguez,Synergy Tech,aarav.rodriguez@synergytech.com,Starter,49.0,2025-06-11,12,5,1,1,3.6,15.25,0,87.5,69,30.45,0
+CUST-0690,Rohan Williams,InnoWave,rohan.williams@innowave.com,Enterprise,799.0,2025-06-02,13,7,4,1,2.29,30.63,25,22.3,13,86.48,1
+CUST-0691,Chris Miller,Horizon Labs,chris.miller@horizonlabs.com,Starter,49.0,2025-01-09,17,5,2,2,2.6,57.5,7,53.4,27,72.06,0
+CUST-0692,Aarav Chen,TechPulse,aarav.chen@techpulse.com,Starter,49.0,2025-03-08,16,9,7,4,1.89,16.65,14,82.3,0,100.0,1
+CUST-0693,Aarav Verma,Vanguard AI,aarav.verma@vanguardai.com,Starter,49.0,2025-06-02,13,6,4,1,2.33,15.85,0,21.8,28,71.15,0
+CUST-0694,Jordan Davis,CloudScale,jordan.davis@cloudscale.com,Enterprise,799.0,2025-09-19,9,2,2,0,2.0,24.0,0,40.6,54,45.94,0
+CUST-0695,Sophia Williams,Acme Corp,sophia.williams@acmecorp.com,Enterprise,799.0,2025-01-09,17,3,3,2,1.67,24.0,14,67.8,17,82.29,1
+CUST-0696,Noah Mahato,InnoWave,noah.mahato@innowave.com,Pro,199.0,2025-06-24,12,7,2,3,3.14,31.72,25,65.5,20,79.31,0
+CUST-0697,Olivia Rodriguez,Nexus Solutions,olivia.rodriguez@nexussolutions.com,Starter,49.0,2025-01-14,17,10,6,2,2.6,27.65,25,49.2,0,100.0,1
+CUST-0698,Chris Taylor,CloudScale,chris.taylor@cloudscale.com,Pro,199.0,2025-03-07,16,3,0,1,3.67,11.27,14,69.2,67,32.15,0
+CUST-0699,Dakota Patel,TechPulse,dakota.patel@techpulse.com,Starter,49.0,2025-03-01,16,3,1,2,3.0,11.95,0,87.9,54,45.21,0
+CUST-0700,Taylor Smith,QuantumSoft,taylor.smith@quantumsoft.com,Starter,49.0,2025-10-08,8,3,2,0,2.0,19.2,0,21.1,52,47.89,0
+CUST-0701,Liam Taylor,Starlight Systems,liam.taylor@starlightsystems.com,Pro,199.0,2025-06-26,12,2,1,2,3.0,27.1,0,46.5,50,49.35,0
+CUST-0702,Pat Taylor,QuantumSoft,pat.taylor@quantumsoft.com,Enterprise,799.0,2025-02-09,16,3,2,1,2.67,6.2,14,46.8,41,58.39,0
+CUST-0703,Olivia Davis,Horizon Labs,olivia.davis@horizonlabs.com,Starter,49.0,2025-05-07,14,5,1,1,3.0,10.57,0,82.3,64,35.77,0
+CUST-0704,Emily Garcia,TechPulse,emily.garcia@techpulse.com,Enterprise,799.0,2025-06-16,12,10,5,3,3.1,23.54,3,15.4,4,95.46,1
+CUST-0705,Casey Rodriguez,Starlight Systems,casey.rodriguez@starlightsystems.com,Starter,49.0,2025-07-09,11,9,5,4,2.67,18.27,0,27.2,0,100.0,1
+CUST-0706,Riley Anderson,ByteWorks,riley.anderson@byteworks.com,Enterprise,799.0,2025-08-30,10,6,3,3,3.5,12.23,25,89.2,17,82.08,1
+CUST-0707,Noah Sharma,Horizon Labs,noah.sharma@horizonlabs.com,Starter,49.0,2025-06-06,13,4,2,4,2.0,43.5,3,39.5,12,87.85,1
+CUST-0708,Dakota Sharma,Vanguard AI,dakota.sharma@vanguardai.com,Starter,49.0,2025-04-30,14,7,2,1,4.14,45.38,14,67.7,55,44.49,0
+CUST-0709,Noah Thomas,Apex Global,noah.thomas@apexglobal.com,Enterprise,799.0,2025-04-17,14,2,1,1,2.5,25.9,0,81.9,60,39.81,0
+CUST-0710,Siddharth Johnson,QuantumSoft,siddharth.johnson@quantumsoft.com,Enterprise,799.0,2025-05-23,13,3,1,0,4.0,6.7,0,79.0,81,18.1,0
+CUST-0711,Chris Mahato,Nexus Solutions,chris.mahato@nexussolutions.com,Starter,49.0,2025-09-22,9,10,5,2,2.7,28.62,0,36.8,15,84.72,1
+CUST-0712,Sam Chen,Nexus Solutions,sam.chen@nexussolutions.com,Enterprise,799.0,2025-06-05,13,10,4,3,3.2,24.93,7,26.7,12,87.93,1
+CUST-0713,Siddharth Verma,Horizon Labs,siddharth.verma@horizonlabs.com,Pro,199.0,2025-07-08,11,3,1,0,3.67,21.3,0,27.0,74,25.97,0
+CUST-0714,Priya Verma,TechPulse,priya.verma@techpulse.com,Enterprise,799.0,2025-04-29,14,9,4,0,3.33,17.16,0,82.5,52,47.08,0
+CUST-0715,Priya Mahato,DataFlow,priya.mahato@dataflow.com,Enterprise,799.0,2025-03-15,15,3,1,0,4.0,25.1,0,36.0,77,22.4,0
+CUST-0716,Sam Anderson,Synergy Tech,sam.anderson@synergytech.com,Starter,49.0,2025-10-20,8,2,1,0,3.0,17.3,0,28.2,68,31.18,0
+CUST-0717,Olivia Anderson,InnoWave,olivia.anderson@innowave.com,Enterprise,799.0,2025-08-04,11,7,4,2,2.14,43.7,3,31.5,16,83.51,1
+CUST-0718,Rohan Davis,Vanguard AI,rohan.davis@vanguardai.com,Enterprise,799.0,2025-05-12,13,7,3,2,2.57,15.5,14,15.4,19,80.29,0
+CUST-0719,Morgan Jackson,Apex Global,morgan.jackson@apexglobal.com,Starter,49.0,2025-01-06,18,6,4,1,2.83,34.75,14,49.8,27,72.75,0
+CUST-0720,Noah Mahato,DataFlow,noah.mahato@dataflow.com,Pro,199.0,2025-04-20,14,5,3,1,3.6,38.8,0,55.3,50,49.67,0
+CUST-0721,Ananya Garcia,Horizon Labs,ananya.garcia@horizonlabs.com,Pro,199.0,2025-01-30,17,4,1,1,2.75,39.23,0,31.8,57,42.82,0
+CUST-0722,Dakota Chen,Vanguard AI,dakota.chen@vanguardai.com,Pro,199.0,2025-07-15,11,8,4,2,2.62,26.45,0,23.5,21,78.65,0
+CUST-0723,Alex Williams,TechPulse,alex.williams@techpulse.com,Pro,199.0,2025-07-01,12,9,3,2,2.78,32.48,25,44.1,17,82.37,1
+CUST-0724,Ananya Jones,Horizon Labs,ananya.jones@horizonlabs.com,Pro,199.0,2025-05-11,13,10,2,1,3.5,25.34,14,15.5,45,54.85,0
+CUST-0725,Morgan Verma,Starlight Systems,morgan.verma@starlightsystems.com,Pro,199.0,2025-02-22,16,10,7,5,2.4,38.77,7,30.6,0,100.0,1
+CUST-0726,Dakota Taylor,TechPulse,dakota.taylor@techpulse.com,Enterprise,799.0,2025-07-25,11,3,3,1,2.0,24.0,14,49.8,28,71.42,0
+CUST-0727,Pat Mahato,Vanguard AI,pat.mahato@vanguardai.com,Enterprise,799.0,2025-03-07,16,6,5,1,2.0,10.7,0,51.2,21,78.88,0
+CUST-0728,Morgan Patel,Acme Corp,morgan.patel@acmecorp.com,Pro,199.0,2025-03-18,15,2,0,0,3.5,15.6,0,68.1,84,15.19,0
+CUST-0729,Riley Jones,TechPulse,riley.jones@techpulse.com,Enterprise,799.0,2025-03-05,16,2,2,0,2.5,24.0,0,78.9,61,38.11,0
+CUST-0730,Casey Smith,Starlight Systems,casey.smith@starlightsystems.com,Enterprise,799.0,2025-09-06,9,10,5,2,3.0,21.3,0,59.3,19,80.07,0
+CUST-0731,Aarav Johnson,CloudScale,aarav.johnson@cloudscale.com,Pro,199.0,2025-06-22,12,7,3,1,2.86,13.6,0,65.8,45,54.56,0
+CUST-0732,Morgan Smith,Starlight Systems,morgan.smith@starlightsystems.com,Pro,199.0,2025-02-11,16,6,3,4,2.17,40.4,7,80.1,7,92.86,1
+CUST-0733,Taylor Anderson,Synergy Tech,taylor.anderson@synergytech.com,Enterprise,799.0,2025-02-17,16,9,5,3,2.44,33.48,0,68.8,6,93.56,1
+CUST-0734,Sam Garcia,Synergy Tech,sam.garcia@synergytech.com,Starter,49.0,2025-03-03,16,4,2,0,3.5,32.4,0,94.9,71,28.51,0
+CUST-0735,Rohan Jackson,TechPulse,rohan.jackson@techpulse.com,Enterprise,799.0,2025-01-19,17,8,6,3,3.0,35.95,0,20.9,0,100.0,1
+CUST-0736,Noah Miller,Apex Global,noah.miller@apexglobal.com,Starter,49.0,2025-07-29,11,5,3,2,2.6,27.6,0,63.6,33,66.84,0
+CUST-0737,Alex Taylor,ByteWorks,alex.taylor@byteworks.com,Starter,49.0,2025-07-06,12,2,0,1,3.5,16.95,25,64.5,59,40.55,0
+CUST-0738,Taylor Rodriguez,Vanguard AI,taylor.rodriguez@vanguardai.com,Enterprise,799.0,2025-01-07,18,3,2,1,3.0,9.5,14,51.2,44,55.28,0
+CUST-0739,Jordan Jackson,QuantumSoft,jordan.jackson@quantumsoft.com,Pro,199.0,2025-03-02,16,2,2,0,2.5,24.0,0,50.1,59,40.99,0
+CUST-0740,Chris Rodriguez,InnoWave,chris.rodriguez@innowave.com,Enterprise,799.0,2025-08-29,10,3,2,0,3.67,10.1,0,31.4,66,33.53,0
+CUST-0741,Chris Chen,Acme Corp,chris.chen@acmecorp.com,Enterprise,799.0,2025-08-06,10,10,7,1,2.6,27.97,0,59.7,10,89.23,1
+CUST-0742,Liam Verma,InnoWave,liam.verma@innowave.com,Starter,49.0,2025-05-13,13,7,6,2,1.86,7.4,0,18.7,0,100.0,1
+CUST-0743,Sam Chen,InnoWave,sam.chen@innowave.com,Enterprise,799.0,2025-04-28,14,10,7,5,2.5,13.0,25,57.2,0,100.0,1
+CUST-0744,Aarav Smith,Starlight Systems,aarav.smith@starlightsystems.com,Pro,199.0,2025-04-04,15,8,3,1,3.38,31.14,25,17.9,29,70.21,0
+CUST-0745,Siddharth Anderson,CloudScale,siddharth.anderson@cloudscale.com,Enterprise,799.0,2025-06-04,13,9,6,0,2.89,22.77,0,82.6,33,66.63,0
+CUST-0746,Aarav Jones,ByteWorks,aarav.jones@byteworks.com,Enterprise,799.0,2025-01-28,17,3,0,1,3.33,15.97,3,79.4,72,27.19,0
+CUST-0747,Jordan Garcia,QuantumSoft,jordan.garcia@quantumsoft.com,Pro,199.0,2025-04-17,14,4,3,2,2.0,56.7,0,87.8,22,77.22,0
+CUST-0748,Jordan Patel,DataFlow,jordan.patel@dataflow.com,Enterprise,799.0,2025-05-28,13,9,4,3,2.89,23.82,3,56.0,14,85.09,1
+CUST-0749,Morgan Sharma,Horizon Labs,morgan.sharma@horizonlabs.com,Starter,49.0,2025-09-19,9,4,2,0,3.5,22.2,0,77.1,69,30.29,0
+CUST-0750,Dakota Kim,Starlight Systems,dakota.kim@starlightsystems.com,Pro,199.0,2025-09-12,9,9,5,2,2.78,31.3,0,79.4,20,79.84,0
+CUST-0751,Dakota Patel,Apex Global,dakota.patel@apexglobal.com,Enterprise,799.0,2025-04-14,14,6,4,1,3.17,37.5,3,31.1,34,65.36,0
+CUST-0752,Emily Williams,InnoWave,emily.williams@innowave.com,Pro,199.0,2025-08-30,10,10,3,1,3.7,30.31,0,58.5,51,48.55,0
+CUST-0753,Dakota Anderson,Horizon Labs,dakota.anderson@horizonlabs.com,Starter,49.0,2025-04-06,15,6,4,1,2.67,21.9,0,93.6,38,61.31,0
+CUST-0754,Noah Sharma,CloudScale,noah.sharma@cloudscale.com,Starter,49.0,2025-06-17,12,7,2,3,2.86,34.26,7,54.7,28,71.87,0
+CUST-0755,Riley Johnson,DataFlow,riley.johnson@dataflow.com,Pro,199.0,2025-06-17,12,8,6,2,2.38,43.1,0,41.1,5,94.89,1
+CUST-0756,Taylor Jackson,Synergy Tech,taylor.jackson@synergytech.com,Pro,199.0,2025-01-12,17,7,1,0,3.86,15.97,0,16.5,74,25.49,0
+CUST-0757,Chris Patel,Vanguard AI,chris.patel@vanguardai.com,Enterprise,799.0,2025-08-08,10,3,1,2,1.0,34.95,14,59.0,27,72.5,0
+CUST-0758,Siddharth Mahato,InnoWave,siddharth.mahato@innowave.com,Starter,49.0,2025-08-24,10,3,0,1,3.0,13.0,0,87.3,72,27.27,0
+CUST-0759,Priya Sharma,Synergy Tech,priya.sharma@synergytech.com,Starter,49.0,2025-08-03,11,4,1,2,3.0,12.57,0,21.7,48,51.83,0
+CUST-0760,Liam Williams,ByteWorks,liam.williams@byteworks.com,Pro,199.0,2025-04-14,14,4,2,0,2.75,27.2,0,57.2,61,38.28,0
+CUST-0761,Jordan Jones,DataFlow,jordan.jones@dataflow.com,Starter,49.0,2025-07-22,11,6,2,0,3.83,7.92,0,47.4,69,30.59,0
+CUST-0762,Casey Davis,Nexus Solutions,casey.davis@nexussolutions.com,Pro,199.0,2025-01-17,17,4,3,3,2.0,14.1,0,54.5,17,82.55,1
+CUST-0763,Noah Davis,Acme Corp,noah.davis@acmecorp.com,Enterprise,799.0,2025-02-05,17,2,1,0,3.0,56.2,0,55.0,63,36.5,0
+CUST-0764,Liam Rodriguez,Horizon Labs,liam.rodriguez@horizonlabs.com,Pro,199.0,2025-01-23,17,8,3,2,2.38,26.06,0,57.2,30,69.28,0
+CUST-0765,Priya Anderson,Nexus Solutions,priya.anderson@nexussolutions.com,Pro,199.0,2025-09-09,9,9,3,4,3.11,47.05,25,63.6,2,97.75,1
+CUST-0766,Olivia Sharma,QuantumSoft,olivia.sharma@quantumsoft.com,Enterprise,799.0,2025-06-07,12,5,1,0,3.6,13.32,0,32.3,74,25.97,0
+CUST-0767,Aarav Verma,Synergy Tech,aarav.verma@synergytech.com,Starter,49.0,2025-09-21,9,9,3,1,3.0,23.57,7,54.6,41,58.74,0
+CUST-0768,Jordan Jackson,TechPulse,jordan.jackson@techpulse.com,Pro,199.0,2025-03-22,15,2,1,1,3.0,28.6,0,47.6,60,39.24,0
+CUST-0769,Ananya Kim,Acme Corp,ananya.kim@acmecorp.com,Enterprise,799.0,2025-10-02,9,7,3,5,2.29,15.15,3,51.6,0,100.0,1
+CUST-0770,Taylor Chen,DataFlow,taylor.chen@dataflow.com,Enterprise,799.0,2025-03-24,15,8,3,2,2.25,20.36,0,74.2,31,68.58,0
+CUST-0771,Alex Garcia,TechPulse,alex.garcia@techpulse.com,Pro,199.0,2025-02-24,16,9,3,2,3.33,22.07,14,87.1,32,67.02,0
+CUST-0772,Noah Miller,Vanguard AI,noah.miller@vanguardai.com,Starter,49.0,2025-05-26,13,4,1,2,2.75,35.7,14,51.6,40,59.24,0
+CUST-0773,Aarav Brown,ByteWorks,aarav.brown@byteworks.com,Pro,199.0,2025-05-20,13,3,1,1,2.67,39.2,0,58.5,59,40.82,0
+CUST-0774,Alex Jones,TechPulse,alex.jones@techpulse.com,Enterprise,799.0,2025-05-09,13,8,2,2,3.5,32.78,0,42.6,46,53.74,0
+CUST-0775,Chris Chen,InnoWave,chris.chen@innowave.com,Pro,199.0,2025-02-03,17,8,4,2,3.5,33.35,25,53.4,16,83.66,1
+CUST-0776,Sophia Thomas,Starlight Systems,sophia.thomas@starlightsystems.com,Pro,199.0,2025-10-17,8,6,5,1,1.83,9.7,0,67.8,21,78.55,0
+CUST-0777,Priya Brown,Horizon Labs,priya.brown@horizonlabs.com,Enterprise,799.0,2025-02-20,16,2,2,1,2.0,24.0,0,90.4,49,50.96,0
+CUST-0778,Aarav Smith,DataFlow,aarav.smith@dataflow.com,Starter,49.0,2025-09-09,9,5,3,0,2.6,41.6,0,34.5,50,49.75,0
+CUST-0779,Emily Miller,Apex Global,emily.miller@apexglobal.com,Starter,49.0,2025-06-06,13,5,3,2,2.2,10.95,0,58.5,29,70.55,0
+CUST-0780,Siddharth Johnson,TechPulse,siddharth.johnson@techpulse.com,Enterprise,799.0,2025-05-15,13,8,5,4,2.25,13.37,0,69.3,0,100.0,1
+CUST-0781,Priya Chen,Starlight Systems,priya.chen@starlightsystems.com,Enterprise,799.0,2025-08-26,10,4,1,0,4.0,21.9,0,18.1,75,24.19,0
+CUST-0782,Priya Brown,Vanguard AI,priya.brown@vanguardai.com,Pro,199.0,2025-06-13,12,7,1,2,3.71,30.6,0,26.2,54,45.67,0
+CUST-0783,Jordan Kim,QuantumSoft,jordan.kim@quantumsoft.com,Starter,49.0,2025-07-01,12,5,3,1,2.4,45.1,3,54.6,38,61.14,0
+CUST-0784,Taylor Brown,Starlight Systems,taylor.brown@starlightsystems.com,Starter,49.0,2025-06-01,13,8,6,3,1.88,51.6,14,67.8,0,100.0,1
+CUST-0785,Noah Taylor,QuantumSoft,noah.taylor@quantumsoft.com,Pro,199.0,2025-01-31,17,5,1,0,3.6,13.77,0,86.8,79,20.52,0
+CUST-0786,Emily Johnson,Acme Corp,emily.johnson@acmecorp.com,Starter,49.0,2025-05-19,13,5,2,3,1.6,19.4,14,67.0,15,84.9,1
+CUST-0787,Jordan Patel,TechPulse,jordan.patel@techpulse.com,Starter,49.0,2025-02-08,16,6,4,2,2.5,30.5,7,19.8,15,84.22,1
+CUST-0788,Olivia Jackson,QuantumSoft,olivia.jackson@quantumsoft.com,Pro,199.0,2025-01-17,17,4,4,0,2.25,24.0,0,35.7,39,60.43,0
+CUST-0789,Dakota Jones,InnoWave,dakota.jones@innowave.com,Starter,49.0,2025-05-24,13,9,6,2,2.56,20.9,0,26.3,5,94.93,1
+CUST-0790,Casey Kim,Acme Corp,casey.kim@acmecorp.com,Pro,199.0,2025-10-16,8,4,1,2,3.0,20.2,14,73.1,44,55.09,0
+CUST-0791,Aarav Mahato,Vanguard AI,aarav.mahato@vanguardai.com,Enterprise,799.0,2025-07-01,12,7,4,1,2.86,14.1,0,57.6,36,63.38,0
+CUST-0792,Olivia Garcia,Acme Corp,olivia.garcia@acmecorp.com,Pro,199.0,2025-05-30,13,7,2,4,2.43,25.96,0,43.9,17,82.18,1
+CUST-0793,Riley Brown,Acme Corp,riley.brown@acmecorp.com,Pro,199.0,2025-04-03,15,2,1,2,1.5,60.9,0,23.4,28,71.66,0
+CUST-0794,Sam Taylor,CloudScale,sam.taylor@cloudscale.com,Pro,199.0,2025-02-13,16,6,2,3,2.17,45.02,7,79.9,25,74.88,0
+CUST-0795,Olivia Anderson,Horizon Labs,olivia.anderson@horizonlabs.com,Pro,199.0,2025-06-29,12,3,1,1,3.33,18.65,0,18.8,60,39.45,0
+CUST-0796,Liam Thomas,ByteWorks,liam.thomas@byteworks.com,Pro,199.0,2025-06-28,12,10,6,3,3.0,26.6,0,91.6,5,94.84,1
+CUST-0797,Ananya Chen,Nexus Solutions,ananya.chen@nexussolutions.com,Enterprise,799.0,2025-03-19,15,8,3,1,3.5,19.06,0,44.1,48,51.59,0
+CUST-0798,Emily Garcia,Apex Global,emily.garcia@apexglobal.com,Starter,49.0,2025-05-08,13,2,2,0,2.0,24.0,0,77.0,57,42.3,0
+CUST-0799,Ananya Smith,Acme Corp,ananya.smith@acmecorp.com,Enterprise,799.0,2025-10-04,9,2,1,0,2.0,30.5,0,80.7,66,33.93,0
+CUST-0800,Ananya Sharma,QuantumSoft,ananya.sharma@quantumsoft.com,Starter,49.0,2025-03-06,16,10,9,1,2.3,13.0,25,39.6,0,100.0,1
+CUST-0801,Emily Anderson,InnoWave,emily.anderson@innowave.com,Starter,49.0,2025-02-02,17,6,3,2,2.67,23.1,14,15.6,20,79.51,0
+CUST-0802,Aarav Chen,Synergy Tech,aarav.chen@synergytech.com,Enterprise,799.0,2025-04-29,14,3,3,0,2.0,24.0,0,18.7,43,56.13,0
+CUST-0803,Priya Jones,Acme Corp,priya.jones@acmecorp.com,Enterprise,799.0,2025-06-25,12,4,4,2,1.75,24.0,7,70.4,14,85.16,1
+CUST-0804,Olivia Garcia,Vanguard AI,olivia.garcia@vanguardai.com,Enterprise,799.0,2025-08-28,10,5,3,1,2.4,7.5,14,43.3,31,68.87,0
+CUST-0805,Liam Thomas,InnoWave,liam.thomas@innowave.com,Pro,199.0,2025-09-25,9,9,5,2,3.0,29.62,0,46.5,18,81.35,0
+CUST-0806,Sophia Mahato,TechPulse,sophia.mahato@techpulse.com,Pro,199.0,2025-09-26,9,7,6,1,2.14,4.9,0,17.9,10,89.07,1
+CUST-0807,Rohan Chen,CloudScale,rohan.chen@cloudscale.com,Enterprise,799.0,2025-05-01,14,5,3,3,2.0,51.95,25,37.4,0,100.0,1
+CUST-0808,Olivia Miller,Horizon Labs,olivia.miller@horizonlabs.com,Starter,49.0,2025-04-05,15,10,7,3,2.1,16.63,0,31.6,0,100.0,1
+CUST-0809,Riley Davis,Vanguard AI,riley.davis@vanguardai.com,Starter,49.0,2025-08-12,10,4,2,0,3.0,12.8,0,68.4,64,35.16,0
+CUST-0810,Taylor Mahato,Starlight Systems,taylor.mahato@starlightsystems.com,Starter,49.0,2025-02-13,16,3,2,1,3.0,20.3,3,31.8,49,50.62,0
+CUST-0811,Chris Jackson,Starlight Systems,chris.jackson@starlightsystems.com,Pro,199.0,2025-02-17,16,6,3,1,3.5,14.6,0,65.7,50,49.43,0
+CUST-0812,Sam Sharma,Synergy Tech,sam.sharma@synergytech.com,Enterprise,799.0,2025-08-06,10,9,7,5,2.56,38.4,0,29.6,0,100.0,1
+CUST-0813,Casey Anderson,DataFlow,casey.anderson@dataflow.com,Enterprise,799.0,2025-03-13,15,3,2,1,2.67,9.2,3,20.6,45,54.41,0
+CUST-0814,Sam Chen,DataFlow,sam.chen@dataflow.com,Starter,49.0,2025-01-30,17,4,2,1,2.0,13.7,14,69.1,38,61.49,0
+CUST-0815,Noah Sharma,CloudScale,noah.sharma@cloudscale.com,Enterprise,799.0,2025-01-28,17,10,5,2,3.5,16.14,14,46.8,14,85.72,1
+CUST-0816,Morgan Mahato,Vanguard AI,morgan.mahato@vanguardai.com,Enterprise,799.0,2025-07-17,11,3,3,0,1.67,24.0,0,69.4,46,53.73,0
+CUST-0817,Olivia Patel,Apex Global,olivia.patel@apexglobal.com,Enterprise,799.0,2025-08-07,10,7,2,3,2.71,11.48,0,34.4,29,70.85,0
+CUST-0818,Ananya Miller,QuantumSoft,ananya.miller@quantumsoft.com,Starter,49.0,2025-05-30,13,2,2,1,1.5,24.0,0,81.7,44,55.83,0
+CUST-0819,Chris Patel,Vanguard AI,chris.patel@vanguardai.com,Starter,49.0,2025-05-06,14,3,1,0,3.33,37.95,0,83.0,76,23.03,0
+CUST-0820,Liam Davis,DataFlow,liam.davis@dataflow.com,Starter,49.0,2025-09-19,9,9,2,4,2.78,19.9,3,28.2,17,82.76,1
+CUST-0821,Pat Garcia,ByteWorks,pat.garcia@byteworks.com,Pro,199.0,2025-01-14,17,3,0,0,4.0,18.93,0,28.7,84,15.13,0
+CUST-0822,Jordan Jackson,DataFlow,jordan.jackson@dataflow.com,Starter,49.0,2025-09-05,9,7,4,1,3.14,27.43,7,41.2,33,66.94,0
+CUST-0823,Alex Williams,Nexus Solutions,alex.williams@nexussolutions.com,Starter,49.0,2025-08-15,10,4,2,2,2.0,52.2,0,29.3,24,75.07,0
+CUST-0824,Jordan Verma,InnoWave,jordan.verma@innowave.com,Starter,49.0,2025-02-03,17,9,4,1,3.33,31.0,0,25.3,37,62.8,0
+CUST-0825,Sam Miller,Synergy Tech,sam.miller@synergytech.com,Starter,49.0,2025-05-09,13,7,6,2,2.29,32.8,0,72.1,7,92.5,1
+CUST-0826,Dakota Verma,DataFlow,dakota.verma@dataflow.com,Enterprise,799.0,2025-05-27,13,6,2,3,3.0,20.25,3,85.6,34,65.24,0
+CUST-0827,Aarav Garcia,ByteWorks,aarav.garcia@byteworks.com,Starter,49.0,2025-07-25,11,4,3,2,2.25,15.6,3,94.3,31,68.37,0
+CUST-0828,Aarav Taylor,QuantumSoft,aarav.taylor@quantumsoft.com,Pro,199.0,2025-03-27,15,3,1,1,3.33,35.35,0,61.9,64,35.14,0
+CUST-0829,Liam Kim,TechPulse,liam.kim@techpulse.com,Pro,199.0,2025-08-14,10,5,1,2,2.8,34.75,0,26.2,47,52.98,0
+CUST-0830,Ananya Mahato,CloudScale,ananya.mahato@cloudscale.com,Enterprise,799.0,2025-09-02,10,10,5,2,2.5,29.04,3,26.3,10,89.17,1
+CUST-0831,Siddharth Verma,Starlight Systems,siddharth.verma@starlightsystems.com,Pro,199.0,2025-08-20,10,10,6,4,2.8,14.95,0,93.0,0,100.0,1
+CUST-0832,Rohan Smith,TechPulse,rohan.smith@techpulse.com,Enterprise,799.0,2025-07-02,12,10,4,0,3.8,18.87,0,81.4,56,43.46,0
+CUST-0833,Rohan Kim,Starlight Systems,rohan.kim@starlightsystems.com,Enterprise,799.0,2025-01-27,17,3,0,1,3.67,30.07,3,18.0,69,30.67,0
+CUST-0834,Alex Johnson,Synergy Tech,alex.johnson@synergytech.com,Pro,199.0,2025-02-15,16,7,5,3,1.57,50.95,25,57.0,0,100.0,1
+CUST-0835,Sam Anderson,TechPulse,sam.anderson@techpulse.com,Enterprise,799.0,2025-07-15,11,7,3,2,2.86,7.77,0,83.3,37,62.81,0
+CUST-0836,Aarav Kim,ByteWorks,aarav.kim@byteworks.com,Pro,199.0,2025-07-02,12,7,4,3,1.57,10.77,7,65.6,2,97.07,1
+CUST-0837,Dakota Mahato,Synergy Tech,dakota.mahato@synergytech.com,Pro,199.0,2025-08-12,10,4,0,1,3.0,39.02,7,58.7,65,34.33,0
+CUST-0838,Sophia Rodriguez,Synergy Tech,sophia.rodriguez@synergytech.com,Enterprise,799.0,2025-02-13,16,6,4,1,2.67,13.1,0,55.2,34,65.15,0
+CUST-0839,Emily Taylor,Vanguard AI,emily.taylor@vanguardai.com,Enterprise,799.0,2025-06-27,12,2,1,0,2.5,54.4,0,87.6,62,37.24,0
+CUST-0840,Alex Johnson,Starlight Systems,alex.johnson@starlightsystems.com,Enterprise,799.0,2025-06-08,12,3,0,1,3.0,29.67,3,43.0,66,33.5,0
+CUST-0841,Aarav Garcia,Nexus Solutions,aarav.garcia@nexussolutions.com,Pro,199.0,2025-05-28,13,4,3,0,2.75,26.3,0,48.2,52,47.18,0
+CUST-0842,Noah Mahato,Acme Corp,noah.mahato@acmecorp.com,Enterprise,799.0,2025-05-03,14,8,4,2,2.75,23.23,0,29.4,22,77.06,0
+CUST-0843,Priya Jackson,Horizon Labs,priya.jackson@horizonlabs.com,Starter,49.0,2025-08-05,11,6,4,2,1.67,31.95,7,46.3,11,88.24,1
+CUST-0844,Chris Anderson,DataFlow,chris.anderson@dataflow.com,Starter,49.0,2025-01-01,18,6,1,4,2.17,38.64,0,52.3,24,75.44,0
+CUST-0845,Olivia Smith,Starlight Systems,olivia.smith@starlightsystems.com,Starter,49.0,2025-07-20,11,8,4,3,2.62,29.63,25,78.2,1,98.18,1
+CUST-0846,Ananya Sharma,TechPulse,ananya.sharma@techpulse.com,Pro,199.0,2025-05-30,13,10,6,2,3.1,28.07,0,71.6,13,86.04,1
+CUST-0847,Taylor Patel,Vanguard AI,taylor.patel@vanguardai.com,Pro,199.0,2025-07-24,11,9,4,3,3.0,19.2,0,42.8,16,83.72,1
+CUST-0848,Aarav Taylor,Starlight Systems,aarav.taylor@starlightsystems.com,Pro,199.0,2025-04-10,14,8,4,3,2.75,30.55,7,63.7,12,87.83,1
+CUST-0849,Alex Johnson,Acme Corp,alex.johnson@acmecorp.com,Starter,49.0,2025-10-24,8,2,2,1,2.0,24.0,14,75.3,39,60.87,0
+CUST-0850,Riley Jackson,QuantumSoft,riley.jackson@quantumsoft.com,Starter,49.0,2025-10-11,8,6,3,2,3.17,21.23,0,59.6,37,62.71,0
+CUST-0851,Siddharth Chen,Nexus Solutions,siddharth.chen@nexussolutions.com,Pro,199.0,2025-08-09,10,2,2,0,2.0,24.0,0,57.7,55,44.23,0
+CUST-0852,Dakota Mahato,QuantumSoft,dakota.mahato@quantumsoft.com,Enterprise,799.0,2025-04-10,14,2,2,0,2.0,24.0,0,29.4,52,47.06,0
+CUST-0853,Ananya Davis,Synergy Tech,ananya.davis@synergytech.com,Starter,49.0,2025-01-03,18,9,4,2,3.22,27.62,25,90.8,17,82.14,1
+CUST-0854,Morgan Mahato,InnoWave,morgan.mahato@innowave.com,Starter,49.0,2025-08-20,10,7,6,1,1.71,13.1,0,35.7,9,90.72,1
+CUST-0855,Jordan Garcia,Starlight Systems,jordan.garcia@starlightsystems.com,Pro,199.0,2025-06-13,12,10,5,2,2.7,41.14,0,88.4,20,79.56,0
+CUST-0856,Olivia Jones,TechPulse,olivia.jones@techpulse.com,Enterprise,799.0,2025-10-20,8,6,3,1,3.0,8.4,0,39.7,43,56.03,0
+CUST-0857,Siddharth Jackson,Starlight Systems,siddharth.jackson@starlightsystems.com,Enterprise,799.0,2025-07-14,11,7,4,2,3.14,24.37,0,52.5,28,71.61,0
+CUST-0858,Ananya Jones,Synergy Tech,ananya.jones@synergytech.com,Starter,49.0,2025-05-01,14,5,4,0,2.0,3.3,0,38.2,37,62.18,0
+CUST-0859,Alex Thomas,QuantumSoft,alex.thomas@quantumsoft.com,Pro,199.0,2025-08-21,10,8,5,2,2.0,26.27,0,76.9,13,86.31,1
+CUST-0860,Priya Rodriguez,Horizon Labs,priya.rodriguez@horizonlabs.com,Pro,199.0,2025-01-08,17,9,4,2,3.0,13.34,0,37.3,25,74.27,0
+CUST-0861,Olivia Williams,CloudScale,olivia.williams@cloudscale.com,Enterprise,799.0,2025-06-01,13,5,2,2,3.4,21.6,0,38.0,45,55.0,0
+CUST-0862,Rohan Davis,TechPulse,rohan.davis@techpulse.com,Enterprise,799.0,2025-01-24,17,10,6,3,2.4,17.27,0,49.9,0,100.0,1
+CUST-0863,Liam Jones,InnoWave,liam.jones@innowave.com,Starter,49.0,2025-10-01,9,6,3,1,2.33,25.13,0,75.5,42,57.78,0
+CUST-0864,Riley Smith,CloudScale,riley.smith@cloudscale.com,Enterprise,799.0,2025-07-03,12,5,4,5,1.6,42.3,0,63.3,0,100.0,1
+CUST-0865,Ananya Sharma,Vanguard AI,ananya.sharma@vanguardai.com,Pro,199.0,2025-08-19,10,5,3,1,2.6,28.45,0,69.2,43,56.28,0
+CUST-0866,Rohan Jackson,Vanguard AI,rohan.jackson@vanguardai.com,Starter,49.0,2025-07-18,11,7,5,3,2.71,41.05,7,85.1,6,93.98,1
+CUST-0867,Riley Johnson,Horizon Labs,riley.johnson@horizonlabs.com,Pro,199.0,2025-04-20,14,9,3,1,3.33,23.0,25,70.2,34,65.31,0
+CUST-0868,Rohan Chen,QuantumSoft,rohan.chen@quantumsoft.com,Pro,199.0,2025-05-22,13,9,4,4,2.56,36.9,7,15.7,0,100.0,1
+CUST-0869,Dakota Garcia,Horizon Labs,dakota.garcia@horizonlabs.com,Pro,199.0,2025-03-22,15,2,0,0,5.0,16.7,0,26.5,92,7.35,0
+CUST-0870,Priya Mahato,CloudScale,priya.mahato@cloudscale.com,Starter,49.0,2025-07-22,11,5,1,0,4.4,20.4,0,22.5,79,20.55,0
+CUST-0871,Sam Jones,Starlight Systems,sam.jones@starlightsystems.com,Enterprise,799.0,2025-01-29,17,8,5,3,2.12,28.93,7,93.5,2,97.85,1
+CUST-0872,Chris Patel,Acme Corp,chris.patel@acmecorp.com,Enterprise,799.0,2025-07-24,11,10,5,1,3.1,30.04,0,27.1,27,72.49,0
+CUST-0873,Sam Jones,QuantumSoft,sam.jones@quantumsoft.com,Pro,199.0,2025-08-19,10,2,1,1,2.0,4.4,3,34.7,49,50.33,0
+CUST-0874,Dakota Thomas,QuantumSoft,dakota.thomas@quantumsoft.com,Enterprise,799.0,2025-03-03,16,4,0,1,2.75,14.65,14,79.8,61,38.42,0
+CUST-0875,Noah Jackson,Acme Corp,noah.jackson@acmecorp.com,Enterprise,799.0,2025-04-05,15,3,1,1,4.0,21.45,7,60.3,65,34.17,0
+CUST-0876,Pat Verma,Starlight Systems,pat.verma@starlightsystems.com,Starter,49.0,2025-01-27,17,9,5,2,2.78,21.88,7,58.5,13,86.13,1
+CUST-0877,Alex Sharma,Synergy Tech,alex.sharma@synergytech.com,Starter,49.0,2025-10-23,8,5,3,0,3.0,15.15,0,79.5,57,42.05,0
+CUST-0878,Emily Sharma,CloudScale,emily.sharma@cloudscale.com,Pro,199.0,2025-03-04,16,10,5,3,2.7,34.04,0,38.6,5,94.54,1
+CUST-0879,Liam Rodriguez,CloudScale,liam.rodriguez@cloudscale.com,Enterprise,799.0,2025-08-28,10,10,5,3,2.5,52.1,25,19.5,0,100.0,1
+CUST-0880,Riley Jackson,TechPulse,riley.jackson@techpulse.com,Enterprise,799.0,2025-06-24,12,5,3,0,3.2,44.85,0,72.0,58,41.2,0
+CUST-0881,Aarav Kim,TechPulse,aarav.kim@techpulse.com,Starter,49.0,2025-06-20,12,2,1,0,3.5,13.1,0,38.4,73,26.16,0
+CUST-0882,Noah Taylor,QuantumSoft,noah.taylor@quantumsoft.com,Pro,199.0,2025-10-19,8,3,1,0,3.0,7.75,0,54.1,71,28.59,0
+CUST-0883,Noah Sharma,Apex Global,noah.sharma@apexglobal.com,Pro,199.0,2025-10-26,8,2,1,0,2.0,48.5,0,27.5,52,47.25,0
+CUST-0884,Chris Taylor,QuantumSoft,chris.taylor@quantumsoft.com,Enterprise,799.0,2025-05-31,13,8,3,2,2.62,31.1,0,90.2,36,63.98,0
+CUST-0885,Noah Johnson,Nexus Solutions,noah.johnson@nexussolutions.com,Pro,199.0,2025-07-21,11,8,4,2,2.88,26.98,0,69.4,27,72.06,0
+CUST-0886,Taylor Rodriguez,Vanguard AI,taylor.rodriguez@vanguardai.com,Enterprise,799.0,2025-04-15,14,8,3,0,3.5,18.94,0,53.6,59,40.64,0
+CUST-0887,Chris Sharma,Vanguard AI,chris.sharma@vanguardai.com,Enterprise,799.0,2025-10-06,8,8,2,2,3.88,36.25,25,49.9,34,65.01,0
+CUST-0888,Priya Sharma,Synergy Tech,priya.sharma@synergytech.com,Enterprise,799.0,2025-03-22,15,4,2,0,3.25,32.9,0,54.8,65,34.52,0
+CUST-0889,Priya Miller,InnoWave,priya.miller@innowave.com,Enterprise,799.0,2025-07-29,11,6,4,1,2.67,21.55,0,15.1,30,69.16,0
+CUST-0890,Sophia Chen,Nexus Solutions,sophia.chen@nexussolutions.com,Enterprise,799.0,2025-09-09,9,6,3,1,3.0,37.2,7,19.0,37,62.3,0
+CUST-0891,Chris Brown,Vanguard AI,chris.brown@vanguardai.com,Pro,199.0,2025-01-05,18,7,4,1,3.0,32.87,14,20.2,25,74.38,0
+CUST-0892,Rohan Davis,Vanguard AI,rohan.davis@vanguardai.com,Pro,199.0,2025-04-03,15,7,3,4,2.71,24.77,3,17.6,7,92.33,1
+CUST-0893,Taylor Jackson,CloudScale,taylor.jackson@cloudscale.com,Pro,199.0,2025-06-05,13,4,1,1,3.75,27.4,0,73.4,69,30.66,0
+CUST-0894,Morgan Verma,Acme Corp,morgan.verma@acmecorp.com,Enterprise,799.0,2025-09-08,9,10,4,1,3.6,28.27,25,28.2,24,75.38,0
+CUST-0895,Aarav Thomas,Apex Global,aarav.thomas@apexglobal.com,Enterprise,799.0,2025-10-11,8,9,4,4,2.56,23.58,0,47.6,3,96.8,1
+CUST-0896,Liam Miller,ByteWorks,liam.miller@byteworks.com,Enterprise,799.0,2025-03-05,16,8,6,2,2.62,46.15,0,16.3,4,95.37,1
+CUST-0897,Priya Johnson,Starlight Systems,priya.johnson@starlightsystems.com,Pro,199.0,2025-06-05,13,5,3,1,2.8,18.45,14,84.9,38,61.51,0
+CUST-0898,Noah Johnson,QuantumSoft,noah.johnson@quantumsoft.com,Pro,199.0,2025-06-08,12,6,4,2,2.83,27.6,0,68.7,27,72.46,0
+CUST-0899,Jordan Johnson,Horizon Labs,jordan.johnson@horizonlabs.com,Starter,49.0,2025-05-14,13,7,3,2,2.86,22.17,7,50.1,29,70.33,0
+CUST-0900,Morgan Jones,InnoWave,morgan.jones@innowave.com,Starter,49.0,2025-08-04,11,3,3,0,1.67,24.0,0,87.3,48,51.94,0
+CUST-0901,Riley Williams,Starlight Systems,riley.williams@starlightsystems.com,Pro,199.0,2025-09-11,9,3,2,1,2.0,10.4,3,37.7,41,58.03,0
+CUST-0902,Priya Anderson,Horizon Labs,priya.anderson@horizonlabs.com,Enterprise,799.0,2025-03-15,15,8,5,2,2.62,17.37,0,59.6,16,83.04,1
+CUST-0903,Rohan Jones,Apex Global,rohan.jones@apexglobal.com,Starter,49.0,2025-10-01,9,6,2,1,3.17,25.62,25,34.8,37,62.19,0
+CUST-0904,Sam Chen,TechPulse,sam.chen@techpulse.com,Pro,199.0,2025-08-17,10,8,5,2,3.25,15.93,0,59.4,21,78.06,0
+CUST-0905,Sophia Davis,CloudScale,sophia.davis@cloudscale.com,Starter,49.0,2025-02-22,16,7,4,4,2.14,35.77,3,46.8,0,100.0,1
+CUST-0906,Rohan Garcia,Starlight Systems,rohan.garcia@starlightsystems.com,Starter,49.0,2025-06-09,12,9,4,2,3.0,41.24,3,75.4,27,72.26,0
+CUST-0907,Noah Smith,CloudScale,noah.smith@cloudscale.com,Enterprise,799.0,2025-01-06,18,4,2,3,2.25,41.55,7,90.1,26,73.19,0
+CUST-0908,Sam Miller,TechPulse,sam.miller@techpulse.com,Starter,49.0,2025-10-22,8,9,3,2,3.44,25.72,0,37.6,37,62.68,0
+CUST-0909,Pat Davis,Apex Global,pat.davis@apexglobal.com,Pro,199.0,2025-08-04,11,8,4,3,1.75,16.35,0,82.3,10,89.77,1
+CUST-0910,Aarav Chen,Starlight Systems,aarav.chen@starlightsystems.com,Pro,199.0,2025-04-30,14,7,4,3,3.14,23.43,0,72.1,20,79.65,0
+CUST-0911,Olivia Taylor,Horizon Labs,olivia.taylor@horizonlabs.com,Enterprise,799.0,2025-06-28,12,4,2,1,2.25,11.05,0,20.9,44,55.91,0
+CUST-0912,Pat Kim,Apex Global,pat.kim@apexglobal.com,Enterprise,799.0,2025-08-29,10,6,3,2,2.5,27.33,14,43.6,21,78.04,0
+CUST-0913,Rohan Rodriguez,Acme Corp,rohan.rodriguez@acmecorp.com,Starter,49.0,2025-02-02,17,3,1,0,4.33,12.55,0,40.4,80,19.29,0
+CUST-0914,Dakota Verma,ByteWorks,dakota.verma@byteworks.com,Starter,49.0,2025-05-21,13,10,5,3,2.8,28.08,7,51.2,3,96.68,1
+CUST-0915,Morgan Thomas,Starlight Systems,morgan.thomas@starlightsystems.com,Enterprise,799.0,2025-04-27,14,2,2,1,2.0,24.0,3,71.2,45,54.68,0
+CUST-0916,Priya Taylor,CloudScale,priya.taylor@cloudscale.com,Pro,199.0,2025-09-02,10,2,2,0,1.5,24.0,0,35.3,49,50.47,0
+CUST-0917,Alex Jackson,CloudScale,alex.jackson@cloudscale.com,Pro,199.0,2025-01-10,17,3,1,1,3.33,31.05,0,46.2,63,36.71,0
+CUST-0918,Liam Johnson,ByteWorks,liam.johnson@byteworks.com,Starter,49.0,2025-03-30,15,6,1,0,3.67,12.78,0,83.1,79,20.36,0
+CUST-0919,Rohan Brown,ByteWorks,rohan.brown@byteworks.com,Starter,49.0,2025-08-24,10,3,1,0,3.67,14.9,0,15.9,72,27.08,0
+CUST-0920,Casey Garcia,Acme Corp,casey.garcia@acmecorp.com,Pro,199.0,2025-05-03,14,9,3,2,3.11,23.48,3,91.4,38,61.77,0
+CUST-0921,Dakota Brown,TechPulse,dakota.brown@techpulse.com,Starter,49.0,2025-03-13,15,4,2,1,2.75,9.5,0,26.2,48,51.38,0
+CUST-0922,Jordan Anderson,Acme Corp,jordan.anderson@acmecorp.com,Enterprise,799.0,2025-04-18,14,9,3,4,2.78,26.65,25,53.5,0,100.0,1
+CUST-0923,Chris Sharma,Synergy Tech,chris.sharma@synergytech.com,Pro,199.0,2025-07-01,12,5,3,0,2.2,7.9,0,17.0,45,54.7,0
+CUST-0924,Riley Taylor,CloudScale,riley.taylor@cloudscale.com,Enterprise,799.0,2025-02-28,16,5,2,1,2.6,17.9,14,59.7,42,57.63,0
+CUST-0925,Emily Davis,TechPulse,emily.davis@techpulse.com,Pro,199.0,2025-06-14,12,2,1,0,2.5,25.5,0,17.7,63,36.23,0
+CUST-0926,Priya Taylor,Synergy Tech,priya.taylor@synergytech.com,Enterprise,799.0,2025-01-12,17,5,3,2,2.2,23.1,0,24.4,26,73.96,0
+CUST-0927,Ananya Taylor,Starlight Systems,ananya.taylor@starlightsystems.com,Pro,199.0,2025-05-05,14,2,1,1,4.0,10.5,0,82.4,72,27.76,0
+CUST-0928,Casey Chen,InnoWave,casey.chen@innowave.com,Pro,199.0,2025-09-23,9,6,3,3,2.33,26.07,0,78.4,22,77.49,0
+CUST-0929,Ananya Patel,TechPulse,ananya.patel@techpulse.com,Enterprise,799.0,2025-07-10,11,2,1,0,3.0,11.7,0,35.5,69,30.45,0
+CUST-0930,Rohan Rodriguez,Nexus Solutions,rohan.rodriguez@nexussolutions.com,Pro,199.0,2025-07-18,11,5,1,1,3.4,18.3,0,36.7,62,37.13,0
+CUST-0931,Casey Taylor,Horizon Labs,casey.taylor@horizonlabs.com,Enterprise,799.0,2025-03-22,15,9,6,2,2.0,55.93,0,62.1,0,100.0,1
+CUST-0932,Priya Garcia,ByteWorks,priya.garcia@byteworks.com,Pro,199.0,2025-03-06,16,7,5,0,3.14,16.2,0,37.6,38,61.1,0
+CUST-0933,Olivia Thomas,InnoWave,olivia.thomas@innowave.com,Pro,199.0,2025-06-15,12,4,2,1,3.5,43.95,7,91.2,56,43.08,0
+CUST-0934,Alex Kim,TechPulse,alex.kim@techpulse.com,Pro,199.0,2025-08-29,10,4,4,1,2.5,24.0,3,58.3,32,67.97,0
+CUST-0935,Olivia Mahato,CloudScale,olivia.mahato@cloudscale.com,Enterprise,799.0,2025-07-04,12,2,2,0,2.0,24.0,0,35.5,53,46.45,0
+CUST-0936,Casey Taylor,Apex Global,casey.taylor@apexglobal.com,Pro,199.0,2025-05-28,13,3,2,1,3.0,9.7,0,53.4,53,46.66,0
+CUST-0937,Liam Jones,CloudScale,liam.jones@cloudscale.com,Starter,49.0,2025-09-02,10,2,2,2,2.5,24.0,0,81.5,42,57.85,0
+CUST-0938,Rohan Jackson,Horizon Labs,rohan.jackson@horizonlabs.com,Starter,49.0,2025-05-23,13,6,3,1,3.67,16.1,14,66.7,43,56.4,0
+CUST-0939,Casey Jones,CloudScale,casey.jones@cloudscale.com,Enterprise,799.0,2025-05-29,13,5,3,1,3.2,25.65,7,43.2,41,58.28,0
+CUST-0940,Chris Chen,Nexus Solutions,chris.chen@nexussolutions.com,Enterprise,799.0,2025-03-16,15,6,4,0,2.67,8.15,0,68.3,46,53.84,0
+CUST-0941,Jordan Jones,Acme Corp,jordan.jones@acmecorp.com,Pro,199.0,2025-01-11,17,6,2,2,3.0,23.78,25,37.0,26,73.3,0
+CUST-0942,Pat Williams,Nexus Solutions,pat.williams@nexussolutions.com,Pro,199.0,2025-08-01,11,2,1,2,3.0,17.5,0,82.3,54,45.77,0
+CUST-0943,Alex Brown,QuantumSoft,alex.brown@quantumsoft.com,Pro,199.0,2025-10-17,8,4,0,1,4.0,17.52,0,81.4,80,19.86,0
+CUST-0944,Alex Johnson,DataFlow,alex.johnson@dataflow.com,Pro,199.0,2025-01-27,17,3,1,0,4.0,17.1,0,82.4,82,17.76,0
+CUST-0945,Aarav Verma,TechPulse,aarav.verma@techpulse.com,Pro,199.0,2025-08-30,10,7,7,1,2.14,24.0,3,36.7,3,96.99,1
+CUST-0946,Dakota Rodriguez,Horizon Labs,dakota.rodriguez@horizonlabs.com,Starter,49.0,2025-05-14,13,4,1,2,3.0,25.63,0,38.6,49,50.14,0
+CUST-0947,Alex Kim,ByteWorks,alex.kim@byteworks.com,Enterprise,799.0,2025-10-03,9,3,0,2,2.33,29.8,0,40.8,52,47.25,0
+CUST-0948,Alex Taylor,ByteWorks,alex.taylor@byteworks.com,Starter,49.0,2025-02-11,16,9,3,2,3.44,18.23,14,62.3,31,68.61,0
+CUST-0949,Sophia Thomas,Acme Corp,sophia.thomas@acmecorp.com,Starter,49.0,2025-04-01,15,4,2,2,3.75,45.7,7,85.8,48,51.62,0
+CUST-0950,Olivia Brown,InnoWave,olivia.brown@innowave.com,Starter,49.0,2025-07-20,11,9,5,1,2.78,52.92,0,37.1,17,82.07,1
+CUST-0951,Aarav Chen,Acme Corp,aarav.chen@acmecorp.com,Enterprise,799.0,2025-10-01,9,9,1,4,3.11,33.36,0,41.4,31,68.97,0
+CUST-0952,Casey Kim,Apex Global,casey.kim@apexglobal.com,Starter,49.0,2025-08-13,10,10,4,1,2.9,18.2,3,64.3,35,64.17,0
+CUST-0953,Sam Sharma,Synergy Tech,sam.sharma@synergytech.com,Starter,49.0,2025-10-18,8,5,3,1,3.2,22.95,0,34.2,45,54.98,0
+CUST-0954,Jordan Jones,CloudScale,jordan.jones@cloudscale.com,Starter,49.0,2025-05-24,13,4,2,2,3.0,20.5,14,18.4,31,68.56,0
+CUST-0955,Chris Kim,InnoWave,chris.kim@innowave.com,Pro,199.0,2025-09-17,9,8,3,1,3.25,19.64,7,55.3,43,56.67,0
+CUST-0956,Alex Chen,Synergy Tech,alex.chen@synergytech.com,Starter,49.0,2025-08-19,10,4,3,2,2.5,13.7,0,35.4,29,70.46,0
+CUST-0957,Aarav Thomas,ByteWorks,aarav.thomas@byteworks.com,Enterprise,799.0,2025-08-23,10,4,2,1,2.75,32.2,0,88.8,54,45.12,0
+CUST-0958,Aarav Davis,Nexus Solutions,aarav.davis@nexussolutions.com,Starter,49.0,2025-03-06,16,8,5,2,2.75,32.0,0,76.1,19,80.39,0
+CUST-0959,Aarav Kim,Nexus Solutions,aarav.kim@nexussolutions.com,Pro,199.0,2025-07-28,11,8,4,2,2.75,27.15,14,29.9,14,85.41,1
+CUST-0960,Rohan Williams,Acme Corp,rohan.williams@acmecorp.com,Starter,49.0,2025-07-04,12,8,4,4,2.75,24.28,25,73.2,0,100.0,1
+CUST-0961,Chris Smith,QuantumSoft,chris.smith@quantumsoft.com,Pro,199.0,2025-04-03,15,4,1,0,4.0,9.5,0,66.1,80,19.39,0
+CUST-0962,Priya Johnson,Acme Corp,priya.johnson@acmecorp.com,Pro,199.0,2025-05-19,13,4,4,1,1.25,24.0,14,16.2,11,88.78,1
+CUST-0963,Noah Patel,CloudScale,noah.patel@cloudscale.com,Enterprise,799.0,2025-10-09,8,10,5,4,2.7,21.78,3,93.7,0,100.0,1
+CUST-0964,Chris Jackson,Vanguard AI,chris.jackson@vanguardai.com,Starter,49.0,2025-02-03,17,8,3,3,3.25,17.66,0,20.9,24,75.91,0
+CUST-0965,Morgan Williams,TechPulse,morgan.williams@techpulse.com,Pro,199.0,2025-06-07,12,4,3,1,2.0,10.5,25,47.4,21,78.26,0
+CUST-0966,Casey Miller,TechPulse,casey.miller@techpulse.com,Pro,199.0,2025-06-21,12,9,5,2,2.78,41.6,0,91.9,21,78.59,0
+CUST-0967,Taylor Kim,Vanguard AI,taylor.kim@vanguardai.com,Starter,49.0,2025-02-06,17,5,4,3,1.6,19.6,0,90.4,9,90.16,1
+CUST-0968,Jordan Chen,CloudScale,jordan.chen@cloudscale.com,Starter,49.0,2025-01-02,18,7,5,1,2.57,42.35,0,65.6,27,72.87,0
+CUST-0969,Pat Thomas,DataFlow,pat.thomas@dataflow.com,Starter,49.0,2025-10-22,8,4,0,1,3.0,40.8,3,81.3,70,29.67,0
+CUST-0970,Priya Chen,ByteWorks,priya.chen@byteworks.com,Starter,49.0,2025-07-28,11,8,5,0,2.38,39.0,0,91.1,38,61.89,0
+CUST-0971,Aarav Davis,Nexus Solutions,aarav.davis@nexussolutions.com,Starter,49.0,2025-01-07,18,7,2,1,3.57,31.68,25,36.7,41,58.76,0
+CUST-0972,Rohan Williams,TechPulse,rohan.williams@techpulse.com,Starter,49.0,2025-09-19,9,5,3,1,3.0,13.25,0,24.3,42,57.57,0
+CUST-0973,Pat Miller,ByteWorks,pat.miller@byteworks.com,Pro,199.0,2025-03-19,15,3,2,0,2.67,21.4,0,60.4,61,38.63,0
+CUST-0974,Chris Miller,QuantumSoft,chris.miller@quantumsoft.com,Starter,49.0,2025-07-11,11,8,2,1,3.88,32.05,0,49.3,59,40.07,0
+CUST-0975,Rohan Verma,Apex Global,rohan.verma@apexglobal.com,Starter,49.0,2025-09-02,10,9,5,6,1.89,32.4,3,89.6,0,100.0,1
+CUST-0976,Sam Kim,Starlight Systems,sam.kim@starlightsystems.com,Pro,199.0,2025-08-31,10,2,1,0,2.5,31.6,0,35.5,65,34.45,0
+CUST-0977,Chris Williams,CloudScale,chris.williams@cloudscale.com,Enterprise,799.0,2025-01-03,18,3,2,0,2.33,13.0,0,43.9,57,42.94,0
+CUST-0978,Liam Miller,Vanguard AI,liam.miller@vanguardai.com,Pro,199.0,2025-05-05,14,3,3,0,2.33,24.0,0,41.1,48,51.22,0
+CUST-0979,Rohan Garcia,Synergy Tech,rohan.garcia@synergytech.com,Starter,49.0,2025-09-09,9,5,2,2,3.4,57.67,0,45.4,37,62.26,0
+CUST-0980,Liam Johnson,InnoWave,liam.johnson@innowave.com,Pro,199.0,2025-10-03,9,4,1,1,3.5,44.83,14,31.9,54,45.21,0
+CUST-0981,Emily Williams,CloudScale,emily.williams@cloudscale.com,Pro,199.0,2025-10-28,8,10,6,2,2.5,29.3,0,20.6,4,95.94,1
+CUST-0982,Noah Anderson,Horizon Labs,noah.anderson@horizonlabs.com,Pro,199.0,2025-01-08,17,6,2,1,3.17,28.9,0,34.6,52,47.21,0
+CUST-0983,Rohan Anderson,Acme Corp,rohan.anderson@acmecorp.com,Enterprise,799.0,2025-06-20,12,10,4,3,3.0,12.52,25,77.9,4,95.21,1
+CUST-0984,Chris Davis,TechPulse,chris.davis@techpulse.com,Pro,199.0,2025-06-11,12,10,4,3,2.8,10.95,0,70.7,17,82.53,1
+CUST-0985,Sophia Smith,ByteWorks,sophia.smith@byteworks.com,Enterprise,799.0,2025-04-15,14,7,2,2,2.43,24.56,7,53.4,34,65.43,0
+CUST-0986,Pat Davis,Vanguard AI,pat.davis@vanguardai.com,Starter,49.0,2025-06-13,12,10,5,2,3.1,17.94,0,68.9,21,78.31,0
+CUST-0987,Liam Mahato,CloudScale,liam.mahato@cloudscale.com,Enterprise,799.0,2025-08-09,10,7,3,3,2.0,32.67,0,92.9,21,78.71,0
+CUST-0988,Rohan Rodriguez,TechPulse,rohan.rodriguez@techpulse.com,Pro,199.0,2025-03-13,15,6,1,3,2.33,42.86,0,87.6,39,60.57,0
+CUST-0989,Priya Mahato,Apex Global,priya.mahato@apexglobal.com,Pro,199.0,2025-07-09,11,6,3,1,3.0,16.2,7,86.9,44,55.51,0
+CUST-0990,Sophia Rodriguez,InnoWave,sophia.rodriguez@innowave.com,Starter,49.0,2025-02-09,16,6,2,3,2.83,21.68,7,30.6,25,74.47,0
+CUST-0991,Rohan Taylor,CloudScale,rohan.taylor@cloudscale.com,Starter,49.0,2025-10-05,8,5,5,1,1.6,24.0,0,86.2,21,78.58,0
+CUST-0992,Riley Anderson,Nexus Solutions,riley.anderson@nexussolutions.com,Pro,199.0,2025-08-30,10,5,3,1,2.8,16.4,14,47.4,34,65.26,0
+CUST-0993,Aarav Brown,DataFlow,aarav.brown@dataflow.com,Starter,49.0,2025-04-30,14,6,4,1,2.33,6.1,3,30.4,27,72.09,0
+CUST-0994,Taylor Miller,InnoWave,taylor.miller@innowave.com,Enterprise,799.0,2025-09-04,10,3,1,2,3.33,6.0,14,84.7,48,51.26,0
+CUST-0995,Siddharth Miller,Apex Global,siddharth.miller@apexglobal.com,Enterprise,799.0,2025-02-20,16,8,7,1,1.75,8.2,14,81.8,0,100.0,1
+CUST-0996,Noah Miller,Horizon Labs,noah.miller@horizonlabs.com,Starter,49.0,2025-09-22,9,3,0,1,4.0,25.2,3,61.5,76,23.65,0
+CUST-0997,Emily Miller,Synergy Tech,emily.miller@synergytech.com,Enterprise,799.0,2025-07-28,11,10,4,3,3.1,25.53,0,92.2,22,77.98,0
+CUST-0998,Chris Kim,QuantumSoft,chris.kim@quantumsoft.com,Enterprise,799.0,2025-02-19,16,6,3,3,2.5,16.47,0,35.4,19,80.46,0
+CUST-0999,Siddharth Brown,TechPulse,siddharth.brown@techpulse.com,Starter,49.0,2025-10-15,8,5,2,1,4.0,44.83,0,70.8,63,36.92,0
+CUST-1000,Noah Thomas,DataFlow,noah.thomas@dataflow.com,Enterprise,799.0,2025-04-23,14,8,6,3,2.25,23.8,7,78.2,0,100.0,1
