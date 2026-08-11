@@ -1,0 +1,34 @@
+[
+    {
+        "segment": "Enterprise",
+        "what_data_shows": "The 'Enterprise' segment has an exceptionally high average LTV ($150,000.00) and below-average churn (20.0%).",
+        "behavioural_characteristic": "High-value, strong retention profile.",
+        "why_it_matters": "These customers generate disproportionate revenue and are loyal, making them the most profitable cohort.",
+        "business_action": "Maintain premium support SLAs and implement proactive account management to defend this revenue.",
+        "magnitude_note": "Churn difference from average: -32.9 percentage points."
+    },
+    {
+        "segment": "Freemium",
+        "what_data_shows": "The 'Freemium' segment shows a high churn rate (100.0%) combined with high average support tickets (4.5).",
+        "behavioural_characteristic": "High friction, elevated flight risk.",
+        "why_it_matters": "The correlation between high ticket volume and high churn suggests onboarding challenges or product friction driving customers away.",
+        "business_action": "Investigate common support ticket themes for this segment and improve self-service onboarding flows.",
+        "magnitude_note": "Churn difference from average: +47.1 percentage points."
+    },
+    {
+        "segment": "SMB",
+        "what_data_shows": "The 'SMB' segment shows a high churn rate (60.0%) combined with high average support tickets (7.6).",
+        "behavioural_characteristic": "High friction, elevated flight risk.",
+        "why_it_matters": "The correlation between high ticket volume and high churn suggests onboarding challenges or product friction driving customers away.",
+        "business_action": "Investigate common support ticket themes for this segment and improve self-service onboarding flows.",
+        "magnitude_note": "Churn difference from average: +7.1 percentage points."
+    },
+    {
+        "segment": "Startup",
+        "what_data_shows": "The 'Startup' segment exhibits lower than average LTV ($5,160.00) and shorter retention (106 days).",
+        "behavioural_characteristic": "Low barrier to entry, low commitment.",
+        "why_it_matters": "This cohort provides volume but lower unit economics, meaning high-touch support models may be unprofitable.",
+        "business_action": "Transition to scalable, lower-cost self-service models and automated lifecycle email campaigns.",
+        "magnitude_note": "Churn difference from average: +7.1 percentage points."
+    }
+]
