@@ -1,7 +1,0 @@
-2026-08-04 15:20:13,295 - INFO - Starting SupportSense Data Workflow Pipeline...
-2026-08-04 15:20:13,295 - INFO - Initiating data ingestion from: /Users/nikunj/Documents/development/SW2627/data/raw/customer_support_tickets.csv
-2026-08-04 15:20:13,299 - INFO - Successfully ingested 11 rows and 10 columns from /Users/nikunj/Documents/development/SW2627/data/raw/customer_support_tickets.csv
-2026-08-04 15:20:13,301 - INFO - Removed 1 duplicate ticket records.
-2026-08-04 15:20:13,306 - INFO - Processing completed: 11 raw records -> 10 final clean records. Identified 4 high-risk tickets.
-2026-08-04 15:20:13,307 - INFO - Successfully saved 10 records to output destination: /Users/nikunj/Documents/development/SW2627/data/processed/processed_churn_tickets.csv
-2026-08-04 15:20:13,307 - INFO - SupportSense Data Workflow Pipeline completed successfully.
