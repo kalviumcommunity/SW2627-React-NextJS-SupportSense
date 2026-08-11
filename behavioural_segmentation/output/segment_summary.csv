@@ -1,0 +1,5 @@
+segment,customer_count,customer_percentage,avg_ltv,churn_rate,avg_tickets,avg_retention,ltv_rank,churn_rank,retention_rank
+Enterprise,5,29.411764705882355,150000.0,0.2,1.8,892.0,1,1,1
+Freemium,2,11.76470588235294,125.0,1.0,4.5,12.5,4,4,4
+SMB,5,29.411764705882355,25000.0,0.6,7.6,314.0,2,2,2
+Startup,5,29.411764705882355,5160.0,0.6,1.4,106.0,3,2,3

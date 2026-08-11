@@ -1,0 +1,18 @@
+customer_id,customer_type,lifetime_value,churn,support_tickets,retention_days,region
+CUST-101,Enterprise,150000,0,2,900,North America
+CUST-102,Enterprise,145000,0,1,850,Europe
+CUST-103,Enterprise,160000,0,3,920,North America
+CUST-104,Enterprise,140000,1,2,880,Asia
+CUST-105,Enterprise,155000,0,1,910,Europe
+CUST-201,SMB,25000,1,8,300,North America
+CUST-202,SMB,22000,0,6,350,North America
+CUST-203,SMB,28000,1,9,280,Asia
+CUST-204,SMB,24000,1,7,310,Europe
+CUST-205,SMB,26000,0,8,330,North America
+CUST-301,Startup,5000,1,1,100,Asia
+CUST-302,Startup,5500,1,2,110,North America
+CUST-303,Startup,4500,0,1,120,Europe
+CUST-304,Startup,6000,1,2,95,Asia
+CUST-305,Startup,4800,0,1,105,North America
+CUST-401,Freemium,100,1,5,10,North America
+CUST-402,Freemium,150,1,4,15,Europe

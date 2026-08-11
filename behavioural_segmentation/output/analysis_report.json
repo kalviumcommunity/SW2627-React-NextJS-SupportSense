@@ -1,0 +1,100 @@
+{
+    "analysis_status": "SUCCESS",
+    "segment_column": "customer_type",
+    "segment_count": 4,
+    "total_customers": 17,
+    "segments": {
+        "Enterprise": {
+            "customer_count": 5,
+            "customer_percentage": 29.41,
+            "avg_ltv": 150000.0,
+            "churn_rate": 0.2,
+            "avg_tickets": 1.8,
+            "avg_retention": 892.0,
+            "ltv_rank": 1,
+            "churn_rank": 1,
+            "retention_rank": 1
+        },
+        "Freemium": {
+            "customer_count": 2,
+            "customer_percentage": 11.76,
+            "avg_ltv": 125.0,
+            "churn_rate": 1.0,
+            "avg_tickets": 4.5,
+            "avg_retention": 12.5,
+            "ltv_rank": 4,
+            "churn_rank": 4,
+            "retention_rank": 4
+        },
+        "SMB": {
+            "customer_count": 5,
+            "customer_percentage": 29.41,
+            "avg_ltv": 25000.0,
+            "churn_rate": 0.6,
+            "avg_tickets": 7.6,
+            "avg_retention": 314.0,
+            "ltv_rank": 2,
+            "churn_rank": 2,
+            "retention_rank": 2
+        },
+        "Startup": {
+            "customer_count": 5,
+            "customer_percentage": 29.41,
+            "avg_ltv": 5160.0,
+            "churn_rate": 0.6,
+            "avg_tickets": 1.4,
+            "avg_retention": 106.0,
+            "ltv_rank": 3,
+            "churn_rank": 2,
+            "retention_rank": 3
+        }
+    },
+    "top_performers": {
+        "highest_ltv": "Enterprise",
+        "lowest_ltv": "Freemium",
+        "highest_churn": "Freemium",
+        "lowest_churn": "Enterprise",
+        "best_retention": "Enterprise",
+        "lowest_retention": "Freemium"
+    },
+    "warnings": [
+        "Segment 'Enterprise' has only 5 customers. Segment-level conclusions should be treated cautiously.",
+        "Segment 'Freemium' has only 2 customers. Segment-level conclusions should be treated cautiously.",
+        "Segment 'SMB' has only 5 customers. Segment-level conclusions should be treated cautiously.",
+        "Segment 'Startup' has only 5 customers. Segment-level conclusions should be treated cautiously."
+    ],
+    "insights": [
+        {
+            "segment": "Enterprise",
+            "what_data_shows": "The 'Enterprise' segment has an exceptionally high average LTV ($150,000.00) and below-average churn (20.0%).",
+            "behavioural_characteristic": "High-value, strong retention profile.",
+            "why_it_matters": "These customers generate disproportionate revenue and are loyal, making them the most profitable cohort.",
+            "business_action": "Maintain premium support SLAs and implement proactive account management to defend this revenue.",
+            "magnitude_note": "Churn difference from average: -32.9 percentage points."
+        },
+        {
+            "segment": "Freemium",
+            "what_data_shows": "The 'Freemium' segment shows a high churn rate (100.0%) combined with high average support tickets (4.5).",
+            "behavioural_characteristic": "High friction, elevated flight risk.",
+            "why_it_matters": "The correlation between high ticket volume and high churn suggests onboarding challenges or product friction driving customers away.",
+            "business_action": "Investigate common support ticket themes for this segment and improve self-service onboarding flows.",
+            "magnitude_note": "Churn difference from average: +47.1 percentage points."
+        },
+        {
+            "segment": "SMB",
+            "what_data_shows": "The 'SMB' segment shows a high churn rate (60.0%) combined with high average support tickets (7.6).",
+            "behavioural_characteristic": "High friction, elevated flight risk.",
+            "why_it_matters": "The correlation between high ticket volume and high churn suggests onboarding challenges or product friction driving customers away.",
+            "business_action": "Investigate common support ticket themes for this segment and improve self-service onboarding flows.",
+            "magnitude_note": "Churn difference from average: +7.1 percentage points."
+        },
+        {
+            "segment": "Startup",
+            "what_data_shows": "The 'Startup' segment exhibits lower than average LTV ($5,160.00) and shorter retention (106 days).",
+            "behavioural_characteristic": "Low barrier to entry, low commitment.",
+            "why_it_matters": "This cohort provides volume but lower unit economics, meaning high-touch support models may be unprofitable.",
+            "business_action": "Transition to scalable, lower-cost self-service models and automated lifecycle email campaigns.",
+            "magnitude_note": "Churn difference from average: +7.1 percentage points."
+        }
+    ]
+}

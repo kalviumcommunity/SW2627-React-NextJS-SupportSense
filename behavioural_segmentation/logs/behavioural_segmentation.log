@@ -1,0 +1,50 @@
+2026-08-11 15:19:07 - behavioural_segmentation - INFO - ============================================================
+2026-08-11 15:19:07 - behavioural_segmentation - INFO - Behavioural Analysis & User Segmentation Started
+2026-08-11 15:19:07 - behavioural_segmentation - INFO - ============================================================
+2026-08-11 15:19:07 - behavioural_segmentation - INFO - Loading dataset from: sample_data\customers.csv
+2026-08-11 15:19:07 - behavioural_segmentation - INFO - Validating dataset structure. Segment column: 'customer_type'. Required core columns: ['customer_id', 'lifetime_value', 'churn', 'support_tickets', 'retention_days']
+2026-08-11 15:19:07 - behavioural_segmentation - INFO - Dataset validation passed successfully.
+2026-08-11 15:19:07 - behavioural_segmentation.analysis.segment_metrics - INFO - Calculating segment metrics grouped by 'customer_type'.
+2026-08-11 15:19:07 - behavioural_segmentation.analysis.segment_metrics - INFO - Successfully calculated metrics for 4 segments.
+2026-08-11 15:19:07 - behavioural_segmentation.analysis.segment_ranking - INFO - Ranking segments across LTV, Churn, and Retention metrics.
+2026-08-11 15:19:07 - behavioural_segmentation.analysis.segment_ranking - INFO - Successfully ranked segments.
+2026-08-11 15:19:07 - behavioural_segmentation - INFO - Saved segment summary to output\segment_summary.csv
+2026-08-11 15:19:07 - behavioural_segmentation.visualization.heatmap - INFO - Generating normalized segment comparison heatmap at output\segment_comparison_heatmap.png
+2026-08-11 15:19:10 - behavioural_segmentation.visualization.heatmap - INFO - Heatmap successfully saved.
+2026-08-11 15:19:10 - behavioural_segmentation.visualization.comparison_charts - INFO - Generating individual metric bar charts at output
+2026-08-11 15:19:11 - behavioural_segmentation.visualization.comparison_charts - INFO - Individual metric comparison charts saved successfully.
+2026-08-11 15:19:11 - behavioural_segmentation - WARNING - Segment 'Enterprise' has only 5 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:11 - behavioural_segmentation - WARNING - Segment 'Freemium' has only 2 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:11 - behavioural_segmentation - WARNING - Segment 'SMB' has only 5 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:11 - behavioural_segmentation - WARNING - Segment 'Startup' has only 5 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:11 - behavioural_segmentation - ERROR - Pipeline execution failed:
+Traceback (most recent call last):
+  File "C:\Documents\Projects\SupportSense\behavioural_segmentation\main.py", line 78, in run_pipeline
+    if pd.api.types.is_object_dtype(churn_series) or pd.api.types.is_string_dtype(churn_series):
+       ^^
+NameError: name 'pd' is not defined
+2026-08-11 15:19:36 - behavioural_segmentation - INFO - ============================================================
+2026-08-11 15:19:36 - behavioural_segmentation - INFO - Behavioural Analysis & User Segmentation Started
+2026-08-11 15:19:36 - behavioural_segmentation - INFO - ============================================================
+2026-08-11 15:19:36 - behavioural_segmentation - INFO - Loading dataset from: sample_data\customers.csv
+2026-08-11 15:19:36 - behavioural_segmentation - INFO - Validating dataset structure. Segment column: 'customer_type'. Required core columns: ['customer_id', 'lifetime_value', 'churn', 'support_tickets', 'retention_days']
+2026-08-11 15:19:36 - behavioural_segmentation - INFO - Dataset validation passed successfully.
+2026-08-11 15:19:36 - behavioural_segmentation.analysis.segment_metrics - INFO - Calculating segment metrics grouped by 'customer_type'.
+2026-08-11 15:19:36 - behavioural_segmentation.analysis.segment_metrics - INFO - Successfully calculated metrics for 4 segments.
+2026-08-11 15:19:36 - behavioural_segmentation.analysis.segment_ranking - INFO - Ranking segments across LTV, Churn, and Retention metrics.
+2026-08-11 15:19:36 - behavioural_segmentation.analysis.segment_ranking - INFO - Successfully ranked segments.
+2026-08-11 15:19:36 - behavioural_segmentation - INFO - Saved segment summary to output\segment_summary.csv
+2026-08-11 15:19:36 - behavioural_segmentation.visualization.heatmap - INFO - Generating normalized segment comparison heatmap at output\segment_comparison_heatmap.png
+2026-08-11 15:19:37 - behavioural_segmentation.visualization.heatmap - INFO - Heatmap successfully saved.
+2026-08-11 15:19:37 - behavioural_segmentation.visualization.comparison_charts - INFO - Generating individual metric bar charts at output
+2026-08-11 15:19:38 - behavioural_segmentation.visualization.comparison_charts - INFO - Individual metric comparison charts saved successfully.
+2026-08-11 15:19:38 - behavioural_segmentation - WARNING - Segment 'Enterprise' has only 5 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:38 - behavioural_segmentation - WARNING - Segment 'Freemium' has only 2 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:38 - behavioural_segmentation - WARNING - Segment 'SMB' has only 5 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:38 - behavioural_segmentation - WARNING - Segment 'Startup' has only 5 customers. Segment-level conclusions should be treated cautiously.
+2026-08-11 15:19:38 - behavioural_segmentation.analysis.insight_generator - INFO - Generating data-driven business insights per segment.
+2026-08-11 15:19:38 - behavioural_segmentation - INFO - Saved insights to output\segment_insights.json
+2026-08-11 15:19:38 - behavioural_segmentation - INFO - Saved complete analysis report to output\analysis_report.json
+2026-08-11 15:19:38 - behavioural_segmentation - INFO - ============================================================
+2026-08-11 15:19:38 - behavioural_segmentation - INFO - Behavioural Analysis Pipeline Completed Successfully
+2026-08-11 15:19:38 - behavioural_segmentation - INFO - ============================================================
