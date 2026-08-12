@@ -1,0 +1,74 @@
+{
+    "analysis_status": "SUCCESS",
+    "analysis_timestamp": "2026-08-12T08:30:18.374192+00:00",
+    "lookback_days": 30,
+    "metrics_monitored": [
+        "daily_revenue"
+    ],
+    "total_observations": 30,
+    "total_anomalies": 4,
+    "anomaly_rate": 13.33,
+    "severity_counts": {
+        "CRITICAL": 0,
+        "HIGH": 3,
+        "MEDIUM": 1,
+        "LOW": 0
+    },
+    "threshold_alert_count": 2,
+    "zscore_alert_count": 2,
+    "anomalies": [
+        {
+            "timestamp": "2026-08-12T08:30:16.501993+00:00",
+            "anomaly_date": "2026-07-16",
+            "metric": "daily_revenue",
+            "value": 45000,
+            "mean": null,
+            "standard_deviation": null,
+            "expected_range": "2000 to 30000",
+            "z_score": null,
+            "severity": "MEDIUM",
+            "detection_method": "THRESHOLD (ABOVE_MAX 30000)",
+            "status": "OPEN"
+        },
+        {
+            "timestamp": "2026-08-12T08:30:16.508413+00:00",
+            "anomaly_date": "2026-07-16",
+            "metric": "daily_revenue",
+            "value": 45000,
+            "mean": 15342.857142857143,
+            "standard_deviation": 13089.290424217956,
+            "expected_range": "-10835.72 to 41521.44",
+            "z_score": 2.265756347056894,
+            "severity": "HIGH",
+            "detection_method": "STATISTICAL_ZSCORE",
+            "status": "OPEN"
+        },
+        {
+            "timestamp": "2026-08-12T08:30:16.503568+00:00",
+            "anomaly_date": "2026-07-22",
+            "metric": "daily_revenue",
+            "value": 500,
+            "mean": null,
+            "standard_deviation": null,
+            "expected_range": "2000 to 30000",
+            "z_score": null,
+            "severity": "HIGH",
+            "detection_method": "THRESHOLD (BELOW_MIN 2000)",
+            "status": "OPEN"
+        },
+        {
+            "timestamp": "2026-08-12T08:30:16.509844+00:00",
+            "anomaly_date": "2026-08-03",
+            "metric": "daily_revenue",
+            "value": 2500,
+            "mean": 9407.142857142857,
+            "standard_deviation": 3087.2626185976524,
+            "expected_range": "3232.62 to 15581.67",
+            "z_score": -2.2373033040772974,
+            "severity": "HIGH",
+            "detection_method": "STATISTICAL_ZSCORE",
+            "status": "OPEN"
+        }
+    ],
+    "warnings": []
+}
