@@ -1,0 +1,26 @@
+2026-08-12 14:00:16 - anomaly_detection - INFO - ============================================================
+2026-08-12 14:00:16 - anomaly_detection - INFO - Anomaly Detection Analysis Started
+2026-08-12 14:00:16 - anomaly_detection - INFO - ============================================================
+2026-08-12 14:00:16 - anomaly_detection - INFO - Loading dataset from: sample_data\transactions.csv
+2026-08-12 14:00:16 - anomaly_detection - INFO - Loaded 67 transaction rows. Date range: 2026-06-01 to 2026-08-06
+2026-08-12 14:00:16 - anomaly_detection.analysis.aggregation - INFO - Aggregating daily business metrics.
+2026-08-12 14:00:16 - anomaly_detection.analysis.aggregation - INFO - Generated daily metrics for 67 days.
+2026-08-12 14:00:16 - anomaly_detection.analysis.rolling_metrics - INFO - Calculating 7-day rolling statistics for 'daily_revenue'.
+2026-08-12 14:00:16 - anomaly_detection.analysis.rolling_metrics - INFO - Applying lookback window of the most recent 30 days.
+2026-08-12 14:00:16 - anomaly_detection - INFO - Loaded threshold rules.
+2026-08-12 14:00:16 - anomaly_detection.detection.threshold_detector - INFO - Checking threshold rules for 'daily_revenue'.
+2026-08-12 14:00:16 - anomaly_detection.detection.threshold_detector - INFO - Detected 2 threshold anomalies for 'daily_revenue'.
+2026-08-12 14:00:16 - anomaly_detection - INFO - Starting Z-score analysis.
+2026-08-12 14:00:16 - anomaly_detection.detection.zscore_detector - INFO - Running Z-score statistical anomaly detection for 'daily_revenue'.
+2026-08-12 14:00:16 - anomaly_detection.detection.zscore_detector - INFO - Detected 2 statistical anomalies for 'daily_revenue'.
+2026-08-12 14:00:16 - anomaly_detection - INFO - Severity classification completed during detection phase.
+2026-08-12 14:00:16 - anomaly_detection - INFO - Generating visualization.
+2026-08-12 14:00:16 - anomaly_detection.visualization.anomaly_plot - INFO - Generating anomaly visualization plot for 'daily_revenue'.
+2026-08-12 14:00:18 - anomaly_detection.visualization.anomaly_plot - INFO - Anomaly plot saved successfully to output\anomaly_detection.png
+2026-08-12 14:00:18 - anomaly_detection - INFO - Generating Audit log and Reports.
+2026-08-12 14:00:18 - anomaly_detection.reports.report_generator - INFO - Generating anomaly detection reports.
+2026-08-12 14:00:18 - anomaly_detection.reports.report_generator - INFO - JSON report saved to output\anomaly_report.json
+2026-08-12 14:00:18 - anomaly_detection.reports.report_generator - INFO - Anomaly audit log saved to output\anomalies_log.csv
+2026-08-12 14:00:18 - anomaly_detection - INFO - ============================================================
+2026-08-12 14:00:18 - anomaly_detection - INFO - Analysis completed successfully.
+2026-08-12 14:00:18 - anomaly_detection - INFO - ============================================================
