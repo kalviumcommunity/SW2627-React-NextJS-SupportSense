@@ -1,0 +1,11 @@
+{
+    "status": "PASS",
+    "timestamp": "2026-08-13T09:15:59.126868",
+    "customers": 5,
+    "orders": 6,
+    "customers_without_orders": 1,
+    "orphaned_orders": 1,
+    "join_validation": "PASS",
+    "multi_table_validation": "PASS",
+    "warnings": []
+}
