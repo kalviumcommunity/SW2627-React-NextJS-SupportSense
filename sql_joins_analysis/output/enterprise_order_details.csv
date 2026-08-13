@@ -1,0 +1,4 @@
+customer_id,customer_type,order_id,order_date,product_id,product_name,quantity,unit_price,line_total
+C01,Enterprise,O101,2026-08-01,P01,Server,1,1000.0,1000.0
+C01,Enterprise,O102,2026-08-05,P02,Software License,5,100.0,500.0
+C04,Enterprise,O105,2026-08-13,P02,Software License,3,100.0,300.0

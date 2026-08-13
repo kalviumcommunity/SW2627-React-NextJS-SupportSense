@@ -1,0 +1,6 @@
+customer_id,customer_name,customer_type
+C01,Alice,Enterprise
+C02,Bob,SMB
+C03,Charlie,Startup
+C04,Dave,Enterprise
+C05,Eve,Enterprise
