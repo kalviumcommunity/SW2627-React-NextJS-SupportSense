@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
+from alert_config import ALERT_THRESHOLDS
 
 # Page config
 st.set_page_config(page_title="Data Explorer", layout="wide")
@@ -27,13 +28,11 @@ def load_data():
 
 df = load_data()
 
-# --- Task 5: Implement Filter Reset ---
+# --- Task 5 (from prev): Implement Filter Reset ---
 if st.sidebar.button("Reset Filters"):
     st.rerun()
 
 st.sidebar.header("Filters")
-
-# --- Task 1: Implement Three Different Widget Types & Task 3: Meaningful Defaults ---
 
 # Widget 1: Date range picker
 min_date = df['date'].min().date()
@@ -63,7 +62,6 @@ min_rev, max_rev = st.sidebar.slider(
     value=(min_rev_val, max_rev_val)
 )
 
-# --- Task 2: Wire Widgets to Filter the DataFrame ---
 # Ensure date_range has two elements (start and end)
 if len(date_range) == 2:
     start_date, end_date = date_range
@@ -79,10 +77,55 @@ filtered_df = df[
     (df["revenue"] <= max_rev)
 ]
 
-# --- Task 4: Handle Empty Filter Combinations ---
+# --- Task 4 (from prev): Handle Empty Filter Combinations ---
 if len(filtered_df) == 0:
     st.warning("No data matches the current filters. Try broadening your selection.")
     st.stop()
+
+
+# =====================================================================
+# NEW: Alert Monitoring & Metric Threshold Detection
+# =====================================================================
+
+# Compute dynamic mock metrics based on filtered data
+# 1. Churn Rate: mock logic - percentage of transactions where revenue is suspiciously low (< 5000)
+churn_rate_val = (filtered_df['revenue'] < 5000).mean() * 100 if len(filtered_df) > 0 else 0
+
+# 2. Avg Order Value: scaled down by 1000 so it sits around 25 on average (to test the 30 threshold)
+avg_order_value_val = (filtered_df['revenue'].mean() / 1000) if len(filtered_df) > 0 else 0
+
+# 3. Null Percentage: purely dynamic mock based on number of selected segments to trigger alerts
+null_pct_val = (len(selected_segments) * 2.5) 
+
+current_metrics = {
+    "churn_rate": churn_rate_val,
+    "avg_order_value": avg_order_value_val,
+    "null_percentage": null_pct_val
+}
+
+# Check and Display Alerts at the top of the dashboard
+for key, config in ALERT_THRESHOLDS.items():
+    value = current_metrics.get(key, 0)
+    breached = False
+    
+    if config["direction"] == "above" and value > config["threshold"]:
+        breached = True
+    elif config["direction"] == "below" and value < config["threshold"]:
+        breached = True
+        
+    if breached:
+        alert_text = (
+            "ALERT: " + config["metric"] + " is " + 
+            str(round(value, 1)) + " (threshold: " + 
+            str(config["threshold"]) + "). " + config["message"]
+        )
+        if config["severity"] == "critical":
+            st.error(alert_text)
+        else:
+            st.warning(alert_text)
+
+st.markdown("---")
+# =====================================================================
 
 # All downstream charts and metrics read from filtered_df
 st.write(f"Showing **{len(filtered_df):,}** of **{len(df):,}** records")
