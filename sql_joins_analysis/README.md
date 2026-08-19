@@ -33,14 +33,36 @@ If you aggregate (SUM) the `order_amount` *after* joining to `order_items`, an o
 - **Task 3 (`sql/task3_join_comparison.sql`)**: Demonstrates INNER, LEFT, and FULL OUTER (using UNION ALL to ensure broad database compatibility).
 - **Task 4 (`sql/task4_multi_table_join.sql`)**: Chains 4 tables together and calculates strict line totals without double counting.
 
-## 6. How to Run
-Ensure you have Python 3 installed.
+## 6. Interactive Visualization Layer (Dashboard)
+The project now includes a production-grade visualization layer built with **Plotly** and **Streamlit**. It strictly consumes the output of the pre-aggregated SQL data layer, avoiding complex business logic duplication in the frontend.
+
+**Features Implemented:**
+- **Metric Selection**: Switch between Revenue, Orders, and Avg Order Value instantly using Plotly `updatemenus`.
+- **Date Zooming**: Plotly range sliders and range selectors (1W, 1M, All) enable deep temporal exploration.
+- **Custom Tooltips**: Formatted currencies and anomaly indicators using `hovertemplate`.
+- **Anomaly Detection**: Dynamically highlights unusual metrics ($|Z| > 1.5$) directly on the chart.
+- **Offline HTML Export**: A standalone interactive chart is generated automatically upon running the dashboard.
+
+## 7. How to Run
+
+Ensure you have Python 3 installed. Install the dependencies:
 ```bash
 pip install -r requirements.txt
-python main.py
 ```
 
-## 7. Expected Outputs & Validation
+**Run the SQL Validation Pipeline:**
+```bash
+python main.py
+python src/validate_layer.py
+```
+
+**Run the Interactive Dashboard:**
+```bash
+streamlit run dashboard/app.py
+```
+*(The interactive offline chart will be saved to `output/interactive_chart.html` automatically.)*
+
+## 8. Expected Outputs & Validation
 The pipeline executes all queries via an in-memory SQLite database powered by Pandas and SQLAlchemy.
 - It will write `.csv` reports to the `output/` directory.
 - It generates a `validation_report.json` mathematically asserting that the row counts and financial totals are exactly correct based on the raw inputs.
