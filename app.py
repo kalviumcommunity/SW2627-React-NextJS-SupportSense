@@ -136,3 +136,23 @@ st.subheader("Revenue by Segment")
 if not filtered_df.empty:
     chart_data = filtered_df.groupby('segment')['revenue'].sum().reset_index()
     st.bar_chart(chart_data, x='segment', y='revenue')
+
+# =====================================================================
+# NEW: Insight Sharing & Email Report Integration
+# =====================================================================
+from report_generator import generate_report
+from email_sender import send_report
+
+st.sidebar.header("Report Actions")
+recipient = st.sidebar.text_input("Recipient Email")
+if st.sidebar.button("Send Report"):
+    if not recipient:
+        st.sidebar.error("Enter a recipient email.")
+    else:
+        report = generate_report(filtered_df, datetime.now().date())
+        success = send_report(report, recipient)
+        if success:
+            st.sidebar.success("Report sent to " + recipient)
+        else:
+            st.sidebar.error("Failed to send. Check email config (SENDER_EMAIL / SENDER_PASSWORD).")
+
