@@ -1,0 +1,36 @@
+name: Weekly Data Pipeline
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Every Monday at 6:00 AM UTC
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install pandas; fi
+          
+      - name: Run pipeline
+        run: |
+          # Assuming you have a sample raw data file named customers.csv in data/raw
+          # You can update this to the exact file path expected in production
+          python pipeline.py --input data/raw/customers.csv --output output
+          
+      - name: Commit output
+        run: |
+          git config user.name "Pipeline Bot"
+          git config user.email "bot@example.com"
+          git add output/
+          git commit -m "pipeline: automated refresh" || echo "No changes to commit"
+          git push
