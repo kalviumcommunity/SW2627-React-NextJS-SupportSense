@@ -60,6 +60,11 @@ SW2627-React-NextJS-SupportSense/
 5. **Prescriptive Recommendations (Module 8)**: Automated AI retention playbooks for critical-risk accounts.
 6. **Analytics & Root Cause Telemetry (Module 10)**: Category volume distributions and portfolio risk segmentation.
 7. **Alerts & Executive Reporting (Module 11)**: High-risk alert feeds and executive CSV export.
+8. **Interactive Streamlit Dashboard**: A multipage data exploration app built over pre-aggregated SQL metrics.
+   - **Overview**: High-level KPIs and business metrics.
+   - **Trends**: Interactive time-series charts powered by Plotly.
+   - **Segments**: Customer segmentation analysis and revenue breakdowns.
+   - **Data Explorer**: Progressive disclosure of raw underlying data tables.
 
 ---
 
@@ -102,6 +107,15 @@ npm install
 npm run dev
 ```
 * Access the web application at: `http://localhost:5173`
+
+### 5. Launch Streamlit Multipage Dashboard
+
+```bash
+# Navigate to the root directory
+# Start the interactive multipage analytics app
+streamlit run app.py
+```
+* Access the analytics dashboard at: `http://localhost:8501`
 
 ---
 
