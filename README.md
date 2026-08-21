@@ -60,11 +60,11 @@ SW2627-React-NextJS-SupportSense/
 5. **Prescriptive Recommendations (Module 8)**: Automated AI retention playbooks for critical-risk accounts.
 6. **Analytics & Root Cause Telemetry (Module 10)**: Category volume distributions and portfolio risk segmentation.
 7. **Alerts & Executive Reporting (Module 11)**: High-risk alert feeds and executive CSV export.
-8. **Interactive Streamlit Dashboard**: A multipage data exploration app built over pre-aggregated SQL metrics.
-   - **Overview**: High-level KPIs and business metrics.
-   - **Trends**: Interactive time-series charts powered by Plotly.
-   - **Segments**: Customer segmentation analysis and revenue breakdowns.
-   - **Data Explorer**: Progressive disclosure of raw underlying data tables.
+8. **Real-Time Reactive KPI Dashboard**: A fully reactive multipage data exploration app.
+   - **Reactive KPIs**: High-level metrics recalculate instantly upon filtering (Revenue, Orders, AOV, ACV).
+   - **Upload Integration**: Upload new CSV datasets directly via the UI. Caching is automatically cleared and the SQLite engine is instantly rebuilt to show the fresh data.
+   - **Interactive Filtering**: Date ranges, order amounts, and segment multiselects cross-filter the dataset before driving the 3 integrated Plotly charts (Line, Bar, and Histogram).
+   - **Empty State Handling**: Gracefully catches over-filtered edge cases without silently crashing.
 
 ---
 
