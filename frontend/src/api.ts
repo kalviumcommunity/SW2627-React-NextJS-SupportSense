@@ -1,4 +1,5 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+const base = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_BASE_URL = base.endsWith('/api/v1') ? base : `${base}/api/v1`;
 
 export async function fetchDashboardKPIs() {
   const res = await fetch(`${API_BASE_URL}/analytics/dashboard`);
